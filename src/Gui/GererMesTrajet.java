@@ -30,6 +30,7 @@ public class GererMesTrajet extends javax.swing.JPanel {
      */
     public GererMesTrajet() {
         initComponents();
+         
     }
 
     /**

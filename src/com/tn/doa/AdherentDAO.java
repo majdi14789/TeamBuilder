@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -202,5 +204,24 @@ public class AdherentDAO {
             return null;
         }}
       
+  
+  public void AjouterAdherent(Adherent ad){
+        try {
+            String req="INSERT INTO `adherent`(`nom`, `prenom`, `adresse_mail`, `mdp`, `telephone`, `nombre_reclamation`) VALUES (?,?,?,?,?,?)";
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(req);
+            ps.setString(1, ad.getNom());
+            ps.setString(2, ad.getPrenom());
+            ps.setString(3, ad.getAdresseMail());
+            ps.setString(4, ad.getMdp());
+            ps.setInt(5, ad.getTelephone());
+            ps.setInt(6, 0);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AdherentDAO.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Erreur de l'ajout "+ex.getMessage());
+            
+        }
+  
+  }
 }
 

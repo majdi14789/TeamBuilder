@@ -159,9 +159,14 @@
                 <Component class="javax.swing.JTextField" name="rechVilleDepart">
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rechVilleDepartActionPerformed"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rechVilleDepartKeyPressed"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rechVilleDepartKeyReleased"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="rechVilleArrive">
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rechVilleArriveKeyReleased"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="rechDate">
                 </Component>

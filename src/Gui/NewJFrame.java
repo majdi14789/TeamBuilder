@@ -31,7 +31,9 @@ public class NewJFrame extends javax.swing.JFrame {
         int width=(int)tailleEcran.getWidth();
           int height =(int)tailleEcran.getHeight();
           setSize(tailleEcran);
-        //setSize(500, 500);
+        //setLocationRelativeTo(null);
+          //setSize(500, 500);
+          setResizable(false);
     }
 
     /**

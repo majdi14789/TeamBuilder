@@ -32,10 +32,32 @@ public class TrajetTableModel extends AbstractTableModel{
     public TrajetTableModel(String villedeart,String villearrive,String date) throws SQLException{
         monTrajet=new TrajetDAO().DisplayAllTrajetByVilleDepartETVilleArriveETdate(villedeart,villearrive,date);
     }
+    public TrajetTableModel(String villedeart,int n) {
+        try {
+            monTrajet=new TrajetDAO().DisplayAllTrajetByVilleDepartAjax(villedeart);
+        } catch (SQLException ex) {
+            Logger.getLogger(TrajetTableModel.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Pobleme AJAX");
+        }
+    }
+     public TrajetTableModel(String villedeart,String villearrivee,int n) {
+        try {
+            monTrajet=new TrajetDAO().DisplayAllTrajetByVilleDepartETVilleArriveAjax(villedeart, villearrivee);
+        } catch (SQLException ex) {
+            Logger.getLogger(TrajetTableModel.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Pobleme AJAX");
+        }
+    }
     @Override
     public int getRowCount() {
-    return monTrajet.size();
+        try {
+           return monTrajet.size();
+        } catch (Exception e) {
+            return 1;
+        }
+   
     }
+    
 
     @Override
     public int getColumnCount() {

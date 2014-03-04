@@ -263,7 +263,7 @@ public class TrajetDAO {
         return listeTrajet;
        
     }catch (SQLException ex){
-            System.out.println("Erreurrrrr de chargement de stock"+ex.getMessage());
+            System.out.println("Erreurrrrr de chargement de tout les trajet "+ex.getMessage());
             return null;
     }
     }
@@ -302,7 +302,7 @@ public class TrajetDAO {
         return listeTrajet;
        
     }catch (SQLException ex){
-            System.out.println("Erreurrrrr de chargement de stock"+ex.getMessage());
+            System.out.println("Erreurrrrr de chargement de trajet recherche par ville"+ex.getMessage());
             return null;
     }
     }
@@ -343,7 +343,7 @@ public class TrajetDAO {
         return listeTrajet;
        
     }catch (SQLException ex){
-            System.out.println("Erreurrrrr de chargement de stock"+ex.getMessage());
+            System.out.println("Erreurrrrr de chargement de trajet ville depart et arrive "+ex.getMessage());
             return null;
     }
     }
@@ -385,7 +385,93 @@ public class TrajetDAO {
         return listeTrajet;
        
     }catch (SQLException ex){
-            System.out.println("Erreurrrrr de chargement de stock"+ex.getMessage());
+            System.out.println("Erreurrrrr de chargement de trajet depart et arrive et jours "+ex.getMessage());
+            return null;
+    }
+    }
+      
+      
+   public List<Trajet> DisplayAllTrajetByVilleDepartAjax(String villedepart) throws SQLException{
+       List<Trajet> listeTrajet=new ArrayList<Trajet>();
+        String requete="select * from trajet where ville_depart LIKE '"+villedepart+"%'";//`ville_depart` LIKE  'biz%'
+         
+        VoitureDAO voitureDAO = new VoitureDAO();
+                AdherentDAO adherentDAO = new AdherentDAO();
+        try{
+            
+       PreparedStatement ps=MyConnection.getInstance().prepareStatement(requete);
+       //ps.setString(1,villedepart);
+       ResultSet resultat =ps.executeQuery();
+       
+       while(resultat.next()){
+         Trajet trajet=new Trajet();
+           trajet.setIdTrajet(resultat.getInt(1));
+           trajet.setAdherent(adherentDAO.findAdherentById(resultat.getInt(2)));
+           trajet.setJours(resultat.getString(3));
+           trajet.setHeure(resultat.getString(4));
+           trajet.setFrequence(resultat.getString(5));
+           trajet.setTypeTrajet(resultat.getString(6));
+           trajet.setPlaces(resultat.getInt(7));
+           trajet.setBagages(resultat.getString(8));
+           trajet.setCommentaire(resultat.getString(9));
+           trajet.setKilometrage(resultat.getInt(10));
+           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getInt(11)));
+           trajet.setPrix(resultat.getInt(12));
+           trajet.setVilleArrivee(resultat.getString(13));
+           trajet.setVilleDepart(resultat.getString(14));
+           
+           listeTrajet.add(trajet);
+           
+       
+       }
+        return listeTrajet;
+       
+    }catch (SQLException ex){
+            System.out.println("Erreurrrrr de chargement de  trajet 3ajax "+ex.getMessage());
+            return null;
+    }
+    }
+   public List<Trajet> DisplayAllTrajetByVilleDepartETVilleArriveAjax(String villedepart,String villearrive) throws SQLException{
+       List<Trajet> listeTrajet=new ArrayList<Trajet>();
+        //String requete="select * from trajet where ville_depart LIKE '"+villedepart+"%' and ville_arrivee LIKE '"+villearrive+"'";
+         String req="SELECT * \n" +
+"FROM trajet\n" +
+"WHERE ville_depart LIKE  '"+villedepart+"%'\n" +
+"AND ville_arrivee LIKE  '"+villearrive+"%'";
+        VoitureDAO voitureDAO = new VoitureDAO();
+                AdherentDAO adherentDAO = new AdherentDAO();
+        try{
+            
+       PreparedStatement ps=MyConnection.getInstance().prepareStatement(req);
+//       ps.setString(1,villedepart);
+//       ps.setString(2,villearrive);
+       ResultSet resultat =ps.executeQuery();
+       
+       while(resultat.next()){
+         Trajet trajet=new Trajet();
+           trajet.setIdTrajet(resultat.getInt(1));
+           trajet.setAdherent(adherentDAO.findAdherentById(resultat.getInt(2)));
+           trajet.setJours(resultat.getString(3));
+           trajet.setHeure(resultat.getString(4));
+           trajet.setFrequence(resultat.getString(5));
+           trajet.setTypeTrajet(resultat.getString(6));
+           trajet.setPlaces(resultat.getInt(7));
+           trajet.setBagages(resultat.getString(8));
+           trajet.setCommentaire(resultat.getString(9));
+           trajet.setKilometrage(resultat.getInt(10));
+           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getInt(11)));
+           trajet.setPrix(resultat.getInt(12));
+           trajet.setVilleArrivee(resultat.getString(13));
+           trajet.setVilleDepart(resultat.getString(14));
+           
+           listeTrajet.add(trajet);
+           
+       
+       }
+        return listeTrajet;
+       
+    }catch (SQLException ex){
+            System.out.println("Erreurrrrr de chargement de trajet ville depart et arrive AJAX"+ex.getMessage());
             return null;
     }
     }

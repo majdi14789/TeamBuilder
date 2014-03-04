@@ -93,6 +93,7 @@ public class AjouterTrajetPanel extends javax.swing.JPanel {
         nbr_places = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         Idv = new javax.swing.JTextField();
@@ -222,6 +223,8 @@ public class AjouterTrajetPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton2.setText("jButton2");
+
         javax.swing.GroupLayout trajet_panelLayout = new javax.swing.GroupLayout(trajet_panel);
         trajet_panel.setLayout(trajet_panelLayout);
         trajet_panelLayout.setHorizontalGroup(
@@ -307,6 +310,10 @@ public class AjouterTrajetPanel extends javax.swing.JPanel {
                                         .addComponent(frequence_combo, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, trajet_panelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(51, 51, 51))
         );
         trajet_panelLayout.setVerticalGroup(
             trajet_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -319,6 +326,8 @@ public class AjouterTrajetPanel extends javax.swing.JPanel {
                             .addComponent(jLabel4)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, trajet_panelLayout.createSequentialGroup()
                         .addContainerGap()
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(trajet_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(ville1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -1703,6 +1712,7 @@ public class AjouterTrajetPanel extends javax.swing.JPanel {
     private static volatile javax.swing.JComboBox gov2;
     private javax.swing.JComboBox heure_combo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

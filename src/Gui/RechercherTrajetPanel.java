@@ -87,6 +87,20 @@ public class RechercherTrajetPanel extends javax.swing.JPanel {
                 rechVilleDepartActionPerformed(evt);
             }
         });
+        rechVilleDepart.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                rechVilleDepartKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                rechVilleDepartKeyReleased(evt);
+            }
+        });
+
+        rechVilleArrive.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                rechVilleArriveKeyReleased(evt);
+            }
+        });
 
         rechercherBTN.setText("Rechercher");
         rechercherBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -236,14 +250,14 @@ public class RechercherTrajetPanel extends javax.swing.JPanel {
                 }
             }else if((!villedepart.equals(""))&&(villearrive.equals(""))&&(date.equals("")))
             {
-                try {
-                    tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart));
-                    tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
-                    tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
-                    tableTrajet.getColumnModel().getColumn(0).setWidth(0);
-                } catch (SQLException ex) {
-                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-                }
+            try {
+                tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart));
+            } catch (SQLException ex) {
+                Logger.getLogger(RechercherTrajetPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
+            tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
+            tableTrajet.getColumnModel().getColumn(0).setWidth(0);
             }else{
                 tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel());
                 tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
@@ -276,6 +290,33 @@ public class RechercherTrajetPanel extends javax.swing.JPanel {
         tableMesReservation.setModel(new ReservationTableModel(Authentification.id_adherent));
         
     }//GEN-LAST:event_BtnReserverActionPerformed
+
+    private void rechVilleDepartKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechVilleDepartKeyReleased
+        System.out.println("pip pip from key "+rechVilleDepart.getText());
+        String villedepart=rechVilleDepart.getText();
+        tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart,3));
+                    tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
+                    tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
+                    tableTrajet.getColumnModel().getColumn(0).setWidth(0);
+    }//GEN-LAST:event_rechVilleDepartKeyReleased
+
+    private void rechVilleDepartKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechVilleDepartKeyPressed
+      
+       
+        
+        
+        
+    }//GEN-LAST:event_rechVilleDepartKeyPressed
+
+    private void rechVilleArriveKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechVilleArriveKeyReleased
+        System.out.println("pip pip from key "+rechVilleDepart.getText());
+        String villedepart=rechVilleDepart.getText();
+        String villearrivee=rechVilleArrive.getText();
+        tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart, villearrivee, 1));
+                    tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
+                    tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
+                    tableTrajet.getColumnModel().getColumn(0).setWidth(0); 
+    }//GEN-LAST:event_rechVilleArriveKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
