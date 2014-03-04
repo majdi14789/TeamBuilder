@@ -4,14 +4,19 @@
  */
 package com.tn.doa;
 
+import Entité.Adherent;
 import com.tn.connect.MyConnection;
 import Entité.Evaluation;
+import Gui.Authentification;
+import java.sql.PreparedStatement;
 //import entité.Reclamation;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -54,4 +59,22 @@ public class EvaluationDAO {
             return null;
         }
      }
+     
+     public void InsertEvaluation(Evaluation ev,int id_evalue){
+         try {
+             String req="INSERT INTO `evaluation`(`id_adherentEvalué`, `id_evaluateur`, `note`, `commentaire`, `reponse`) VALUES (?,?,?,?,?)";
+             
+             PreparedStatement ps=MyConnection.getInstance().prepareStatement(req);
+             ps.setInt(1, id_evalue);
+             ps.setInt(2, Authentification.id_adherent);
+             ps.setInt(3, ev.getNote());
+             ps.setString(4, ev.getCommentaire());
+             ps.setString(5, ev.getReponse());
+            
+                ps.executeUpdate();
+         } catch (SQLException ex) {
+             System.out.println("Probleme lors de l'insertion de l'evaluation "+ex.getMessage());
+             Logger.getLogger(EvaluationDAO.class.getName()).log(Level.SEVERE, null, ex);
+         }
+                 }
 }

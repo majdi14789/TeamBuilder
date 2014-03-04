@@ -47,7 +47,7 @@ public class Evaluation implements Serializable {
     private String reponse;
     @JoinColumn(name = "id_evaluateur", referencedColumnName = "id_adherent")
     @ManyToOne(optional = false)
-    private Adherent idEvaluateur;
+    private int idEvaluateur;
     @JoinColumn(name = "id_adherentEvalu\u00e9", referencedColumnName = "id_adherent")
     @ManyToOne(optional = false)
     //private Adherent idadherentEvalué;
@@ -97,11 +97,11 @@ public class Evaluation implements Serializable {
         this.reponse = reponse;
     }
 
-    public Adherent getIdEvaluateur() {
+    public int getIdEvaluateur() {
         return idEvaluateur;
     }
 
-    public void setIdEvaluateur(Adherent idEvaluateur) {
+    public void setIdEvaluateur(int idEvaluateur) {
         this.idEvaluateur = idEvaluateur;
     }
 

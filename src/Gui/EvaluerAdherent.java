@@ -6,6 +6,11 @@
 
 package Gui;
 
+import Entité.Adherent;
+import Entité.Evaluation;
+import com.tn.doa.AdherentDAO;
+import com.tn.doa.EvaluationDAO;
+
 /**
  *
  * @author majdi
@@ -34,9 +39,9 @@ public class EvaluerAdherent extends javax.swing.JPanel {
         nomAdherentAevalue = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        commentaireTextArea = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        noteText = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -68,15 +73,20 @@ public class EvaluerAdherent extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(102, 102, 0));
         jLabel1.setText("Votre commentaire par Ici:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        commentaireTextArea.setColumns(20);
+        commentaireTextArea.setRows(5);
+        jScrollPane2.setViewportView(commentaireTextArea);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 0));
         jLabel2.setText("Donner une Note :");
 
         jButton1.setText("Valider ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -100,7 +110,7 @@ public class EvaluerAdherent extends javax.swing.JPanel {
                         .addGap(74, 74, 74)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(noteText, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,12 +163,12 @@ public class EvaluerAdherent extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(jButton1))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(noteText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -194,8 +204,25 @@ public class EvaluerAdherent extends javax.swing.JPanel {
         tableEvaluationAdherent.setModel(new com.tn.tableModel.AdherentEvaluationTable(nom));
     }//GEN-LAST:event_nomAdherentAevalueKeyReleased
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       //if(tableEvaluationAdherent.)
+        Evaluation ev=new  Evaluation();
+       AdherentDAO adDAO=new AdherentDAO();
+       EvaluationDAO evDAO=new EvaluationDAO();
+        int id=Integer.parseInt(tableEvaluationAdherent.getValueAt(tableEvaluationAdherent.getSelectedRow(),0).toString());
+        ev.setIdEvaluateur(Authentification.id_adherent);
+        ev.setCommentaire(commentaireTextArea.getText());
+        ev.setNote(Integer.parseInt(noteText.getText()));
+        ev.setReponse("");
+        evDAO.InsertEvaluation(ev,id);
+        commentaireTextArea.setText("");
+        noteText.setText("");
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea commentaireTextArea;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -207,9 +234,8 @@ public class EvaluerAdherent extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField nomAdherentAevalue;
+    private javax.swing.JTextField noteText;
     private javax.swing.JLabel sonPrenomLabel;
     private javax.swing.JLabel sonTelephoneLabel;
     private javax.swing.JLabel sonnomLabel;
