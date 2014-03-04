@@ -10,6 +10,7 @@ import Entité.Adherent;
 import Entité.Evaluation;
 import com.tn.doa.AdherentDAO;
 import com.tn.doa.EvaluationDAO;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -205,7 +206,7 @@ public class EvaluerAdherent extends javax.swing.JPanel {
     }//GEN-LAST:event_nomAdherentAevalueKeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       //if(tableEvaluationAdherent.)
+       if(tableEvaluationAdherent.getSelectedRow()!=-1){
         Evaluation ev=new  Evaluation();
        AdherentDAO adDAO=new AdherentDAO();
        EvaluationDAO evDAO=new EvaluationDAO();
@@ -216,7 +217,8 @@ public class EvaluerAdherent extends javax.swing.JPanel {
         ev.setReponse("");
         evDAO.InsertEvaluation(ev,id);
         commentaireTextArea.setText("");
-        noteText.setText("");
+        noteText.setText("");}else if(tableEvaluationAdherent.getSelectedRow()==-1)
+       {JOptionPane.showMessageDialog(this, "veuillez selectionner");}
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
