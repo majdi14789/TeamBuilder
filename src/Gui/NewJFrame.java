@@ -27,6 +27,7 @@ public class NewJFrame extends javax.swing.JFrame {
         panelajoutertrajet.add(new AjouterTrajetPanel());
         panelrecherchertrajet.add(new RechercherTrajetPanel());
         panelgerertrajet.add(new GererMesTrajet());
+        panelEvaluation.add(new EvaluerAdherent());
         Dimension tailleEcran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         int width=(int)tailleEcran.getWidth();
           int height =(int)tailleEcran.getHeight();
@@ -51,6 +52,7 @@ public class NewJFrame extends javax.swing.JFrame {
         panelajoutertrajet = new javax.swing.JPanel();
         panelrecherchertrajet = new javax.swing.JPanel();
         panelgerertrajet = new javax.swing.JPanel();
+        panelEvaluation = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(panelgerertrajet.getMaximumSize());
@@ -77,6 +79,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         panelgerertrajet.setLayout(new java.awt.CardLayout());
         tabprincipale.addTab("gerer mes trajet", panelgerertrajet);
+        tabprincipale.addTab("evaluer adherent", panelEvaluation);
 
         jPanel1.add(tabprincipale, "card2");
         tabprincipale.getAccessibleContext().setAccessibleParent(this);
@@ -132,6 +135,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel panelEvaluation;
     private javax.swing.JPanel panelajoutertrajet;
     private javax.swing.JPanel panelgerertrajet;
     private javax.swing.JPanel panelprofil;

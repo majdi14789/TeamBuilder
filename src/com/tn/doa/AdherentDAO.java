@@ -223,5 +223,39 @@ public class AdherentDAO {
         }
   
   }
+  
+  
+  public List<Adherent> DisplayAllAdhrerntAjax (String nom){
+        List<Adherent> listreclamation = new ArrayList<Adherent>();
+        
+        String requete = "select * from Adherent where nom LIKE '"+nom+"%'";
+        try {
+           Statement statement = MyConnection.getInstance()
+                   .createStatement();
+            ResultSet resultat = statement.executeQuery(requete);
+         
+            while(resultat.next()){
+                Adherent adherent =new Adherent();
+                adherent.setIdAdherent(resultat.getInt(1));
+               
+                adherent.setNom(resultat.getString(2));
+                
+                adherent.setPrenom(resultat.getString(3));
+               
+                adherent.setAdresseMail(resultat.getString(4));
+                adherent.setMdp(resultat.getString(5));
+               
+               adherent.setTelephone(resultat.getInt(6));
+                adherent.setNombreReclamation(resultat.getInt(7));
+
+                listreclamation.add(adherent);
+            }
+            return listreclamation;
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors du chargement adherent AJAX "+ex.getMessage());
+            return null;
+        }}
+      
 }
 
