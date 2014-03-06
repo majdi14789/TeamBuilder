@@ -24,7 +24,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 public class Authentification extends javax.swing.JFrame {
     
-    
+    //******
     public static int id_adherent =0;
     public static String nom_adherent="";
     
