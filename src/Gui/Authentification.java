@@ -11,7 +11,17 @@ import javax.swing.JOptionPane;
 import com.tn.doa.AdherentDAO;
 import Entité.Adherent;
 import Gui.MainFrame;
-
+import com.jtattoo.plaf.aero.AeroLookAndFeel;
+import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
+import com.jtattoo.plaf.fast.FastLookAndFeel;
+import com.jtattoo.plaf.mcwin.McWinLookAndFeel;
+import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaBlackStarLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaSilverMoonLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaStandardLookAndFeel;
+import java.text.ParseException;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 public class Authentification extends javax.swing.JFrame {
     
     
@@ -21,8 +31,11 @@ public class Authentification extends javax.swing.JFrame {
     Adherent adherent = new Adherent();
     
     AdherentDAO adherentDAO=new AdherentDAO();
-    public Authentification() {
+    public Authentification() throws ParseException, UnsupportedLookAndFeelException {
+         
         initComponents();
+        javax.swing.UIManager.setLookAndFeel(new SyntheticaSilverMoonLookAndFeel());
+        
         setLocationRelativeTo(null);
     }
     
@@ -229,7 +242,16 @@ public class Authentification extends javax.swing.JFrame {
            
             // interface 
            this.setVisible(false);
-            new NewJFrame().setVisible(true);
+           try {
+               new MainFrame().setVisible(true);
+               //new NewJFrame().setVisible(true);
+           } catch (UnsupportedLookAndFeelException ex) {
+               Logger.getLogger(Authentification.class.getName()).log(Level.SEVERE, null, ex);
+           }catch (OutOfMemoryError e){
+            System.out.println("out of memory");
+           } catch (ParseException ex) {
+               Logger.getLogger(Authentification.class.getName()).log(Level.SEVERE, null, ex);
+           }
            
        }
        else if (test==0)
@@ -243,7 +265,11 @@ public class Authentification extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        this.setVisible(false);
-       new InscriptionAdherent().setVisible(true);
+        try {
+            new InscriptionAdherent().setVisible(true);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(Authentification.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
    
@@ -253,11 +279,16 @@ public class Authentification extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        //UIManager.setLookAndFeel("de.javasoft.plaf.synthetica.SyntheticaStandardLookAndFeel");
+
         try {
+            
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    
                     break;
+                    
                 }
             }
         } catch (ClassNotFoundException ex) {
@@ -269,12 +300,19 @@ public class Authentification extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Authentification.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Authentification().setVisible(true);
+                try {
+                    new Authentification().setVisible(true);
+                } catch (ParseException ex) {
+                    Logger.getLogger(Authentification.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(Authentification.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 Authentification.setDefaultLookAndFeelDecorated(true);
                 
                 

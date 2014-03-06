@@ -57,7 +57,7 @@ public class ReservationDAO {
          
         try{
        PreparedStatement ps=MyConnection.getInstance().prepareStatement(requete);
-       
+       AdherentDAO adDAO=new AdherentDAO();
        ps.setInt(1, Authentification.id_adherent);
        ResultSet resultat =ps.executeQuery();
        
@@ -67,7 +67,7 @@ public class ReservationDAO {
            Reservation reservation=new Reservation();
           
            reservation.setIdReservation(resultat.getInt(1));
-           reservation.setIdAdherent(resultat.getInt(2));
+           reservation.setAdhrent(adDAO.findAdherentById(resultat.getInt(2)));
            reservation.setIdTrajet(resultat.getInt(3));
            reservation.setPlaces(resultat.getInt(4));
            reservation.setDate(resultat.getString(5));

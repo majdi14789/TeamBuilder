@@ -8,8 +8,13 @@ package Gui;
 
 import Entité.Adherent;
 import com.tn.doa.AdherentDAO;
+import de.javasoft.plaf.synthetica.SyntheticaSilverMoonLookAndFeel;
 import java.awt.Dimension;
-
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.UnsupportedLookAndFeelException;
+import java.awt.Toolkit;
 /**
  *
  * @author majdi
@@ -20,9 +25,11 @@ public class NewJFrame extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     static Dimension tailleEcran;
-    public NewJFrame() {
+    public NewJFrame() throws UnsupportedLookAndFeelException, ParseException {
+        //javax.swing.UIManager.setLookAndFeel(new SyntheticaSilverMoonLookAndFeel());
         initComponents();
-        //setLocationRelativeTo(null);
+        
+        setLocationRelativeTo(null);
         panelprofil.add(new monProfilPanel());
         panelajoutertrajet.add(new AjouterTrajetPanel());
         panelrecherchertrajet.add(new RechercherTrajetPanel());
@@ -31,10 +38,16 @@ public class NewJFrame extends javax.swing.JFrame {
         Dimension tailleEcran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         int width=(int)tailleEcran.getWidth();
           int height =(int)tailleEcran.getHeight();
-          setSize(tailleEcran);
+//          setSize(tailleEcran);
         //setLocationRelativeTo(null);
-          //setSize(500, 500);
-          setResizable(false);
+          setSize(500, 500);
+         
+          Toolkit tool=Toolkit.getDefaultToolkit();
+          Dimension dim=new Dimension(tool.getScreenSize());
+          int height1=(int)dim.getHeight();
+          int width1=(int)dim.getWidth();
+          setSize(width1 -100, height1 -100 );
+          setLocationRelativeTo(new Gui.Authentification());
     }
 
     /**
@@ -128,7 +141,15 @@ public class NewJFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame().setVisible(true);
+                try {
+                    new NewJFrame().setVisible(true);
+                } catch (UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex); }
+                catch (OutOfMemoryError e){
+                    System.out.println(" out of memory");
+                } catch (ParseException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

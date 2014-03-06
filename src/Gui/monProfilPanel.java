@@ -10,6 +10,10 @@ import Entité.Adherent;
 import com.tn.doa.AdherentDAO;
 import com.tn.doa.ReservationDAO;
 import com.tn.tableModel.ReservationTableModel;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -259,9 +263,19 @@ public class monProfilPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       ModifierMonProfil md=new ModifierMonProfil();
-       md.setVisible(true);
+       ModifierMonProfil md;
+        try {
+            md = new ModifierMonProfil();
+            md.setVisible(true);
        md.setLocationRelativeTo(null);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(monProfilPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }catch (OutOfMemoryError e){
+            System.out.println("out of memory");
+        } catch (ParseException ex) {
+            Logger.getLogger(monProfilPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
        
     }//GEN-LAST:event_jButton1ActionPerformed
 

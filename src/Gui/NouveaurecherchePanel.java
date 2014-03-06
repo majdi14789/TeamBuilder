@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package Gui;
 import Gui.Authentification;
@@ -16,21 +12,17 @@ import com.tn.tableModel.TrajetTableModel;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 /**
  *
  * @author majdi
  */
-public class RechercherTrajetPanel extends javax.swing.JPanel {
+public class NouveaurecherchePanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form RechercherTrajetPanel
+     * Creates new form NouveaurecherchePanel
      */
-    public RechercherTrajetPanel() {
-        setSize(1366 -100, 768 -100 );
-          
+    public NouveaurecherchePanel() {
         initComponents();
-        
     }
 
     /**
@@ -42,7 +34,6 @@ public class RechercherTrajetPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         rechercher_trajetPanel = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -60,15 +51,13 @@ public class RechercherTrajetPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         tableTrajet = new javax.swing.JTable();
 
-        setLayout(new java.awt.BorderLayout());
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jPanel1.setAutoscrolls(true);
-        jPanel1.setLayout(new java.awt.BorderLayout());
+        setLayout(new java.awt.CardLayout());
 
         rechercher_trajetPanel.setBackground(new java.awt.Color(239, 228, 228));
         rechercher_trajetPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        rechercher_trajetPanel.setMinimumSize(jPanel1.getMinimumSize());
+        rechercher_trajetPanel.setMaximumSize(new java.awt.Dimension(100, 100));
+        rechercher_trajetPanel.setMinimumSize(new java.awt.Dimension(1, 10));
+        rechercher_trajetPanel.setPreferredSize(new java.awt.Dimension(100, 100));
         rechercher_trajetPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 204));
@@ -157,7 +146,7 @@ public class RechercherTrajetPanel extends javax.swing.JPanel {
                         .addComponent(rechDate, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29)
                 .addComponent(rechercherBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(210, Short.MAX_VALUE))
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
@@ -177,7 +166,7 @@ public class RechercherTrajetPanel extends javax.swing.JPanel {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        rechercher_trajetPanel.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, -1));
+        rechercher_trajetPanel.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, -1));
         jPanel3.setSize(rechercher_trajetPanel.getSize());
 
         BtnReserver.setText("Reserver ");
@@ -189,8 +178,13 @@ public class RechercherTrajetPanel extends javax.swing.JPanel {
         rechercher_trajetPanel.add(BtnReserver, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 395, 169, 32));
 
         trajetMap.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        trajetMap.setMaximumSize(new java.awt.Dimension(206, 206));
+        trajetMap.setMinimumSize(new java.awt.Dimension(206, 206));
+        trajetMap.setPreferredSize(new java.awt.Dimension(206, 206));
 
         trajetlabel.setText("<html><head></head><body><img src='http://maps.googleapis.com/maps/api/staticmap?&amp;size=500x500&amp;maptype=roadmap\\&markers=size:mid&th=color:0xff0000ff|weight:5|Tunis|Grombalia|Nabeul&amp;sensor=true'></body></html>");
+        trajetlabel.setMaximumSize(new java.awt.Dimension(160, 160));
+        trajetlabel.setMinimumSize(new java.awt.Dimension(160, 160));
 
         javax.swing.GroupLayout trajetMapLayout = new javax.swing.GroupLayout(trajetMap);
         trajetMap.setLayout(trajetMapLayout);
@@ -198,15 +192,15 @@ public class RechercherTrajetPanel extends javax.swing.JPanel {
             trajetMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(trajetMapLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(trajetlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addComponent(trajetlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         trajetMapLayout.setVerticalGroup(
             trajetMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(trajetlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
         );
 
-        rechercher_trajetPanel.add(trajetMap, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 161, -1, -1));
+        rechercher_trajetPanel.add(trajetMap, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 161, 206, 206));
 
         try{
             tableTrajet.setModel(new TrajetTableModel());
@@ -218,14 +212,35 @@ public class RechercherTrajetPanel extends javax.swing.JPanel {
 
         rechercher_trajetPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 161, 514, 216));
 
-        jPanel1.add(rechercher_trajetPanel, java.awt.BorderLayout.CENTER);
-
-        add(jPanel1, java.awt.BorderLayout.CENTER);
+        add(rechercher_trajetPanel, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void rechVilleDepartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechVilleDepartActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rechVilleDepartActionPerformed
+
+    private void rechVilleDepartKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechVilleDepartKeyPressed
+
+    }//GEN-LAST:event_rechVilleDepartKeyPressed
+
+    private void rechVilleDepartKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechVilleDepartKeyReleased
+        System.out.println("pip pip from key "+rechVilleDepart.getText());
+        String villedepart=rechVilleDepart.getText();
+        tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart,3));
+        tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setWidth(0);
+    }//GEN-LAST:event_rechVilleDepartKeyReleased
+
+    private void rechVilleArriveKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechVilleArriveKeyReleased
+        System.out.println("pip pip from key "+rechVilleDepart.getText());
+        String villedepart=rechVilleDepart.getText();
+        String villearrivee=rechVilleArrive.getText();
+        tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart, villearrivee, 1));
+        tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setWidth(0);
+    }//GEN-LAST:event_rechVilleArriveKeyReleased
 
     private void rechercherBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechercherBTNActionPerformed
         String villedepart=rechVilleDepart.getText().toString();
@@ -253,14 +268,14 @@ public class RechercherTrajetPanel extends javax.swing.JPanel {
                 }
             }else if((!villedepart.equals(""))&&(villearrive.equals(""))&&(date.equals("")))
             {
-            try {
-                tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart));
-            } catch (SQLException ex) {
-                Logger.getLogger(RechercherTrajetPanel.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
-            tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
-            tableTrajet.getColumnModel().getColumn(0).setWidth(0);
+                try {
+                    tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart));
+                } catch (SQLException ex) {
+                    Logger.getLogger(RechercherTrajetPanel.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
+                tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
+                tableTrajet.getColumnModel().getColumn(0).setWidth(0);
             }else{
                 tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel());
                 tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
@@ -277,7 +292,7 @@ public class RechercherTrajetPanel extends javax.swing.JPanel {
     private void BtnReserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReserverActionPerformed
         Reservation reservation=new Reservation();
         ReservationDAO reservationDAO=new ReservationDAO();
-         Gmail gmail = new Gmail();
+        Gmail gmail = new Gmail();
         int x=tableTrajet.getSelectedRow();
         //
         reservation.setIdAdherent(Authentification.id_adherent);
@@ -293,38 +308,11 @@ public class RechercherTrajetPanel extends javax.swing.JPanel {
         System.out.println(Authentification.id_adherent);
         tableMesReservation.setModel(new ReservationTableModel(Authentification.id_adherent));
         gmail.subject = "Equipe Administration Covoiturage--Prevention";
-        gmail.contenu="ba33333";    
+        gmail.contenu="ba33333";
         gmail.adresse_destination="majdi.saadani@esprit.tn";
-   
+
         gmail.sendMail();
     }//GEN-LAST:event_BtnReserverActionPerformed
-
-    private void rechVilleDepartKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechVilleDepartKeyReleased
-        System.out.println("pip pip from key "+rechVilleDepart.getText());
-        String villedepart=rechVilleDepart.getText();
-        tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart,3));
-                    tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
-                    tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
-                    tableTrajet.getColumnModel().getColumn(0).setWidth(0);
-    }//GEN-LAST:event_rechVilleDepartKeyReleased
-
-    private void rechVilleDepartKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechVilleDepartKeyPressed
-      
-       
-        
-        
-        
-    }//GEN-LAST:event_rechVilleDepartKeyPressed
-
-    private void rechVilleArriveKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechVilleArriveKeyReleased
-        System.out.println("pip pip from key "+rechVilleDepart.getText());
-        String villedepart=rechVilleDepart.getText();
-        String villearrivee=rechVilleArrive.getText();
-        tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart, villearrivee, 1));
-                    tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
-                    tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
-                    tableTrajet.getColumnModel().getColumn(0).setWidth(0); 
-    }//GEN-LAST:event_rechVilleArriveKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -333,7 +321,6 @@ public class RechercherTrajetPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;

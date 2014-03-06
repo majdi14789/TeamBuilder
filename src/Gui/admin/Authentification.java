@@ -1,13 +1,21 @@
 package Gui.admin;
 
+import Entité.Adherent;
+import Entité.Administrateur;
+import static Gui.Authentification.id_adherent;
+import static Gui.Authentification.nom_adherent;
 import com.tn.doa.AdministrateurDAO;
 import javax.swing.JOptionPane;
 
 public class Authentification extends javax.swing.JFrame {
+    public static  int id_administrateur=0;
+    AdministrateurDAO administrateurDAO=new AdministrateurDAO();
+    Administrateur ad=new Administrateur();
     public Authentification() {
+        
         initComponents();
     }
-    AdministrateurDAO administrateurDAO=new AdministrateurDAO();
+    
 
    
     @SuppressWarnings("unchecked")
@@ -161,15 +169,23 @@ public class Authentification extends javax.swing.JFrame {
       
        String login=loginText.getText().toString();
        String password=passwordText.getText().toString();
-       int test=0,id;
+       int test=0;
        
        test=administrateurDAO.connexion(login,password);
+       
        if(test==1)
        {
            
            JOptionPane.showMessageDialog(this,administrateurDAO.getId(login,password));
-           
+         
+           id_administrateur=administrateurDAO.getId(login,login);
             // interface 
+            
+           ad=administrateurDAO.findAdministrateurtById(id_administrateur);
+            ad.setIdAdministrateur(id_administrateur);
+            ad.setNom(ad.getNom());
+           String nom_admin=ad.getNom();
+            System.out.println(id_administrateur);
            this.setVisible(false);
             new Acceuil().setVisible(true);
            

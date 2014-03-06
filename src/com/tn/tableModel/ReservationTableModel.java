@@ -51,10 +51,8 @@ AdherentDAO adDAO;
                 return mesReservation.get(rowIndex).getIdReservation();
             }
             case 1:{
-                //Adherent ad;
-//                Adherent ad=adDAO.findAdherentById(10);
-//                System.err.println(ad.getNom());
-              return  "amine";
+                
+              return  mesReservation.get(rowIndex).getAdherent().getNom().toString();
             }
             case 2:{
                 return mesReservation.get(rowIndex).getIdTrajet();

@@ -1,8 +1,13 @@
 package Gui;
 
 import Entité.Adherent;
+import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
 import com.tn.doa.AdherentDAO;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -12,7 +17,8 @@ public class InscriptionAdherent extends javax.swing.JFrame {
      AdherentDAO adDAO=new AdherentDAO();
      Adherent ad=new Adherent();
      
-    public InscriptionAdherent() {
+    public InscriptionAdherent() throws UnsupportedLookAndFeelException {
+        
         initComponents();
     }
 
@@ -169,7 +175,13 @@ public class InscriptionAdherent extends javax.swing.JFrame {
         ad.setNombreReclamation(0);
         adDAO.AjouterAdherent(ad);
         this.setVisible(false);
-        new Authentification().setVisible(true);
+            try {
+                new Authentification().setVisible(true);
+            } catch (ParseException ex) {
+                Logger.getLogger(InscriptionAdherent.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (UnsupportedLookAndFeelException ex) {
+                Logger.getLogger(InscriptionAdherent.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         else
         {
@@ -216,7 +228,11 @@ public class InscriptionAdherent extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InscriptionAdherent().setVisible(true);
+                try {
+                    new InscriptionAdherent().setVisible(true);
+                } catch (UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(InscriptionAdherent.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

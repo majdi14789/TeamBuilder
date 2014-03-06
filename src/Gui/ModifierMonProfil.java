@@ -3,8 +3,13 @@
 package Gui;
 
 import Entité.Adherent;
+import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
 import com.tn.doa.AdherentDAO;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -14,11 +19,13 @@ public class ModifierMonProfil extends javax.swing.JFrame {
         Adherent ad=new Adherent(); 
         AdherentDAO adDAO=new AdherentDAO();
         
-    public ModifierMonProfil() {
+    public ModifierMonProfil() throws UnsupportedLookAndFeelException, ParseException {
+        
         initComponents();
         this.setName("form Modifier information Profil");
         System.out.println(Authentification.id_adherent+" | "+this.getName());
         modifierMotdepasse.disable();
+          
     }
 
     /**
@@ -252,7 +259,13 @@ public class ModifierMonProfil extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ModifierMonProfil().setVisible(true);
+                try {
+                    new ModifierMonProfil().setVisible(true);
+                } catch (UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(ModifierMonProfil.class.getName()).log(Level.SEVERE, null, ex);}
+                 catch (ParseException ex) {
+                    Logger.getLogger(ModifierMonProfil.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

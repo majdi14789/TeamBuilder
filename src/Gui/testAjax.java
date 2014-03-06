@@ -6,6 +6,12 @@
 
 package Gui;
 
+import de.javasoft.plaf.synthetica.SyntheticaBlackStarLookAndFeel;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author majdi
@@ -15,7 +21,8 @@ public class testAjax extends javax.swing.JFrame {
     /**
      * Creates new form testAjax
      */
-    public testAjax() {
+    public testAjax() throws UnsupportedLookAndFeelException, ParseException {
+        javax.swing.UIManager.setLookAndFeel(new SyntheticaBlackStarLookAndFeel());
         initComponents();
     }
 
@@ -119,7 +126,13 @@ public class testAjax extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new testAjax().setVisible(true);
+                try {
+                    new testAjax().setVisible(true);
+                } catch (UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(testAjax.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ParseException ex) {
+                    Logger.getLogger(testAjax.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

@@ -6,6 +6,9 @@
 
 package Gui.admin;
 
+import Entité.Adherent;
+import com.tn.doa.AdherentDAO;
+
 /**
  *
  * @author majdi
@@ -16,7 +19,11 @@ public class profiladminPanel extends javax.swing.JPanel {
      * Creates new form profiladminPanel
      */
     public profiladminPanel() {
+        Adherent ad=new Adherent();
+        AdherentDAO adDAO=new AdherentDAO();
+        //adDAO.findAdherentById(Authentification.)
         initComponents();
+
     }
 
     /**
@@ -144,13 +151,13 @@ public class profiladminPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton dcnxBtn;
-    private javax.swing.JTextField loginText;
+    public static javax.swing.JTextField loginText;
     private javax.swing.JLabel login_label;
-    private javax.swing.JTextField mailText;
+    public static javax.swing.JTextField mailText;
     private javax.swing.JLabel mail_Label;
-    private javax.swing.JTextField nomCompletText;
+    public static javax.swing.JTextField nomCompletText;
     private javax.swing.JLabel nomCompletlabel;
     private javax.swing.JLabel passwdLabel;
-    private javax.swing.JPasswordField passwdText;
+    private static javax.swing.JPasswordField passwdText;
     // End of variables declaration//GEN-END:variables
 }
