@@ -121,6 +121,7 @@
                       <Component id="ajouterTrajetButton" alignment="0" max="32767" attributes="0"/>
                       <Component id="deconexionButton" alignment="1" max="32767" attributes="0"/>
                       <Component id="gererMesTrajetButtom" alignment="0" max="32767" attributes="0"/>
+                      <Component id="evaluerButton" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -133,7 +134,9 @@
                           <Component id="chercherTrajetButton" min="-2" pref="94" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="gererMesTrajetButtom" min="-2" pref="101" max="-2" attributes="0"/>
-                          <EmptySpace pref="76" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="evaluerButton" pref="52" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="deconexionButton" min="-2" pref="66" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       </Group>
@@ -213,6 +216,14 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gererMesTrajetButtomActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="evaluerButton">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jButton1"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="evaluerButtonActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

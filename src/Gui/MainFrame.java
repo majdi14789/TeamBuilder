@@ -53,6 +53,7 @@ public class MainFrame extends javax.swing.JFrame {
         chercherTrajetButton = new javax.swing.JButton();
         deconexionButton = new javax.swing.JButton();
         gererMesTrajetButtom = new javax.swing.JButton();
+        evaluerButton = new javax.swing.JButton();
         contentPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,6 +107,13 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        evaluerButton.setText("jButton1");
+        evaluerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                evaluerButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout menu_panelLayout = new javax.swing.GroupLayout(menu_panel);
         menu_panel.setLayout(menu_panelLayout);
         menu_panelLayout.setHorizontalGroup(
@@ -115,6 +123,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addComponent(ajouterTrajetButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(deconexionButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(gererMesTrajetButtom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(evaluerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         menu_panelLayout.setVerticalGroup(
             menu_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +135,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(chercherTrajetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(gererMesTrajetButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(evaluerButton, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(deconexionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
@@ -209,6 +220,13 @@ public class MainFrame extends javax.swing.JFrame {
         contentPanel.revalidate();
     }//GEN-LAST:event_chercherTrajetButtonActionPerformed
 
+    private void evaluerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_evaluerButtonActionPerformed
+        contentPanel.removeAll();
+        contentPanel.add(new NouveauEvaluationAdherent());
+        contentPanel.repaint();
+        contentPanel.revalidate();
+    }//GEN-LAST:event_evaluerButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -256,6 +274,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton chercherTrajetButton;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JButton deconexionButton;
+    private javax.swing.JButton evaluerButton;
     private javax.swing.JButton gererMesTrajetButtom;
     private javax.swing.JPanel jPanel;
     private javax.swing.JPanel menu_panel;
