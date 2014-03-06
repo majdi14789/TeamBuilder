@@ -18,6 +18,7 @@ import com.jtattoo.plaf.mcwin.McWinLookAndFeel;
 import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 import de.javasoft.plaf.synthetica.SyntheticaBlackStarLookAndFeel;
 import de.javasoft.plaf.synthetica.SyntheticaSilverMoonLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaSkyMetallicLookAndFeel;
 import de.javasoft.plaf.synthetica.SyntheticaStandardLookAndFeel;
 import java.text.ParseException;
 import javax.swing.UIManager;
@@ -34,7 +35,7 @@ public class Authentification extends javax.swing.JFrame {
     public Authentification() throws ParseException, UnsupportedLookAndFeelException {
          
         initComponents();
-        javax.swing.UIManager.setLookAndFeel(new SyntheticaSilverMoonLookAndFeel());
+        javax.swing.UIManager.setLookAndFeel(new SyntheticaSkyMetallicLookAndFeel());
         
         setLocationRelativeTo(null);
     }

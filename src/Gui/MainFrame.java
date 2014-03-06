@@ -11,6 +11,7 @@ import java.awt.Toolkit;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -79,6 +80,22 @@ public class MainFrame extends javax.swing.JFrame {
 
         ajouterTrajetButton.setBackground(new java.awt.Color(255, 255, 255));
         ajouterTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ajoutcov.jpeg"))); // NOI18N
+        ajouterTrajetButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ajouterTrajetButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ajouterTrajetButtonMouseExited(evt);
+            }
+        });
+        ajouterTrajetButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                ajouterTrajetButtonMouseDragged(evt);
+            }
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                ajouterTrajetButtonMouseMoved(evt);
+            }
+        });
         ajouterTrajetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ajouterTrajetButtonActionPerformed(evt);
@@ -100,6 +117,7 @@ public class MainFrame extends javax.swing.JFrame {
         deconexionButton.setMinimumSize(new java.awt.Dimension(10, 10));
         deconexionButton.setPreferredSize(new java.awt.Dimension(10, 10));
 
+        gererMesTrajetButtom.setBackground(new java.awt.Color(255, 255, 255));
         gererMesTrajetButtom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/gestion.jpg"))); // NOI18N
         gererMesTrajetButtom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +126,9 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         evaluerButton.setText("jButton1");
+        evaluerButton.setMaximumSize(new java.awt.Dimension(113, 69));
+        evaluerButton.setMinimumSize(new java.awt.Dimension(113, 69));
+        evaluerButton.setPreferredSize(new java.awt.Dimension(113, 69));
         evaluerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 evaluerButtonActionPerformed(evt);
@@ -136,7 +157,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(gererMesTrajetButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(evaluerButton, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                .addComponent(evaluerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(deconexionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
@@ -226,6 +247,26 @@ public class MainFrame extends javax.swing.JFrame {
         contentPanel.repaint();
         contentPanel.revalidate();
     }//GEN-LAST:event_evaluerButtonActionPerformed
+
+    private void ajouterTrajetButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouterTrajetButtonMouseMoved
+       // ajouterTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/plus.png")));
+    }//GEN-LAST:event_ajouterTrajetButtonMouseMoved
+
+    private void ajouterTrajetButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouterTrajetButtonMouseExited
+         ;
+        System.out.println("5raj");
+        ajouterTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ajoutcov.jpeg")));
+    
+    }//GEN-LAST:event_ajouterTrajetButtonMouseExited
+
+    private void ajouterTrajetButtonMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouterTrajetButtonMouseDragged
+        // ajouterTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ajoutcov.png")));
+    }//GEN-LAST:event_ajouterTrajetButtonMouseDragged
+
+    private void ajouterTrajetButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouterTrajetButtonMouseEntered
+         ajouterTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/plus.png")));
+          System.out.println("d5all");
+    }//GEN-LAST:event_ajouterTrajetButtonMouseEntered
 
     /**
      * @param args the command line arguments

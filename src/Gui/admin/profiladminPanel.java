@@ -145,7 +145,7 @@ public class profiladminPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_passwdTextActionPerformed
 
     private void dcnxBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dcnxBtnActionPerformed
-        
+    
     }//GEN-LAST:event_dcnxBtnActionPerformed
 
 
