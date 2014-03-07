@@ -34,7 +34,7 @@ public class ReservationDAO {
                 
             //ps.setInt(1,reser.getIdReservation());
             ps.setInt(1,Authentification.id_adherent);
-            ps.setInt(2,reser.getIdTrajet());
+            ps.setInt(2,reser.getTrajet().getIdTrajet());
             ps.setInt(3,reser.getPlaces());
             ps.setString(4,"");
             ps.setString(5,reser.getHeure());

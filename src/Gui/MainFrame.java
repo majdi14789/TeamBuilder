@@ -283,7 +283,7 @@ NouveauMonProfil np=new NouveauMonProfil();
          NouveauMonProfil.monNom.setText(ad.getNom());
          NouveauMonProfil.monPrenom.setText(ad.getPrenom());
          NouveauMonProfil.monMail.setText(ad.getAdresseMail());
-         NouveauMonProfil.monTelephone.setText(ad.getTelephone());
+         NouveauMonProfil.monTelephone.setText(ad.getTelephone().toString());
     }//GEN-LAST:event_formWindowOpened
 
     /**
