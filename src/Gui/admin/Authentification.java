@@ -5,7 +5,11 @@ import Entité.Administrateur;
 import static Gui.Authentification.id_adherent;
 import static Gui.Authentification.nom_adherent;
 import com.tn.doa.AdministrateurDAO;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.UnsupportedLookAndFeelException;
 
 public class Authentification extends javax.swing.JFrame {
     public static  int id_administrateur=0;
@@ -187,7 +191,13 @@ public class Authentification extends javax.swing.JFrame {
            String nom_admin=ad.getNom();
             System.out.println(id_administrateur);
            this.setVisible(false);
-            new Acceuil().setVisible(true);
+           try {
+               new MainFrameAdmin().setVisible(true);
+           } catch (ParseException ex) {
+               Logger.getLogger(Authentification.class.getName()).log(Level.SEVERE, null, ex);
+           } catch (UnsupportedLookAndFeelException ex) {
+               Logger.getLogger(Authentification.class.getName()).log(Level.SEVERE, null, ex);
+           }
            
        }
        else if (test==0)
