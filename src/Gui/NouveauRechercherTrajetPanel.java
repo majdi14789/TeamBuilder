@@ -11,10 +11,12 @@ import com.tn.doa.AdherentDAO;
 import com.tn.doa.ReservationDAO;
 import com.tn.doa.TrajetDAO;
 import com.tn.tableModel.ReservationTableModel;
+import com.tn.tableModel.TrajetModel;
 import com.tn.tableModel.TrajetTableModel;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author majdi
@@ -293,7 +295,9 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
         AdherentDAO adDAO=new AdherentDAO();
         Gmail gmail = new Gmail();
         int x=tableTrajet.getSelectedRow();
-        
+        int nbr=Integer.parseInt(tableTrajet.getValueAt(x,3).toString());
+        System.out.println(nbr+" nombre de place disponible");
+        if(nbr>=1){
         reservation.setAdhrent(adDAO.findAdherentById(Authentification.id_adherent));
         reservation.setTrajet(traDAO.DisplayAll_trajet_by_Id_trajet(Integer.parseInt(tableTrajet.getValueAt(x, 0).toString())));
         reservation.setPlaces((Integer)tableTrajet.getValueAt(x, 6));
@@ -303,12 +307,21 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
         reservationDAO.insertReservation(reservation);
         System.out.println(tableTrajet.getSelectedRow());
         System.out.println(Authentification.id_adherent);
+        traDAO.update_Places_Trajet(traDAO.DisplayAll_trajet_by_Id_trajet(Integer.parseInt(tableTrajet.getValueAt(x, 0).toString())),nbr-1);
         tableMesReservation.setModel(new ReservationTableModel(Authentification.id_adherent));
-        gmail.subject = "Equipe Administration Covoiturage--Prevention";
-        gmail.contenu="ba33333";
-        gmail.adresse_destination="majdi.saadani@esprit.tn";
-
-        gmail.sendMail();
+        tableTrajet.setModel(new TrajetTableModel());
+        tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setWidth(0);
+        }else{
+            JOptionPane.showMessageDialog(this,"Trajet non disponible  ");
+        }
+        
+//        gmail.subject = "Equipe Administration Covoiturage--Prevention";
+//        gmail.contenu="ba33333";
+//        gmail.adresse_destination="majdi.saadani@esprit.tn";
+//
+//        gmail.sendMail();
     }//GEN-LAST:event_BtnReserverActionPerformed
 
 

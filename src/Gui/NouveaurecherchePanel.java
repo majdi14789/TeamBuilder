@@ -296,7 +296,8 @@ public class NouveaurecherchePanel extends javax.swing.JPanel {
         ReservationDAO reservationDAO=new ReservationDAO();
         Gmail gmail = new Gmail();
         int x=tableTrajet.getSelectedRow();
-        //
+        int nbr=Integer.parseInt(tableTrajet.getValueAt(x,3).toString());
+        System.out.println(nbr+" nombre de place disponible");
         reservation.setIdAdherent(Authentification.id_adherent);
         reservation.setIdTrajet((Integer) tableTrajet.getValueAt(x, 0));
         reservation.setPlaces((Integer)tableTrajet.getValueAt(x, 6));
@@ -305,15 +306,15 @@ public class NouveaurecherchePanel extends javax.swing.JPanel {
         reservation.setVilleDepart(tableTrajet.getValueAt(x, 4).toString());
         reservation.setVilleArrivee(tableTrajet.getValueAt(x, 5).toString());
         //        System.out.println(reservation.getDate());
-        reservationDAO.insertReservation(reservation);
+        //reservationDAO.insertReservation(reservation);
         System.out.println(tableTrajet.getSelectedRow());
         System.out.println(Authentification.id_adherent);
         tableMesReservation.setModel(new ReservationTableModel(Authentification.id_adherent));
-        gmail.subject = "Equipe Administration Covoiturage--Prevention";
-        gmail.contenu="ba33333";
-        gmail.adresse_destination="majdi.saadani@esprit.tn";
+//        gmail.subject = "Equipe Administration Covoiturage--Prevention";
+//        gmail.contenu="ba33333";
+//        gmail.adresse_destination="majdi.saadani@esprit.tn";
 
-        gmail.sendMail();
+        //gmail.sendMail();
     }//GEN-LAST:event_BtnReserverActionPerformed
 
 

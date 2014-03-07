@@ -31,7 +31,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Reclamation.findAll", query = "SELECT r FROM Reclamation r"),
     @NamedQuery(name = "Reclamation.findByIdReclamation", query = "SELECT r FROM Reclamation r WHERE r.idReclamation = :idReclamation"),
     @NamedQuery(name = "Reclamation.findByDescription", query = "SELECT r FROM Reclamation r WHERE r.description = :description"),
-    @NamedQuery(name = "Reclamation.findByCause", query = "SELECT r FROM Reclamation r WHERE r.cause = :cause")})
+    @NamedQuery(name = "Reclamation.findByCause", query = "SELECT r FROM Reclamation r WHERE r.cause = :cause"),
+    @NamedQuery(name = "Reclamation.findByReport", query = "SELECT r FROM Reclamation r WHERE r.report = :report")})
 public class Reclamation implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -45,27 +46,12 @@ public class Reclamation implements Serializable {
     @Basic(optional = false)
     @Column(name = "cause")
     private String cause;
-
-    public void setReport(String report) {
-        this.report = report;
-    }
-
-    public void setAdministrateur(Administrateur administrateur) {
-        this.administrateur = administrateur;
-    }
-
-    public String getReport() {
-        return report;
-    }
-
-    public Administrateur getAdministrateur() {
-        return administrateur;
-    }
+    @Basic(optional = false)
+    @Column(name = "report")
     private String report;
     @JoinColumn(name = "id_adminisrateur", referencedColumnName = "id_administrateur")
     @ManyToOne
-    private Administrateur administrateur;
-    private int idAdminisrateur;
+    private Administrateur idAdminisrateur;
     @JoinColumn(name = "id_adherentConcern\u00e9", referencedColumnName = "id_adherent")
     @ManyToOne(optional = false)
     private Adherent idadherentConcerné;
@@ -80,12 +66,47 @@ public class Reclamation implements Serializable {
         this.idReclamation = idReclamation;
     }
 
-    public Reclamation(Integer idReclamation, String description, String cause) {
+    private Adherent adherent,adherentConcerné,AdherentReclamateur;
+
+    public Adherent getAdherentConcerné() {
+        return adherentConcerné;
+    }
+
+    public void setAdherentConcerné(Adherent adherentConcerné) {
+        this.adherentConcerné = adherentConcerné;
+    }
+
+    public Adherent getAdherentReclamateur() {
+        return AdherentReclamateur;
+    }
+
+    public void setAdherentReclamateur(Adherent AdherentReclamateur) {
+        this.AdherentReclamateur = AdherentReclamateur;
+    }
+    private Administrateur administrateur;
+    
+    public Reclamation(Integer idReclamation, String description, String cause, String report) {
         this.idReclamation = idReclamation;
         this.description = description;
         this.cause = cause;
+        this.report = report;
     }
-
+    public Adherent getAdherent()
+    {
+        return adherent;
+    }
+    public void setAdherent(Adherent adherent)
+    {
+        this.adherent=adherent;
+    }
+    public void setAdministrateur(Administrateur administrateur)
+    {
+        this.administrateur=administrateur;
+    }
+    public Administrateur getAdministrateur()
+    {
+        return administrateur;
+    }
     public Integer getIdReclamation() {
         return idReclamation;
     }
@@ -110,11 +131,19 @@ public class Reclamation implements Serializable {
         this.cause = cause;
     }
 
-    public int getIdAdminisrateur() {
+    public String getReport() {
+        return report;
+    }
+
+    public void setReport(String report) {
+        this.report = report;
+    }
+
+    public Administrateur getIdAdminisrateur() {
         return idAdminisrateur;
     }
 
-    public void setIdAdminisrateur(int idAdminisrateur) {
+    public void setIdAdminisrateur(Administrateur idAdminisrateur) {
         this.idAdminisrateur = idAdminisrateur;
     }
 
@@ -156,11 +185,7 @@ public class Reclamation implements Serializable {
 
     @Override
     public String toString() {
-        return "salmaDAO.Reclamation[ idReclamation=" + idReclamation + " ]";
-    }
-
-    public void setReprot(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "entit\u00e9.Reclamation[ idReclamation=" + idReclamation + " ]";
     }
     
 }

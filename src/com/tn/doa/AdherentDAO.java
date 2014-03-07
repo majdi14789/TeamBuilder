@@ -300,9 +300,150 @@ public class AdherentDAO {
   return null;
  }
 
-  
-  
+ public List<Adherent> DisplayAllAdherentSa(int id_adherent)
+     {
+         List<Adherent> listeAdherent=new ArrayList<>();
+         String requete="select * from Adherent where id_adherent !="+id_adherent;
+        Adherent adherent;
+         try {
+            
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+         
+            ResultSet resultat = ps.executeQuery();
+            while (resultat.next()) 
+            {
+                adherent =new Adherent();
+                adherent.setIdAdherent(resultat.getInt(1));
+                adherent.setNom(resultat.getString(2));
+                adherent.setPrenom(resultat.getString(3));
+                adherent.setAdresseMail(resultat.getString(4));
+                adherent.setMdp(resultat.getString(5));
+                adherent.setTelephone(resultat.getInt(6));
+                adherent.setNombreReclamation(resultat.getInt(7));
+                listeAdherent.add(adherent);
+            }
+            return listeAdherent;
 
+        } catch (SQLException ex) {
+            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la recherche de l'adherent " + ex.getMessage());
+            return null;
+        }
+         
+     } 
+  
+ public Adherent findAdherentByIdSa(int id) {
+        Adherent adherent = new Adherent();
+        String requete = "select * from adherent where id_adherent=? and bloqué!='false'";
+        try {
+            
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setInt(1, id);
+            ResultSet resultat = ps.executeQuery();
+            while (resultat.next()) {
+                adherent.setIdAdherent(resultat.getInt(1));
+                
+                adherent.setNom(resultat.getString(2));
+                adherent.setPrenom(resultat.getString(3));
+                adherent.setAdresseMail(resultat.getString(4));
+                adherent.setMdp(resultat.getString(5));
+                adherent.setTelephone(resultat.getInt(6));
+                adherent.setNombreReclamation(resultat.getInt(7));
+            }
+            return adherent;
+
+        } catch (SQLException ex) {
+            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la recherche de l'adherent " + ex.getMessage());
+            return null;
+        }
+    }
+     
+ 
+ public int connexionSa(String login,String mdp)
+    {
+        String requete="select * from adherent a where a.adresse_mail=? and a.mdp=? and bloqué !='false'";
+        int compt=0;
+            try {
+                
+            Statement statement = MyConnection.getInstance().createStatement();
+            //ResultSet resultat = statement.executeQuery(requete);
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setString(1,login);
+            ps.setString(2,mdp);
+            ResultSet resultat = ps.executeQuery();
+            
+       while(resultat.next())
+          { 
+              compt++;
+          }
+         } catch (SQLException ex) {
+            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+         return compt;
+}
+    
+    
+    public void updateAdherentNombreReclamationSa(int idAdherent )
+    { 
+        String requete = "update adherent set nombre_reclamation=nombre_reclamation+1 where id_adherent="+idAdherent+" and bloqué !='false';";
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+          
+            ps.executeUpdate();
+            System.out.println("Mise à jour effectuée avec succès");
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la mise à jour "+ex.getMessage());
+        }
+        
+    }
+      public void updateDesactivéCompteAdherentSa(int idAdherent )
+    { 
+        String requete = "update adherent set bloqué='true' where id_adherent="+idAdherent+";";
+                
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+          
+            ps.executeUpdate();
+            System.out.println("Mise à jour effectuée avec succès");
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la mise à jour "+ex.getMessage());
+        }
+        
+    }
+
+    public int getIdSa(String login,String mdp)
+    {
+        int id=0;
+        String requete="select id_adherent from adherent a where a.adresse_mail=? and a.mdp=?";
+      
+            try {
+            
+            Statement statement = MyConnection.getInstance().createStatement();
+             
+            //ResultSet resultat = statement.executeQuery(requete);
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            
+            ps.setString(1,login);
+            ps.setString(2,mdp);
+            ResultSet resultat = ps.executeQuery();
+             
+           
+                
+            
+       while(resultat.next())
+          { 
+              id=resultat.getInt(1);
+              
+          }
+         } catch (SQLException ex) {
+            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            return id;
+    }
 }
   
 

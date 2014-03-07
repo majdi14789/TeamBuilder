@@ -66,11 +66,11 @@ public class TrajetTableModel extends AbstractTableModel{
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-      AllId=new ArrayList<Integer>();
+      //AllId=new ArrayList<Integer>();
       
         switch(columnIndex){
             case 0:{
-                AllId.add(monTrajet.get(rowIndex).getIdTrajet());
+               // AllId.add(monTrajet.get(rowIndex).getIdTrajet());
                 return monTrajet.get(rowIndex).getIdTrajet();
             }
             case 1:{
@@ -98,6 +98,8 @@ public class TrajetTableModel extends AbstractTableModel{
             case 8:{
                 return monTrajet.get(rowIndex).getHeure();
             }
+            case 9:{
+                return monTrajet.get(rowIndex).getHeure();}
              default:
                  throw new IllegalArgumentException();
         }

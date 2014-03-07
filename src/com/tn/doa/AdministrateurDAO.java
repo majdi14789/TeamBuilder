@@ -93,4 +93,85 @@ public class AdministrateurDAO {
         }
     
     }
+     
+      //salma
+        public int connexionSa(String login,String mdp)
+    {
+        String requete="select * from administrateur a where a.login=? and a.mdp=?";
+        int compt=0;
+            try {
+                
+            Statement statement = MyConnection.getInstance().createStatement();
+            //ResultSet resultat = statement.executeQuery(requete);
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setString(1,login);
+            ps.setString(2,mdp);
+            ResultSet resultat = ps.executeQuery();
+            
+       while(resultat.next())
+          { 
+              compt++;
+          }
+         } catch (SQLException ex) {
+            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+         return compt;
+}
+
+    public int getIdSa(String login,String mdp)
+    {
+        int id=0;
+        String requete="select id_administrateur from administrateur a where a.login=? and a.mdp=?";
+      
+            try {
+            
+            Statement statement = MyConnection.getInstance().createStatement();
+             
+            //ResultSet resultat = statement.executeQuery(requete);
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            
+            ps.setString(1,login);
+            ps.setString(2,mdp);
+            ResultSet resultat = ps.executeQuery();
+             
+           
+                
+            
+       while(resultat.next())
+          { 
+              id=resultat.getInt(1);
+              
+          }
+         } catch (SQLException ex) {
+            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            return id;
+    }
+    
+    public Administrateur findAdministrateurByIdSa(int id) {
+        Administrateur administrateur = new Administrateur();
+        String requete = "select * from administrateur where id_administrateur=?";
+        try {
+            
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setInt(1, id);
+            ResultSet resultat = ps.executeQuery();
+            while (resultat.next()) {
+                administrateur.setIdAdministrateur(resultat.getInt(1));
+                administrateur.setLogin(resultat.getString(2));
+                administrateur.setMdp(resultat.getString(3));
+                administrateur.setNom(resultat.getString(4));
+                administrateur.setPrenom(resultat.getString(5));
+               
+            }
+            return administrateur;
+
+        } catch (SQLException ex) {
+            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la recherche du depot " + ex.getMessage());
+            return null;
+        }
+    }
+    
 }

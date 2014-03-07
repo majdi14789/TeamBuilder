@@ -234,7 +234,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
 
     private void gererMesTrajetButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gererMesTrajetButtomActionPerformed
         contentPanel.removeAll();
-        contentPanel.add(new GererReclamation());
+        contentPanel.add(new NouveauGererReclamation());
         contentPanel.repaint();
         contentPanel.revalidate();
     }//GEN-LAST:event_gererMesTrajetButtomActionPerformed

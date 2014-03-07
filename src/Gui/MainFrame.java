@@ -11,6 +11,8 @@ import com.tn.doa.AdherentDAO;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -23,6 +25,7 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class MainFrame extends javax.swing.JFrame {
 NouveauMonProfil np=new NouveauMonProfil();
+NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
     /**
      * Creates new form MainFrame
      */
@@ -123,6 +126,11 @@ NouveauMonProfil np=new NouveauMonProfil();
         deconexionButton.setMaximumSize(new java.awt.Dimension(10, 10));
         deconexionButton.setMinimumSize(new java.awt.Dimension(10, 10));
         deconexionButton.setPreferredSize(new java.awt.Dimension(10, 10));
+        deconexionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deconexionButtonActionPerformed(evt);
+            }
+        });
 
         gererMesTrajetButtom.setBackground(new java.awt.Color(255, 255, 255));
         gererMesTrajetButtom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/gestion.jpg"))); // NOI18N
@@ -284,7 +292,23 @@ NouveauMonProfil np=new NouveauMonProfil();
          NouveauMonProfil.monPrenom.setText(ad.getPrenom());
          NouveauMonProfil.monMail.setText(ad.getAdresseMail());
          NouveauMonProfil.monTelephone.setText(ad.getTelephone().toString());
+            
+        AdherentDAO adherentDAO=new AdherentDAO();
+          List<Adherent> listeAdherents = new ArrayList<Adherent>();
+          listeAdherents=adherentDAO.DisplayAllAdherentSa(Authentification.id_adherent);
+          for(int i=0;i<listeAdherents.size();i++)
+          {
+      NouveauAjouterReclamation.adherentcmb.addItem(listeAdherents.get(i).getIdAdherent()+"  "+listeAdherents.get(i).getNom()+" "+listeAdherents.get(i).getPrenom());
+          }
+        
     }//GEN-LAST:event_formWindowOpened
+
+    private void deconexionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deconexionButtonActionPerformed
+       contentPanel.removeAll();
+        contentPanel.add(nr);
+        contentPanel.repaint();
+        contentPanel.revalidate();
+    }//GEN-LAST:event_deconexionButtonActionPerformed
 
     /**
      * @param args the command line arguments

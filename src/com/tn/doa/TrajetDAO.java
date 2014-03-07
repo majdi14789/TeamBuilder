@@ -599,7 +599,22 @@ public Trajet findTrajetById(int id_trajet) {
     }
       
       
-   
+  public void update_Places_Trajet(Trajet tra, int place ){
+               
+        String req="UPDATE trajet SET places=? where id_trajet=?";
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(req);
+            ps.setInt(1,place);
+            ps.setInt(2,tra.getIdTrajet());
+            
+             ps.executeUpdate();
+            System.out.println("Mise à jour effectuée avec succès");
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la mise à jour "+ex.getMessage());
+        }
+    }
+       
    
 }
 
