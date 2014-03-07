@@ -28,12 +28,15 @@ import java.util.logging.Logger;
  */
 public class NouveauAjouterReclamation extends javax.swing.JPanel {
 public Adherent reclamateur;
-    public Adherent adherent;
+    public Adherent  ad = new Adherent();
     public AdherentDAO adherentDAO=new AdherentDAO();
     /**
      * Creates new form NouveauAjouterReclamation
      */
     public NouveauAjouterReclamation() {
+      //  adherent=new Adherent();
+       // adherentDAO=new AdherentDAO
+                
         initComponents();
     }
 
@@ -194,11 +197,13 @@ public Adherent reclamateur;
         ReclamationDAO reclamationDAO=new ReclamationDAO();
         reclamationAdherentDAO reclamationtAdherentDAO=new reclamationAdherentDAO();
         ReclamationAdherent reclamationadherent= new ReclamationAdherent();
+       // AdherentDAO ad=new AdherentDAO();
         String adresseMailReclamateur;
         String adresseMailAdherentConcerné;
         String contenu,causeMail;
         MailToSend mailToSend=new MailToSend();
-
+        
+        
         String AdherentConcerné=adherentcmb.getSelectedItem().toString();
 
         char adherentConcernéChar=AdherentConcerné.charAt(0);
@@ -223,17 +228,17 @@ public Adherent reclamateur;
         System.out.println(reclamateur.getIdAdherent()+" Salmahh");
         reclamationadherent.setCause(cause);
         reclamationadherent.setDescription(description);
-        adherent=adherentDAO.findAdherentByIdSa(idAdherentConcerné);
+        ad=adherentDAO.findAdherentByIdSa(idAdherentConcerné);
 
         Reclamation reclamation=new Reclamation();
         reclamation.setIdReclamateur(reclamateur);
-        reclamation.setIdadherentConcerné(adherent);
+        reclamation.setIdadherentConcerné(ad);
         reclamation.setDescription(description);
         reclamation.setCause(cause);
 
-        reclamationDAO.insert(reclamation,adherent,reclamateur);
+        reclamationDAO.insert(reclamation,ad,reclamateur);
         adherentDAO.updateAdherentNombreReclamationSa(idAdherentConcerné);
-        reclamationtAdherentDAO.insert(reclamationadherent, adherent);
+        reclamationtAdherentDAO.insert(reclamationadherent, ad);
 
         //Recuperation des adresse mail
 
@@ -256,7 +261,7 @@ public Adherent reclamateur;
         }
 
         adresseMailReclamateur=reclamateur.getAdresseMail();
-        adresseMailAdherentConcerné=adherent.getAdresseMail();
+        adresseMailAdherentConcerné=ad.getAdresseMail();
         mailToSend.sendMessage(cause, contenu,adresseMailAdherentConcerné,adresseMailReclamateur);
 
         JOptionPane.showMessageDialog(this, "Reclamation insérée avec succés");
