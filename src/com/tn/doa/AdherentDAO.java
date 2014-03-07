@@ -256,6 +256,53 @@ public class AdherentDAO {
             System.out.println("erreur lors du chargement adherent AJAX "+ex.getMessage());
             return null;
         }}
+  
+  
+      public void setEetatAdherent(int IdAdherent){ 
+            String requete = "UPDATE adherent SET bloqué ='true'  WHERE id_adherent ="+IdAdherent+";"; 
+            try { PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+           
+            ps.executeUpdate();
+            System.out.println("Mise Ã jour effectuÃ©e avec succÃ¨s"); }
+            catch (SQLException ex) 
+            { System.out.println("erreur lors de la mise Ã jour "+ex.getMessage()); } }
+  
+
       
+
+  public Adherent findByPseudo(String pseudo)
+  {
+  
+         String requete ="Select * from adherent where nom=?";
+         try 
+         {
+         PreparedStatement ps=MyConnection.getInstance().prepareStatement(requete);
+         ps.setString(1, pseudo);
+         ResultSet resultat =ps.executeQuery();
+         Adherent adherent= new Adherent();
+         
+         while (resultat.next())
+         {
+         
+         adherent.setNom(resultat.getString(2));
+         }
+         return adherent;
+         
+         }
+         
+        
+         catch(SQLException ex)
+         {
+  
+                System.out.println("erreur lors du chargement des adhérents"+ex.getMessage());
+  }
+  
+  return null;
+ }
+
+  
+  
+
 }
+  
 

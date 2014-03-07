@@ -24,41 +24,41 @@ import java.util.logging.Logger;
  */
 public class EvaluationDAO {
     
-     public List<Evaluation> DisplayAllEvaluation (){
-
-
-        List<Evaluation> listEvaluation = new ArrayList<Evaluation>();
-        
-        String requete = "select * from evaluation";
-        try {
-            AdministrateurDAO administrateurDAO=new AdministrateurDAO();
-           Statement statement = MyConnection.getInstance()
-                   .createStatement();
-            ResultSet resultat = statement.executeQuery(requete);
-            
-            AdherentDAO adherentDAO=new AdherentDAO();
-
-            
-            while(resultat.next()){
-                Evaluation evaluation =new Evaluation();
-                evaluation.setIdEvaluation(resultat.getInt(1));
-               // Majdiiiii
-                //evaluation.setAdherent(adherentDAO.findAdherentById(resultat.getInt(2)));
-                //Majdiiiiii
-                //evaluation.setAdherent(adherentDAO.findAdherentById(resultat.getInt(3)));
-                evaluation.setNote(resultat.getInt(4));
-                evaluation.setCommentaire(resultat.getString(5));
-                evaluation.setReponse(resultat.getString(6));
-
-                listEvaluation.add(evaluation);
-            }
-            return listEvaluation;
-        } catch (SQLException ex) {
-           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("erreur lors du chargement des reclamations "+ex.getMessage());
-            return null;
-        }
-     }
+//     public List<Evaluation> DisplayAllEvaluation (){
+//
+//
+//        List<Evaluation> listEvaluation = new ArrayList<Evaluation>();
+//        
+//        String requete = "select * from evaluation";
+//        try {
+//            AdministrateurDAO administrateurDAO=new AdministrateurDAO();
+//           Statement statement = MyConnection.getInstance()
+//                   .createStatement();
+//            ResultSet resultat = statement.executeQuery(requete);
+//            
+//            AdherentDAO adherentDAO=new AdherentDAO();
+//
+//            
+//            while(resultat.next()){
+//                Evaluation evaluation =new Evaluation();
+//                evaluation.setIdEvaluation(resultat.getInt(1));
+//                Majdiiiii
+//                evaluation.setAdherent(adherentDAO.findAdherentById(resultat.getInt(2)));
+//                Majdiiiiii
+//                evaluation.setAdherent(adherentDAO.findAdherentById(resultat.getInt(3)));
+//                evaluation.setNote(resultat.getInt(4));
+//                evaluation.setCommentaire(resultat.getString(5));
+//                evaluation.setReponse(resultat.getString(6));
+//
+//                listEvaluation.add(evaluation);
+//            }
+//            return listEvaluation;
+//        } catch (SQLException ex) {
+//           Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+//            System.out.println("erreur lors du chargement des reclamations "+ex.getMessage());
+//            return null;
+//        }
+//     }
      
      public void InsertEvaluation(Evaluation ev,int id_evalue){
          try {
@@ -77,4 +77,75 @@ public class EvaluationDAO {
              Logger.getLogger(EvaluationDAO.class.getName()).log(Level.SEVERE, null, ex);
          }
                  }
+
+
+
+  public List<Evaluation> DisplayAllEvaluation (){
+
+
+        List<Evaluation> listEvaluation = new ArrayList<Evaluation>();
+        
+        String requete = "select * from evaluation";
+        try {
+            AdministrateurDAO administrateurDAO=new AdministrateurDAO();
+           Statement statement = MyConnection.getInstance()
+                   .createStatement();
+            ResultSet resultat = statement.executeQuery(requete);
+            
+            AdherentDAO adherentDAO=new AdherentDAO();
+
+            
+            while(resultat.next()){
+                Evaluation evaluation =new Evaluation();
+                evaluation.setIdEvaluation(resultat.getInt(1));
+               
+                evaluation.setAdherentEvalué(adherentDAO.findAdherentById(resultat.getInt(2)));
+                evaluation.setId_adherentEvalue(1);
+                evaluation.setId_evaluateur(2);
+                evaluation.setEvaluateur(adherentDAO.findAdherentById(resultat.getInt(3)));
+                evaluation.setNote(resultat.getInt(4));
+                evaluation.setCommentaire(resultat.getString(5));
+                evaluation.setReponse(resultat.getString(6));
+
+                listEvaluation.add(evaluation);
+            }
+            return listEvaluation;
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors du chargement des reclamations "+ex.getMessage());
+            return null;
+        }
+        
+        
+     }
+     
+        // méthode sinda pour calcul moyenne 
+         public float getMoyenneByAdherent (int id){
+             
+             
+
+        String requete = "select AVG(note) as moyenne from evaluation where id_adherentEvalué="+id;
+       float moyenne=0;
+       Evaluation evaluation=new Evaluation();
+       try{
+           Statement statement = MyConnection.getInstance()
+                   .createStatement();
+            ResultSet resultat = statement.executeQuery(requete);
+            while(resultat.next())
+            {
+               evaluation.setMoyenne(resultat.getFloat("moyenne"));
+            }
+            moyenne=evaluation.getMoyenne();
+            System.out.println("moyenne "+moyenne);
+           return moyenne;
+       } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors du chargement des reclamations "+ex.getMessage());
+            return 0;
+        }
+       
+       
+       
+         }    
+     
 }

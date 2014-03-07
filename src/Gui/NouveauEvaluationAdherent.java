@@ -202,7 +202,7 @@ public class NouveauEvaluationAdherent extends javax.swing.JPanel {
             AdherentDAO adDAO=new AdherentDAO();
             EvaluationDAO evDAO=new EvaluationDAO();
             int id=Integer.parseInt(tableEvaluationAdherent.getValueAt(tableEvaluationAdherent.getSelectedRow(),0).toString());
-            ev.setIdEvaluateur(Authentification.id_adherent);
+            ev.setId_evaluateur(Authentification.id_adherent);
             ev.setCommentaire(commentaireTextArea.getText());
             ev.setNote(Integer.parseInt(noteText.getText()));
             ev.setReponse("");

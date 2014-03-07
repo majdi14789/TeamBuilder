@@ -22,54 +22,58 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author PC
  */
-@Entity
-@Table(name = "evaluation")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Evaluation.findAll", query = "SELECT e FROM Evaluation e"),
-    @NamedQuery(name = "Evaluation.findByIdEvaluation", query = "SELECT e FROM Evaluation e WHERE e.idEvaluation = :idEvaluation"),
-    @NamedQuery(name = "Evaluation.findByNote", query = "SELECT e FROM Evaluation e WHERE e.note = :note"),
-    @NamedQuery(name = "Evaluation.findByCommentaire", query = "SELECT e FROM Evaluation e WHERE e.commentaire = :commentaire"),
-    @NamedQuery(name = "Evaluation.findByReponse", query = "SELECT e FROM Evaluation e WHERE e.reponse = :reponse")})
-public class Evaluation implements Serializable {
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id_evaluation")
-    private Integer idEvaluation;
-    @Basic(optional = false)
-    @Column(name = "note")
+
+public class Evaluation  {
+   private int id_adherentEvalue;
+    
+    private int idEvaluation;
     private int note;
-    @Column(name = "commentaire")
     private String commentaire;
-    @Column(name = "reponse")
     private String reponse;
-    @JoinColumn(name = "id_evaluateur", referencedColumnName = "id_adherent")
-    @ManyToOne(optional = false)
-    private int idEvaluateur;
-    @JoinColumn(name = "id_adherentEvalu\u00e9", referencedColumnName = "id_adherent")
-    @ManyToOne(optional = false)
+    private int id_evaluateur;
+    private float moyenne;
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + this.id_adherentEvalue;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Evaluation other = (Evaluation) obj;
+        if (this.id_adherentEvalue != other.id_adherentEvalue) {
+            return false;
+        }
+        return true;
+    }
     //private Adherent idadherentEvalué;
-    private Adherent adherent;
+    private Adherent adherentEvalué,evaluateur;
 
-    public Evaluation() {
+    public Evaluation() {}
+
+    public int getId_adherentEvalue() {
+        return id_adherentEvalue;
     }
 
-    public Evaluation(Integer idEvaluation) {
-        this.idEvaluation = idEvaluation;
+   
+
+    public void setId_adherentEvalue(int id_adherentEvalue) {
+        this.id_adherentEvalue = id_adherentEvalue;
     }
 
-    public Evaluation(Integer idEvaluation, int note) {
-        this.idEvaluation = idEvaluation;
-        this.note = note;
-    }
-
-    public Integer getIdEvaluation() {
+    public int getIdEvaluation() {
         return idEvaluation;
     }
 
-    public void setIdEvaluation(Integer idEvaluation) {
+    public void setIdEvaluation(int idEvaluation) {
         this.idEvaluation = idEvaluation;
     }
 
@@ -97,54 +101,41 @@ public class Evaluation implements Serializable {
         this.reponse = reponse;
     }
 
-    public int getIdEvaluateur() {
-        return idEvaluateur;
+    public int getId_evaluateur() {
+        return id_evaluateur;
     }
 
-    public void setIdEvaluateur(int idEvaluateur) {
-        this.idEvaluateur = idEvaluateur;
+    public void setId_evaluateur(int id_evaluateur) {
+        this.id_evaluateur = id_evaluateur;
     }
 
-//    public Adherent getIdadherentEvalué() {
-//        return idadherentEvalué;
-//    }
-//
-//    public void setIdadherentEvalué(Adherent idadherentEvalué) {
-//        this.idadherentEvalué = idadherentEvalué;
-//    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idEvaluation != null ? idEvaluation.hashCode() : 0);
-        return hash;
+    public float getMoyenne() {
+        return moyenne;
     }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Evaluation)) {
-            return false;
-        }
-        Evaluation other = (Evaluation) object;
-        if ((this.idEvaluation == null && other.idEvaluation != null) || (this.idEvaluation != null && !this.idEvaluation.equals(other.idEvaluation))) {
-            return false;
-        }
-        return true;
+    public void setMoyenne(float moyenne) {
+        this.moyenne = moyenne;
     }
 
-    @Override
-    public String toString() {
-        return "entit\u00e9.Evaluation[ idEvaluation=" + idEvaluation + " ]";
+    public Adherent getAdherentEvalué() {
+        return adherentEvalué;
+    }
+
+    public void setAdherentEvalué(Adherent adherentEvalué) {
+        this.adherentEvalué = adherentEvalué;
+    }
+
+   
+
+    public Adherent getEvaluateur() {
+        return evaluateur;
+    }
+
+    public void setEvaluateur(Adherent evaluateur) {
+        this.evaluateur = evaluateur;
     }
     
-    public Adherent getAdherent()
-    {
-        return adherent;
-    }
     
-    public void setAdherent(Adherent adherent)
-    {
-        this.adherent=adherent;
-    }
+
+    
 }

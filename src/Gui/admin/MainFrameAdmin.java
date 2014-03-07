@@ -227,7 +227,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
 
     private void ajouterTrajetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterTrajetButtonActionPerformed
         contentPanel.removeAll();
-        contentPanel.add(new ConsulterinfoAdherent());
+        contentPanel.add(new NouveauConsulterinfoAdherent());
         contentPanel.repaint();
         contentPanel.revalidate();
     }//GEN-LAST:event_ajouterTrajetButtonActionPerformed
@@ -241,7 +241,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
 
     private void chercherTrajetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chercherTrajetButtonActionPerformed
         contentPanel.removeAll();
-        contentPanel.add(new GererlesSratistique());
+        contentPanel.add(new NouveauStatistique());
         contentPanel.repaint();
         contentPanel.revalidate();
     }//GEN-LAST:event_chercherTrajetButtonActionPerformed
