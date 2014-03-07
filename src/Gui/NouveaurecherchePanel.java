@@ -1,10 +1,12 @@
 
 
 package Gui;
+
 import Gui.Authentification;
-import Gui.monProfilPanel;
+
 import Entité.Reservation;
-import static Gui.monProfilPanel.tableMesReservation;
+import static Gui.NouveauMonProfil.tableMesReservation;
+
 import Tools.Gmail;
 import com.tn.doa.ReservationDAO;
 import com.tn.tableModel.ReservationTableModel;
@@ -255,7 +257,7 @@ public class NouveaurecherchePanel extends javax.swing.JPanel {
                 tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
                 tableTrajet.getColumnModel().getColumn(0).setWidth(0);
             } catch (SQLException ex) {
-                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
             }}else if((!villedepart.equals(""))&&(!villearrive.equals(""))&&(date.equals("")))
             {
                 try {
@@ -264,14 +266,14 @@ public class NouveaurecherchePanel extends javax.swing.JPanel {
                     tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
                     tableTrajet.getColumnModel().getColumn(0).setWidth(0);
                 } catch (SQLException ex) {
-                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }else if((!villedepart.equals(""))&&(villearrive.equals(""))&&(date.equals("")))
             {
                 try {
                     tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart));
                 } catch (SQLException ex) {
-                    Logger.getLogger(RechercherTrajetPanel.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(NouveauRechercherTrajetPanel.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
                 tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);

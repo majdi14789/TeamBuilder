@@ -475,5 +475,48 @@ public class TrajetDAO {
             return null;
     }
     }
+
+   public  Trajet DisplayAll_trajet_by_Id_trajet(int id) {
+   Trajet trajet = new Trajet();
+ String requete = "select * from trajet where id_trajet=?";
+        
+        
+        try {
+        
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setInt(1, id);
+            ResultSet resultat = ps.executeQuery();
+           
+            while(resultat.next()){
+             
+                VoitureDAO voitureDAO = new VoitureDAO();
+                AdherentDAO adherentDAO = new AdherentDAO();   
+                trajet.setIdTrajet(resultat.getInt(1));
+                trajet.setAdherent(adherentDAO.findAdherentById(resultat.getInt(2)));
+                trajet.setJours(resultat.getString(3));
+                trajet.setHeure(resultat.getString(4));
+                trajet.setFrequence(resultat.getString(5));
+                trajet.setTypeTrajet(resultat.getString(6));
+                trajet.setPlaces(resultat.getInt(7));
+                trajet.setBagages(resultat.getString(8));
+                trajet.setCommentaire(resultat.getString(9));
+                trajet.setKilometrage(resultat.getInt(10));
+                trajet.setVoiture(voitureDAO.findVoitureById(resultat.getInt(11)));
+                trajet.setPrix(resultat.getInt(12));
+                trajet.setVilleArrivee(resultat.getString(13));
+                trajet.setVilleDepart(resultat.getString(14));
+                trajet.setCode_map(resultat.getString(15));
+               
+
+                
+            }
+            return trajet;
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors du chargement des stocks "+ex.getMessage());
+            return null;
+        }
+    
+    }
 }
 

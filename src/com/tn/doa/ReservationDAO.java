@@ -57,6 +57,7 @@ public class ReservationDAO {
          
         try{
        PreparedStatement ps=MyConnection.getInstance().prepareStatement(requete);
+       TrajetDAO traDAO=new TrajetDAO();
        AdherentDAO adDAO=new AdherentDAO();
        ps.setInt(1, Authentification.id_adherent);
        ResultSet resultat =ps.executeQuery();
@@ -68,7 +69,7 @@ public class ReservationDAO {
           
            reservation.setIdReservation(resultat.getInt(1));
            reservation.setAdhrent(adDAO.findAdherentById(resultat.getInt(2)));
-           reservation.setIdTrajet(resultat.getInt(3));
+           reservation.setTrajet(traDAO.DisplayAll_trajet_by_Id_trajet(resultat.getInt(3)));
            reservation.setPlaces(resultat.getInt(4));
            reservation.setDate(resultat.getString(5));
            reservation.setHeure(resultat.getString(6));

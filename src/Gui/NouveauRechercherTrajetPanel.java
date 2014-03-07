@@ -1,11 +1,15 @@
 
 package Gui;
+
 import Gui.Authentification;
-import Gui.monProfilPanel;
+
 import Entité.Reservation;
-import static Gui.monProfilPanel.tableMesReservation;
+import static Gui.NouveauMonProfil.tableMesReservation;
+
 import Tools.Gmail;
+import com.tn.doa.AdherentDAO;
 import com.tn.doa.ReservationDAO;
+import com.tn.doa.TrajetDAO;
 import com.tn.tableModel.ReservationTableModel;
 import com.tn.tableModel.TrajetTableModel;
 import java.sql.SQLException;
@@ -248,7 +252,7 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
                 tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
                 tableTrajet.getColumnModel().getColumn(0).setWidth(0);
             } catch (SQLException ex) {
-                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
             }}else if((!villedepart.equals(""))&&(!villearrive.equals(""))&&(date.equals("")))
             {
                 try {
@@ -257,14 +261,14 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
                     tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
                     tableTrajet.getColumnModel().getColumn(0).setWidth(0);
                 } catch (SQLException ex) {
-                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }else if((!villedepart.equals(""))&&(villearrive.equals(""))&&(date.equals("")))
             {
                 try {
                     tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart));
                 } catch (SQLException ex) {
-                    Logger.getLogger(RechercherTrajetPanel.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(NouveauRechercherTrajetPanel.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
                 tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
@@ -285,17 +289,17 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
     private void BtnReserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReserverActionPerformed
         Reservation reservation=new Reservation();
         ReservationDAO reservationDAO=new ReservationDAO();
+        TrajetDAO traDAO=new TrajetDAO();
+        AdherentDAO adDAO=new AdherentDAO();
         Gmail gmail = new Gmail();
         int x=tableTrajet.getSelectedRow();
-        //
-        reservation.setIdAdherent(Authentification.id_adherent);
-        reservation.setIdTrajet((Integer) tableTrajet.getValueAt(x, 0));
+        
+        reservation.setAdhrent(adDAO.findAdherentById(Authentification.id_adherent));
+        reservation.setTrajet(traDAO.DisplayAll_trajet_by_Id_trajet(Integer.parseInt(tableTrajet.getValueAt(x, 0).toString())));
         reservation.setPlaces((Integer)tableTrajet.getValueAt(x, 6));
         reservation.setDate((String) tableTrajet.getValueAt(x, 7));
-        ///reservation.setHeure(tableTrajet.getValueAt(x, 8).toString());
         reservation.setVilleDepart(tableTrajet.getValueAt(x, 4).toString());
         reservation.setVilleArrivee(tableTrajet.getValueAt(x, 5).toString());
-        //        System.out.println(reservation.getDate());
         reservationDAO.insertReservation(reservation);
         System.out.println(tableTrajet.getSelectedRow());
         System.out.println(Authentification.id_adherent);

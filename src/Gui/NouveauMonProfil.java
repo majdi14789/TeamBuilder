@@ -6,7 +6,9 @@
 
 package Gui;
 
+
 import Entité.Adherent;
+
 import com.tn.doa.ReservationDAO;
 import com.tn.tableModel.ReservationTableModel;
 import java.text.ParseException;
@@ -43,10 +45,10 @@ public class NouveauMonProfil extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        monNomLabel1 = new javax.swing.JLabel();
-        monPrenomLabel1 = new javax.swing.JLabel();
-        monAdresseLabel1 = new javax.swing.JLabel();
-        monTelephoneLabel1 = new javax.swing.JLabel();
+        monNom = new javax.swing.JLabel();
+        monPrenom = new javax.swing.JLabel();
+        monMail = new javax.swing.JLabel();
+        monTelephone = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -61,10 +63,14 @@ public class NouveauMonProfil extends javax.swing.JPanel {
         tableMesReservation = new javax.swing.JTable();
         panelmape = new javax.swing.JPanel();
         labemmapmonprofil = new javax.swing.JLabel();
+        AnnulerButton = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(100, 100));
         setPreferredSize(new java.awt.Dimension(100, 100));
         setLayout(new java.awt.CardLayout());
+
+        jPanel2.setMaximumSize(new java.awt.Dimension(669, 389));
+        jPanel2.setMinimumSize(new java.awt.Dimension(669, 389));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel4.setMaximumSize(new java.awt.Dimension(199, 209));
@@ -90,13 +96,13 @@ public class NouveauMonProfil extends javax.swing.JPanel {
             }
         });
 
-        monNomLabel1.setText("jLabel9");
+        monNom.setText("jLabel1");
 
-        monPrenomLabel1.setText("jLabel10");
+        monPrenom.setText("jLabel1");
 
-        monAdresseLabel1.setText("jLabel11");
+        monMail.setText("jLabel1");
 
-        monTelephoneLabel1.setText("jLabel12");
+        monTelephone.setText("jLabel1");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -109,15 +115,15 @@ public class NouveauMonProfil extends javax.swing.JPanel {
                     .addComponent(jLabel6)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                .addGap(32, 32, 32)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(monNomLabel1)
-                    .addComponent(monPrenomLabel1)
-                    .addComponent(monAdresseLabel1)
-                    .addComponent(monTelephoneLabel1))
-                .addContainerGap(57, Short.MAX_VALUE))
+                    .addComponent(monNom)
+                    .addComponent(monPrenom)
+                    .addComponent(monMail)
+                    .addComponent(monTelephone))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 88, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -126,19 +132,19 @@ public class NouveauMonProfil extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(monNomLabel1))
+                    .addComponent(monNom))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(monPrenomLabel1))
+                    .addComponent(monPrenom))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(monAdresseLabel1))
+                    .addComponent(monMail))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(monTelephoneLabel1))
+                    .addComponent(monTelephone))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -210,6 +216,13 @@ public class NouveauMonProfil extends javax.swing.JPanel {
                 tableMesReservationMousePressed(evt);
             }
         });
+        tableMesReservation.getColumnModel().getColumn(0).setMinWidth(0);
+        tableMesReservation.getColumnModel().getColumn(0).setMaxWidth(0);
+        tableMesReservation.getColumnModel().getColumn(0).setWidth(0);
+
+        tableMesReservation.getColumnModel().getColumn(2).setMinWidth(0);
+        tableMesReservation.getColumnModel().getColumn(2).setMaxWidth(0);
+        tableMesReservation.getColumnModel().getColumn(2).setWidth(0);
         jScrollPane1.setViewportView(tableMesReservation);
 
         javax.swing.GroupLayout conteneurtableaureservationLayout = new javax.swing.GroupLayout(conteneurtableaureservation);
@@ -217,8 +230,8 @@ public class NouveauMonProfil extends javax.swing.JPanel {
         conteneurtableaureservationLayout.setHorizontalGroup(
             conteneurtableaureservationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(conteneurtableaureservationLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         conteneurtableaureservationLayout.setVerticalGroup(
             conteneurtableaureservationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,7 +253,7 @@ public class NouveauMonProfil extends javax.swing.JPanel {
             panelmapeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelmapeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labemmapmonprofil, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
+                .addComponent(labemmapmonprofil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelmapeLayout.setVerticalGroup(
@@ -251,19 +264,28 @@ public class NouveauMonProfil extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        AnnulerButton.setText("Annuler");
+        AnnulerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AnnulerButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(AnnulerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panelmape, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(conteneurtableaureservation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,7 +300,8 @@ public class NouveauMonProfil extends javax.swing.JPanel {
                         .addComponent(conteneurtableaureservation, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(panelmape, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(AnnulerButton, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
         );
 
         add(jPanel2, "card2");
@@ -291,11 +314,11 @@ public class NouveauMonProfil extends javax.swing.JPanel {
             md.setVisible(true);
             md.setLocationRelativeTo(null);
         } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(monProfilPanel.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Gui.NouveauMonProfil.class.getName()).log(Level.SEVERE, null, ex);
         }catch (OutOfMemoryError e){
             System.out.println("out of memory");
         } catch (ParseException ex) {
-            Logger.getLogger(monProfilPanel.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Gui.NouveauMonProfil.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -317,19 +340,26 @@ public class NouveauMonProfil extends javax.swing.JPanel {
         numConducteurLabel.setText(ad.getTelephone().toString());
     }//GEN-LAST:event_tableMesReservationMousePressed
 
+    private void AnnulerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnnulerButtonActionPerformed
+          
+        int x =tableMesReservation.getSelectedRow();
+        int id=(Integer)tableMesReservation.getValueAt(x, 2);
+        ReservationDAO resDAO=new ReservationDAO();
+        resDAO.DeleteById(id);
+        tableMesReservation.setModel(new com.tn.tableModel.ReservationTableModel(Authentification.id_adherent));
+        System.out.println(tableMesReservation.getSelectedRow());
+        System.out.println("du table mes reservation "+Authentification.id_adherent);
+    }//GEN-LAST:event_AnnulerButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AnnulerButton;
     private javax.swing.JPanel conteneurtableaureservation;
     private javax.swing.JLabel emailConducteurLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -337,18 +367,13 @@ public class NouveauMonProfil extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private static javax.swing.JPanel jPanel4;
+    public static javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labemmapmonprofil;
-    public static javax.swing.JLabel monAdresseLabel;
-    public static javax.swing.JLabel monAdresseLabel1;
-    public static javax.swing.JLabel monNomLabel;
-    public static javax.swing.JLabel monNomLabel1;
-    public static javax.swing.JLabel monPrenomLabel;
-    public static javax.swing.JLabel monPrenomLabel1;
-    public static javax.swing.JLabel monTelephoneLabel;
-    public static javax.swing.JLabel monTelephoneLabel1;
+    public static javax.swing.JLabel monMail;
+    public static javax.swing.JLabel monNom;
+    public static javax.swing.JLabel monPrenom;
+    public static javax.swing.JLabel monTelephone;
     private javax.swing.JLabel nomConducteurLabel;
     private javax.swing.JLabel numConducteurLabel;
     private javax.swing.JPanel panelmape;

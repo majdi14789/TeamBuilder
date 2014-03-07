@@ -55,7 +55,7 @@ AdherentDAO adDAO;
               return  mesReservation.get(rowIndex).getAdherent().getNom().toString();
             }
             case 2:{
-                return mesReservation.get(rowIndex).getIdTrajet();
+                return mesReservation.get(rowIndex).getTrajet().getIdTrajet();
             }
             case 3:{
                 return mesReservation.get(rowIndex).getPlaces();

@@ -6,6 +6,8 @@
 
 package Gui;
 
+import Entité.Adherent;
+import com.tn.doa.AdherentDAO;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.text.ParseException;
@@ -20,13 +22,13 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @author majdi
  */
 public class MainFrame extends javax.swing.JFrame {
-
+NouveauMonProfil np=new NouveauMonProfil();
     /**
      * Creates new form MainFrame
      */
     public MainFrame() throws ParseException, UnsupportedLookAndFeelException {
         initComponents();
-        
+        //Adherent ad=Adherent(); 
         Toolkit tool=Toolkit.getDefaultToolkit();
           Dimension dim=new Dimension(tool.getScreenSize());
           int height1=(int)dim.getHeight();
@@ -58,6 +60,11 @@ public class MainFrame extends javax.swing.JFrame {
         contentPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new java.awt.CardLayout());
 
         jPanel.setMaximumSize(new java.awt.Dimension(1031, 578));
@@ -215,7 +222,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void monProfilButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monProfilButtonActionPerformed
        
         contentPanel.removeAll();
-        contentPanel.add(new NouveauMonProfil());
+        contentPanel.add(np);
         contentPanel.repaint();
         contentPanel.revalidate();
     }//GEN-LAST:event_monProfilButtonActionPerformed
@@ -267,6 +274,17 @@ public class MainFrame extends javax.swing.JFrame {
          ajouterTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/plus.png")));
           System.out.println("d5all");
     }//GEN-LAST:event_ajouterTrajetButtonMouseEntered
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        AdherentDAO adDAO=new AdherentDAO();
+         Adherent ad= new Adherent();
+              ad=adDAO.findAdherentById(Authentification.id_adherent);
+         
+         NouveauMonProfil.monNom.setText(ad.getNom());
+         NouveauMonProfil.monPrenom.setText(ad.getPrenom());
+         NouveauMonProfil.monMail.setText(ad.getAdresseMail());
+         NouveauMonProfil.monTelephone.setText(ad.getTelephone());
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
