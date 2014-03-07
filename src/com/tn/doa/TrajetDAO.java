@@ -48,7 +48,7 @@ public class TrajetDAO {
                 trajet.setBagages(resultat.getString(8));
                 trajet.setCommentaire(resultat.getString(9));
                 trajet.setKilometrage(resultat.getInt(10));
-                trajet.setVoiture(voitureDAO.findVoitureById(resultat.getInt(11)));
+                trajet.setVoiture(voitureDAO.findVoitureById(resultat.getString(11)));
                 trajet.setPrix(resultat.getInt(12));
                 trajet.setVilleArrivee(resultat.getString(13));
                 trajet.setVilleDepart(resultat.getString(14));
@@ -91,7 +91,7 @@ public class TrajetDAO {
             ps.setString(7,t.getBagages());
             ps.setString(8,t.getCommentaire());
             ps.setInt(9,t.getKilometrage());
-            ps.setInt(10,v.getIdVoiture());
+            ps.setString(10,v.getIdVoiture());
             ps.setInt(11,t.getPrix());
             ps.setString(12,t.getVilleArrivee());
             ps.setString(13,t.getVilleDepart());
@@ -135,7 +135,7 @@ public class TrajetDAO {
                 trajet.setBagages(resultat.getString(8));
                 trajet.setCommentaire(resultat.getString(9));
                 trajet.setKilometrage(resultat.getInt(10));
-                trajet.setVoiture(voitureDAO.findVoitureById(resultat.getInt(11)));
+                trajet.setVoiture(voitureDAO.findVoitureById(resultat.getString(11)));
                 trajet.setPrix(resultat.getInt(12));
                 trajet.setVilleArrivee(resultat.getString(13));
                 trajet.setVilleDepart(resultat.getString(14));
@@ -213,7 +213,7 @@ public class TrajetDAO {
                 trajet.setBagages(resultat.getString(8));
                 trajet.setCommentaire(resultat.getString(9));
                 trajet.setKilometrage(resultat.getInt(10));
-                trajet.setVoiture(voitureDAO.findVoitureById(resultat.getInt(11)));
+                trajet.setVoiture(voitureDAO.findVoitureById(resultat.getString(11)));
                 trajet.setPrix(resultat.getInt(12));
                 trajet.setVilleArrivee(resultat.getString(13));
                 trajet.setVilleDepart(resultat.getString(14));
@@ -251,7 +251,7 @@ public class TrajetDAO {
            trajet.setBagages(resultat.getString(8));
            trajet.setCommentaire(resultat.getString(9));
            trajet.setKilometrage(resultat.getInt(10));
-           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getInt(11)));
+           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getString(11)));
            trajet.setPrix(resultat.getInt(12));
            trajet.setVilleArrivee(resultat.getString(13));
            trajet.setVilleDepart(resultat.getString(14));
@@ -290,7 +290,7 @@ public class TrajetDAO {
            trajet.setBagages(resultat.getString(8));
            trajet.setCommentaire(resultat.getString(9));
            trajet.setKilometrage(resultat.getInt(10));
-           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getInt(11)));
+           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getString(11)));
            trajet.setPrix(resultat.getInt(12));
            trajet.setVilleArrivee(resultat.getString(13));
            trajet.setVilleDepart(resultat.getString(14));
@@ -331,7 +331,7 @@ public class TrajetDAO {
            trajet.setBagages(resultat.getString(8));
            trajet.setCommentaire(resultat.getString(9));
            trajet.setKilometrage(resultat.getInt(10));
-           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getInt(11)));
+           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getString(11)));
            trajet.setPrix(resultat.getInt(12));
            trajet.setVilleArrivee(resultat.getString(13));
            trajet.setVilleDepart(resultat.getString(14));
@@ -373,7 +373,7 @@ public class TrajetDAO {
            trajet.setBagages(resultat.getString(8));
            trajet.setCommentaire(resultat.getString(9));
            trajet.setKilometrage(resultat.getInt(10));
-           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getInt(11)));
+           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getString(11)));
            trajet.setPrix(resultat.getInt(12));
            trajet.setVilleArrivee(resultat.getString(13));
            trajet.setVilleDepart(resultat.getString(14));
@@ -415,7 +415,7 @@ public class TrajetDAO {
            trajet.setBagages(resultat.getString(8));
            trajet.setCommentaire(resultat.getString(9));
            trajet.setKilometrage(resultat.getInt(10));
-           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getInt(11)));
+           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getString(11)));
            trajet.setPrix(resultat.getInt(12));
            trajet.setVilleArrivee(resultat.getString(13));
            trajet.setVilleDepart(resultat.getString(14));
@@ -459,7 +459,7 @@ public class TrajetDAO {
            trajet.setBagages(resultat.getString(8));
            trajet.setCommentaire(resultat.getString(9));
            trajet.setKilometrage(resultat.getInt(10));
-           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getInt(11)));
+           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getString(11)));
            trajet.setPrix(resultat.getInt(12));
            trajet.setVilleArrivee(resultat.getString(13));
            trajet.setVilleDepart(resultat.getString(14));
@@ -501,7 +501,7 @@ public class TrajetDAO {
                 trajet.setBagages(resultat.getString(8));
                 trajet.setCommentaire(resultat.getString(9));
                 trajet.setKilometrage(resultat.getInt(10));
-                trajet.setVoiture(voitureDAO.findVoitureById(resultat.getInt(11)));
+                trajet.setVoiture(voitureDAO.findVoitureById(resultat.getString(11)));
                 trajet.setPrix(resultat.getInt(12));
                 trajet.setVilleArrivee(resultat.getString(13));
                 trajet.setVilleDepart(resultat.getString(14));
@@ -518,5 +518,88 @@ public class TrajetDAO {
         }
     
     }
+   
+   public void DeleteTrajetById(int id){
+    
+    String requete="delete from trajet where id_trajet=?";
+    try {
+        
+     PreparedStatement ps=MyConnection.getInstance().prepareStatement(requete);
+       
+       ps.setInt(1, id);
+       ps.execute();   
+        
+        
+        
+    } catch (Exception e) {
+        System.out.println("erruer lors supprission"+e.getMessage());
+    }
+}
+
+
+public Trajet findTrajetById(int id_trajet) {
+      //  Trajet trajet = new Trajet();
+       VoitureDAO voitureDAO = new VoitureDAO();
+       AdherentDAO adherentDAO = new AdherentDAO();
+       Trajet trajet = new  Trajet();
+
+                String requete = "select * from trajet where id_trajet=?";
+        
+          try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setInt(1, id_trajet);
+            ResultSet resultat = ps.executeQuery();
+            while (resultat.next()) {
+           trajet.setIdTrajet(resultat.getInt(1));
+           trajet.setAdherent(adherentDAO.findAdherentById(resultat.getInt(2)));
+           trajet.setJours(resultat.getString(3));
+           trajet.setHeure(resultat.getString(4));
+           trajet.setFrequence(resultat.getString(5));
+           trajet.setTypeTrajet(resultat.getString(6));
+           trajet.setPlaces(resultat.getInt(7));
+           trajet.setBagages(resultat.getString(8));
+           trajet.setCommentaire(resultat.getString(9));
+           trajet.setKilometrage(resultat.getInt(10));
+           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getString(11)));
+           trajet.setPrix(resultat.getInt(12));
+           trajet.setVilleArrivee(resultat.getString(13));
+           trajet.setVilleDepart(resultat.getString(14));
+           trajet.setCode_map(resultat.getString(15));
+            }
+            return trajet;
+
+        } catch (SQLException ex) {
+            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors du recherche du trajet " + ex.getMessage());
+            return null;
+        }
+    
+    }
+ 
+      
+      // safouen : requete Update 
+      
+      
+      
+      
+       public void update_Trajet(int id_trajet, String modif_Jour , String modif_Heur){
+               
+        String req="UPDATE trajet SET jours=? , heure=? where id_trajet=?";
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(req);
+            ps.setString(1,modif_Jour);
+            ps.setString(2, modif_Heur);
+            ps.setInt(3, id_trajet);
+             ps.executeUpdate();
+            System.out.println("Mise à jour effectuée avec succès");
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la mise à jour "+ex.getMessage());
+        }
+    }
+      
+      
+   
+   
 }
 

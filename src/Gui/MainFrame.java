@@ -229,7 +229,7 @@ NouveauMonProfil np=new NouveauMonProfil();
 
     private void ajouterTrajetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterTrajetButtonActionPerformed
         contentPanel.removeAll();
-        contentPanel.add(new AjouterTrajetPanel());
+        contentPanel.add(new NouveauTrajetPanel());
         contentPanel.repaint();
         contentPanel.revalidate();
     }//GEN-LAST:event_ajouterTrajetButtonActionPerformed

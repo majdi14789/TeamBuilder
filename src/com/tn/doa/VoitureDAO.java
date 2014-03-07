@@ -21,7 +21,7 @@ public class VoitureDAO {
         String req="insert into voiture values(?,?,?,?)";
         try {
             PreparedStatement ps= MyConnection.getInstance().prepareStatement(req);
-            ps.setInt(1,v1.getIdVoiture());
+            ps.setString(1,v1.getIdVoiture());
             ps.setString(2,v1.getMarque());
             ps.setString(3, v1.getModel());
             ps.setString(4,v1.getCarburant());
@@ -39,15 +39,15 @@ public class VoitureDAO {
     
     
     //**********************************************************************
-    public Voiture findVoitureById(int id) {
+    public Voiture findVoitureById(String id_voiture) {
         Voiture voiture = new Voiture();
         String requete = "select * from voiture where id_voiture=?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
-            ps.setInt(1, id);
+            ps.setString(1, id_voiture);
             ResultSet resultat = ps.executeQuery();
             while (resultat.next()) {
-                voiture.setIdVoiture(resultat.getInt(1));
+                voiture.setIdVoiture(resultat.getString(1));
                 voiture.setMarque(resultat.getString(2));
                 voiture.setModel(resultat.getString(3));
                 voiture.setCarburant(resultat.getString(4));
@@ -58,7 +58,7 @@ public class VoitureDAO {
 
         } catch (SQLException ex) {
             //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("erreur lors de la recherche du depot " + ex.getMessage());
+            System.out.println("erreur lors de la recherche de la voiture " + ex.getMessage());
             return null;
         }
     
