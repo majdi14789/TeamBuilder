@@ -60,6 +60,7 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
         deconexionButton = new javax.swing.JButton();
         gererMesTrajetButtom = new javax.swing.JButton();
         evaluerButton = new javax.swing.JButton();
+        reclamationsButton = new javax.swing.JButton();
         contentPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -140,13 +141,22 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
             }
         });
 
-        evaluerButton.setText("jButton1");
+        evaluerButton.setBackground(new java.awt.Color(255, 255, 255));
+        evaluerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/evaluer.png"))); // NOI18N
         evaluerButton.setMaximumSize(new java.awt.Dimension(113, 69));
         evaluerButton.setMinimumSize(new java.awt.Dimension(113, 69));
         evaluerButton.setPreferredSize(new java.awt.Dimension(113, 69));
         evaluerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 evaluerButtonActionPerformed(evt);
+            }
+        });
+
+        reclamationsButton.setBackground(new java.awt.Color(255, 255, 255));
+        reclamationsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reclamations.png"))); // NOI18N
+        reclamationsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reclamationsButtonActionPerformed(evt);
             }
         });
 
@@ -160,20 +170,23 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
             .addComponent(deconexionButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(gererMesTrajetButtom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(evaluerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(reclamationsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         menu_panelLayout.setVerticalGroup(
             menu_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_panelLayout.createSequentialGroup()
-                .addComponent(monProfilButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ajouterTrajetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chercherTrajetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(gererMesTrajetButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(evaluerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(monProfilButton)
+                .addGap(0, 0, 0)
+                .addComponent(ajouterTrajetButton)
+                .addGap(0, 0, 0)
+                .addComponent(chercherTrajetButton)
+                .addGap(0, 0, 0)
+                .addComponent(gererMesTrajetButtom)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addComponent(evaluerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(reclamationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(deconexionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
@@ -304,11 +317,22 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
     }//GEN-LAST:event_formWindowOpened
 
     private void deconexionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deconexionButtonActionPerformed
-       contentPanel.removeAll();
+this.setVisible(false);
+    try {
+        new Authentification().setVisible(true);
+    } catch (ParseException ex) {
+        Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (UnsupportedLookAndFeelException ex) {
+        Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }//GEN-LAST:event_deconexionButtonActionPerformed
+
+    private void reclamationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reclamationsButtonActionPerformed
+         contentPanel.removeAll();
         contentPanel.add(nr);
         contentPanel.repaint();
         contentPanel.revalidate();
-    }//GEN-LAST:event_deconexionButtonActionPerformed
+    }//GEN-LAST:event_reclamationsButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -362,5 +386,6 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
     private javax.swing.JPanel jPanel;
     private javax.swing.JPanel menu_panel;
     private javax.swing.JButton monProfilButton;
+    private javax.swing.JButton reclamationsButton;
     // End of variables declaration//GEN-END:variables
 }

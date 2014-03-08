@@ -8,12 +8,15 @@ package Gui;
 
 
 import Entité.Adherent;
+import static Gui.NouveauRechercherTrajetPanel.tableTrajet;
 
 import com.tn.doa.ReservationDAO;
+import com.tn.doa.TrajetDAO;
 import com.tn.tableModel.ReservationTableModel;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.UnsupportedLookAndFeelException;
 
 /**
@@ -21,11 +24,13 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @author majdi
  */
 public class NouveauMonProfil extends javax.swing.JPanel {
-
-    /**
+TrajetDAO traDAO=new TrajetDAO();
+   
+/**
      * Creates new form NouveauMonProfil
      */
     public NouveauMonProfil() {
+        
         initComponents();
     }
 
@@ -339,10 +344,13 @@ public class NouveauMonProfil extends javax.swing.JPanel {
         int x =tableMesReservation.getSelectedRow();
         int id=(Integer)tableMesReservation.getValueAt(x, 2);
         ReservationDAO resDAO=new ReservationDAO();
+        int nbr=Integer.parseInt(tableTrajet.getValueAt(x,3).toString());
         resDAO.DeleteById(id);
+        traDAO.update_Places_Trajet(traDAO.DisplayAll_trajet_by_Id_trajet(Integer.parseInt(NouveauRechercherTrajetPanel.tableTrajet.getValueAt(x, 0).toString())),nbr+1);
         tableMesReservation.setModel(new com.tn.tableModel.ReservationTableModel(Authentification.id_adherent));
         System.out.println(tableMesReservation.getSelectedRow());
         System.out.println("du table mes reservation "+Authentification.id_adherent);
+        
     }//GEN-LAST:event_AnnulerButtonActionPerformed
 
     private void tableMesReservationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMesReservationMouseClicked

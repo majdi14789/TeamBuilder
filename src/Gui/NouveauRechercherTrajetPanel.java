@@ -308,7 +308,7 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
                                 System.out.println("l'index est "+x);
                                 reservation.setAdhrent(adDAO.findAdherentById(Authentification.id_adherent));
                                 reservation.setTrajet(traDAO.DisplayAll_trajet_by_Id_trajet(Integer.parseInt(tableTrajet.getValueAt(x, 0).toString())));
-                                reservation.setPlaces((Integer)tableTrajet.getValueAt(x, 3));
+                                reservation.setPlaces((Integer)tableTrajet.getValueAt(x, 3)-1);
                                 reservation.setDate((String) tableTrajet.getValueAt(x, 7));
                                 reservation.setVilleDepart(tableTrajet.getValueAt(x, 4).toString());
                                 reservation.setVilleArrivee(tableTrajet.getValueAt(x, 5).toString());
@@ -367,7 +367,7 @@ trajetlabel.setText(tableTrajet.getValueAt(tableTrajet.getSelectedRow(),9).toStr
     private javax.swing.JTextField rechVilleDepart;
     private javax.swing.JButton rechercherBTN;
     private javax.swing.JPanel rechercher_trajetPanel;
-    private javax.swing.JTable tableTrajet;
+    public static javax.swing.JTable tableTrajet;
     private javax.swing.JPanel trajetMap;
     private javax.swing.JLabel trajetlabel;
     // End of variables declaration//GEN-END:variables

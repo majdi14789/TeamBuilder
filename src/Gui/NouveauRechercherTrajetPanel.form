@@ -297,6 +297,7 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);&#xa;//tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);&#xa;//tableTrajet.getColumnModel().getColumn(0).setWidth(0);&#xa;}catch(Exception ex ){System.out.print(&quot;erreurrr affichage tableauu&quot;);}"/>
                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
             </Component>
           </SubComponents>

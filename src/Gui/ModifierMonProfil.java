@@ -3,6 +3,7 @@
 package Gui;
 
 import Entité.Adherent;
+import static Gui.MainFrame.contentPanel;
 import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
 import com.tn.doa.AdherentDAO;
 import java.text.ParseException;
@@ -225,6 +226,19 @@ public class ModifierMonProfil extends javax.swing.JFrame {
                 Integer.parseInt(modifierTelephoneText.getText().toString()),
                 ad.getNombreReclamation()
                 );
+        AdherentDAO adDAO=new AdherentDAO();
+         Adherent ad= new Adherent();
+              ad=adDAO.findAdherentById(Authentification.id_adherent);
+         NouveauMonProfil np=new NouveauMonProfil();
+         NouveauMonProfil.monNom.setText(ad.getNom());
+         NouveauMonProfil.monPrenom.setText(ad.getPrenom());
+         NouveauMonProfil.monMail.setText(ad.getAdresseMail());
+         NouveauMonProfil.monTelephone.setText(ad.getTelephone().toString());
+        
+        contentPanel.removeAll();
+        contentPanel.add(np);
+        contentPanel.repaint();
+        contentPanel.revalidate();
         //adDAO.update_adherent(ad);
          this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
