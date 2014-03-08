@@ -244,7 +244,7 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
 
     private void gererMesTrajetButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gererMesTrajetButtomActionPerformed
         contentPanel.removeAll();
-        contentPanel.add(new NouveauGererMesTrajet());
+        contentPanel.add(new NouveauGererMesTrajets());
         contentPanel.repaint();
         contentPanel.revalidate();
     }//GEN-LAST:event_gererMesTrajetButtomActionPerformed

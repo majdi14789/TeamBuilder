@@ -14,7 +14,7 @@ import javax.swing.table.AbstractTableModel;
 public class TrajetTableModel extends AbstractTableModel{
     public static List<Integer> AllId;
     List<Trajet> monTrajet;
-    String [] entete={"id","Nom","Prenom","Nombre de Place","ville de depart","ville d'arrive","Prix","date","Heure"};
+    String [] entete={"id","Nom","Prenom","Nombre de Place","ville de depart","ville d'arrive","Prix","date","Heure","code_html"};
   
     public TrajetTableModel() {
         try {
@@ -99,7 +99,8 @@ public class TrajetTableModel extends AbstractTableModel{
                 return monTrajet.get(rowIndex).getHeure();
             }
             case 9:{
-                return monTrajet.get(rowIndex).getHeure();}
+                return monTrajet.get(rowIndex).getCode_map();}
+           
              default:
                  throw new IllegalArgumentException();
         }

@@ -122,6 +122,11 @@ public class MainFrameAdmin extends javax.swing.JFrame {
         deconexionButton.setMaximumSize(new java.awt.Dimension(10, 10));
         deconexionButton.setMinimumSize(new java.awt.Dimension(10, 10));
         deconexionButton.setPreferredSize(new java.awt.Dimension(10, 10));
+        deconexionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deconexionButtonActionPerformed(evt);
+            }
+        });
 
         gererMesTrajetButtom.setBackground(new java.awt.Color(255, 255, 255));
         gererMesTrajetButtom.addActionListener(new java.awt.event.ActionListener() {
@@ -278,11 +283,15 @@ public class MainFrameAdmin extends javax.swing.JFrame {
          Adherent ad= new Adherent();
               //ad=adDAO.findAdherentById(Authentification.id_adherent);
          
-//         NouveauMonProfil.monNom.setText(ad.getNom());
-//         NouveauMonProfil.monPrenom.setText(ad.getPrenom());
-//         NouveauMonProfil.monMail.setText(ad.getAdresseMail());
-//         NouveauMonProfil.monTelephone.setText(ad.getTelephone().toString());
+
     }//GEN-LAST:event_formWindowOpened
+
+    private void deconexionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deconexionButtonActionPerformed
+     contentPanel.removeAll();
+        contentPanel.add(new NouveauNotificationsAdministrateur());
+        contentPanel.repaint();
+        contentPanel.revalidate();   
+    }//GEN-LAST:event_deconexionButtonActionPerformed
 
     /**
      * @param args the command line arguments

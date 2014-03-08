@@ -23,7 +23,7 @@ import java.util.List;
 public class ReservationDAO {
   
     public void insertReservation(Reservation reser){
-    String requete="insert into reservation (id_passager,id_trajet,places,date,heure,ville_depart,ville_arrivee) values (?,?,?,?,?,?,?)";
+    String requete="insert into reservation (id_passager,id_trajet,places,date,heure,ville_depart,ville_arrivee,code_html) values (?,?,?,?,?,?,?,?)";
             try {
                 
             //Statement statement = MyConnection.getInstance().createStatement();
@@ -39,8 +39,8 @@ public class ReservationDAO {
             ps.setString(4,"");
             ps.setString(5,reser.getHeure());
             ps.setString(6,reser.getVilleDepart());
-            ps.setString(7,reser.getVilleDepart());
-            
+            ps.setString(7,reser.getVilleArrivee());
+            ps.setString(8,reser.getCode_html());
             ps.executeUpdate();
             //***********************************************************
     }
@@ -75,8 +75,7 @@ public class ReservationDAO {
            reservation.setHeure(resultat.getString(6));
            reservation.setVilleDepart(resultat.getString(7));
            reservation.setVilleArrivee(resultat.getString(8));
-           
-           
+           reservation.setCode_html(resultat.getString(9));
            listeReservation.add(reservation);
            
        
@@ -130,7 +129,7 @@ public List<Reservation> DisplayAllReservation() throws SQLException{
            reservation.setHeure(resultat.getString(6));
            reservation.setVilleDepart(resultat.getString(7));
            reservation.setVilleArrivee(resultat.getString(8));
-           
+           reservation.setCode_html(resultat.getString(9));
            
            listeReservation.add(reservation);
            
@@ -172,5 +171,30 @@ public List<Reservation> DisplayAllReservation() throws SQLException{
             return null;
         }
     
+    }
+ 
+ // safouen *******
+ public List<String> DisplayAllEmailsPassagers (int id_trajet){
+ List<String> listeEmailPassagers = new ArrayList<String>();
+        String requete = "SELECT adresse_mail FROM adherent,trajet,reservation where reservation.id_trajet = trajet.id_trajet and reservation.id_passager = adherent.id_adherent and trajet.id_trajet="+id_trajet+";";
+        
+        String email="";
+        try {
+           PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+          // ps.setInt(1, id_trajet);
+           ResultSet resultat = ps.executeQuery(requete);
+         
+            
+            while(resultat.next()){
+              
+              email=resultat.getString("adresse_mail");
+                 listeEmailPassagers.add(email);
+            }
+            return listeEmailPassagers;
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(" "+ex.getMessage());
+            return null;
+        }
     }
 }

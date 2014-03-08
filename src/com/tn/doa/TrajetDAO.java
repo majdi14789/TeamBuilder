@@ -255,7 +255,7 @@ public class TrajetDAO {
            trajet.setPrix(resultat.getInt(12));
            trajet.setVilleArrivee(resultat.getString(13));
            trajet.setVilleDepart(resultat.getString(14));
-           
+           trajet.setCode_map(resultat.getString(15));
            listeTrajet.add(trajet);
            
        
@@ -294,7 +294,7 @@ public class TrajetDAO {
            trajet.setPrix(resultat.getInt(12));
            trajet.setVilleArrivee(resultat.getString(13));
            trajet.setVilleDepart(resultat.getString(14));
-           
+           trajet.setCode_map(resultat.getString(15));
            listeTrajet.add(trajet);
            
        
@@ -335,7 +335,7 @@ public class TrajetDAO {
            trajet.setPrix(resultat.getInt(12));
            trajet.setVilleArrivee(resultat.getString(13));
            trajet.setVilleDepart(resultat.getString(14));
-           
+           trajet.setCode_map(resultat.getString(15));
            listeTrajet.add(trajet);
            
        
@@ -377,7 +377,7 @@ public class TrajetDAO {
            trajet.setPrix(resultat.getInt(12));
            trajet.setVilleArrivee(resultat.getString(13));
            trajet.setVilleDepart(resultat.getString(14));
-           
+           trajet.setCode_map(resultat.getString(15));
            listeTrajet.add(trajet);
            
        
@@ -419,7 +419,7 @@ public class TrajetDAO {
            trajet.setPrix(resultat.getInt(12));
            trajet.setVilleArrivee(resultat.getString(13));
            trajet.setVilleDepart(resultat.getString(14));
-           
+           trajet.setCode_map(resultat.getString(15));
            listeTrajet.add(trajet);
            
        
@@ -463,7 +463,7 @@ public class TrajetDAO {
            trajet.setPrix(resultat.getInt(12));
            trajet.setVilleArrivee(resultat.getString(13));
            trajet.setVilleDepart(resultat.getString(14));
-           
+           trajet.setCode_map(resultat.getString(15));
            listeTrajet.add(trajet);
            
        
@@ -506,7 +506,7 @@ public class TrajetDAO {
                 trajet.setVilleArrivee(resultat.getString(13));
                 trajet.setVilleDepart(resultat.getString(14));
                 trajet.setCode_map(resultat.getString(15));
-               
+                
 
                 
             }
@@ -565,6 +565,7 @@ public Trajet findTrajetById(int id_trajet) {
            trajet.setVilleArrivee(resultat.getString(13));
            trajet.setVilleDepart(resultat.getString(14));
            trajet.setCode_map(resultat.getString(15));
+           
             }
             return trajet;
 

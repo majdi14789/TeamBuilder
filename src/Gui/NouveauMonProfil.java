@@ -212,6 +212,9 @@ public class NouveauMonProfil extends javax.swing.JPanel {
 
         tableMesReservation.setModel(new ReservationTableModel(Authentification.id_adherent));
         tableMesReservation.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableMesReservationMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 tableMesReservationMousePressed(evt);
             }
@@ -338,6 +341,7 @@ public class NouveauMonProfil extends javax.swing.JPanel {
         prenomConducteurLabel.setText(ad.getPrenom());
         emailConducteurLabel.setText(ad.getAdresseMail());
         numConducteurLabel.setText(ad.getTelephone().toString());
+        //labemmapmonprofil.setText(tableMesReservation.getValueAt(tableMesReservation.getSelectedRow(),9).toString());
     }//GEN-LAST:event_tableMesReservationMousePressed
 
     private void AnnulerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnnulerButtonActionPerformed
@@ -350,6 +354,10 @@ public class NouveauMonProfil extends javax.swing.JPanel {
         System.out.println(tableMesReservation.getSelectedRow());
         System.out.println("du table mes reservation "+Authentification.id_adherent);
     }//GEN-LAST:event_AnnulerButtonActionPerformed
+
+    private void tableMesReservationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMesReservationMouseClicked
+      labemmapmonprofil.setText(tableMesReservation.getValueAt(tableMesReservation.getSelectedRow(),8).toString());
+    }//GEN-LAST:event_tableMesReservationMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

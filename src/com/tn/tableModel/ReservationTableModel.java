@@ -19,7 +19,7 @@ public class ReservationTableModel extends AbstractTableModel{
 List<Reservation> mesReservation;
 Adherent ad;
 AdherentDAO adDAO;
-  String [] entete={"id reservation","id passager","id trajet","nbr places","date","heure","depart","arrive"};   
+  String [] entete={"id reservation","id passager","id trajet","nbr places","date","heure","depart","arrive","codeHtml"};   
 
   
   public ReservationTableModel(int id){
@@ -72,7 +72,13 @@ AdherentDAO adDAO;
             case 7:{
                 return mesReservation.get(rowIndex).getVilleArrivee();
             }
-             default:
+            
+            case 8:{
+                return mesReservation.get(rowIndex).getCode_html();
+            }
+            
+            
+            default:
                  throw new IllegalArgumentException();
         }
         

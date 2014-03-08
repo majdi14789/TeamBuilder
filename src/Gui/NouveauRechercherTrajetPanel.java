@@ -207,6 +207,11 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
             tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
             tableTrajet.getColumnModel().getColumn(0).setWidth(0);
         }catch(Exception ex ){System.out.print("erreurrr affichage tableauu");}
+        tableTrajet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableTrajetMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tableTrajet);
 
         rechercher_trajetPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 161, 510, 216));
@@ -304,6 +309,7 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
         reservation.setDate((String) tableTrajet.getValueAt(x, 7));
         reservation.setVilleDepart(tableTrajet.getValueAt(x, 4).toString());
         reservation.setVilleArrivee(tableTrajet.getValueAt(x, 5).toString());
+        reservation.setCode_html(tableTrajet.getValueAt(x, 9).toString());
         reservationDAO.insertReservation(reservation);
         System.out.println(tableTrajet.getSelectedRow());
         System.out.println(Authentification.id_adherent);
@@ -323,6 +329,14 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
 //
 //        gmail.sendMail();
     }//GEN-LAST:event_BtnReserverActionPerformed
+
+    private void tableTrajetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableTrajetMouseClicked
+
+trajetlabel.setText(tableTrajet.getValueAt(tableTrajet.getSelectedRow(),9).toString());
+
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_tableTrajetMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

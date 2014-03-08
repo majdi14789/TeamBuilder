@@ -58,6 +58,23 @@ public class Reservation implements Serializable {
     @ManyToOne(optional = false)
     private Adherent adherent;
     private int idadherent;
+   
+    
+    private String code_html; 
+
+    public void setAdherent(Adherent adherent) {
+        this.adherent = adherent;
+    }
+
+    public void setCode_html(String code_html) {
+        this.code_html = code_html;
+    }
+
+    public String getCode_html() {
+        return code_html;
+    }
+    
+    
     public Reservation() {
     }
 
