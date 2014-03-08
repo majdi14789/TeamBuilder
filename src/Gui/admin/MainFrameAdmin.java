@@ -7,7 +7,9 @@
 package Gui.admin;
 
 import Entité.Adherent;
+import Entité.Administrateur;
 import com.tn.doa.AdherentDAO;
+import com.tn.doa.AdministrateurDAO;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.text.ParseException;
@@ -26,11 +28,14 @@ public class MainFrameAdmin extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
+    NouveauGererFaq gefaq=new NouveauGererFaq();
+    NouveauAdminPanel nap=new NouveauAdminPanel();
     public MainFrameAdmin() throws ParseException, UnsupportedLookAndFeelException {
         initComponents();
         //Adherent ad=Adherent(); 
         Toolkit tool=Toolkit.getDefaultToolkit();
           Dimension dim=new Dimension(tool.getScreenSize());
+          
           int height1=(int)dim.getHeight();
           int width1=(int)dim.getWidth();
           setSize(width1 -100, height1 -100 );
@@ -225,7 +230,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
     private void monProfilButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monProfilButtonActionPerformed
        
         contentPanel.removeAll();
-        contentPanel.add(new profiladminPanel());
+        contentPanel.add(nap);
         contentPanel.repaint();
         contentPanel.revalidate();
     }//GEN-LAST:event_monProfilButtonActionPerformed
@@ -253,7 +258,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
 
     private void evaluerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_evaluerButtonActionPerformed
         contentPanel.removeAll();
-        contentPanel.add(new GenererFAQ());
+        contentPanel.add(gefaq);
         contentPanel.repaint();
         contentPanel.revalidate();
     }//GEN-LAST:event_evaluerButtonActionPerformed
@@ -279,9 +284,18 @@ public class MainFrameAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_ajouterTrajetButtonMouseEntered
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        AdherentDAO adDAO=new AdherentDAO();
-         Adherent ad= new Adherent();
-              //ad=adDAO.findAdherentById(Authentification.id_adherent);
+         AdministrateurDAO administrateurDAO =new AdministrateurDAO();
+         Administrateur administrateur=new Administrateur();
+          administrateur = administrateurDAO.findAdministrateurById(Authentification.id_administrateur);
+         
+         nap.nomtxt.setText(administrateur.getNom());
+         nap.prenomtxt.setText(administrateur.getPrenom());
+         nap.logintxt.setText(administrateur.getLogin());
+         nap.passwordtxt.setText(administrateur.getMdp());
+         
+//         String s = administrateurDAO.findAdministrateurById(Authentification.id_administrateur).getImage();
+//         ImageIcon im = new ImageIcon(""+s);
+         //profiladminPanel.jLabel1.setIcon(im);
          
 
     }//GEN-LAST:event_formWindowOpened

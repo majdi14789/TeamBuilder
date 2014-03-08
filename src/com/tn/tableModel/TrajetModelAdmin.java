@@ -6,6 +6,7 @@ package com.tn.tableModel;
 
 
 import Entité.Trajet;
+import Gui.Authentification;
 import com.tn.doa.TrajetDAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class TrajetModelAdmin extends AbstractTableModel {
 //String[] entete = {"id_trajet", "id_conducteur", "jours", "heure", };
 
     public TrajetModelAdmin() throws SQLException {
-        trajets = new TrajetDAO().DisplayAllTrajet();
+        trajets = new TrajetDAO().DisplayAllTrajet(Authentification.id_adherent);
     }
 
     @Override

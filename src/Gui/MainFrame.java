@@ -38,7 +38,7 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
           int width1=(int)dim.getWidth();
           setSize(width1 -100, height1 -100 );
           setLocationRelativeTo(new Gui.Authentification());
-          System.out.println(width1+","+height1);
+          //System.out.println(width1+","+height1);
     }
 
     /**
@@ -355,7 +355,7 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
     private javax.swing.JButton ajouterTrajetButton;
     private javax.swing.JPanel bodyPanel;
     private javax.swing.JButton chercherTrajetButton;
-    private javax.swing.JPanel contentPanel;
+    public static javax.swing.JPanel contentPanel;
     private javax.swing.JButton deconexionButton;
     private javax.swing.JButton evaluerButton;
     private javax.swing.JButton gererMesTrajetButtom;

@@ -24,7 +24,8 @@ private float latitude;
 private static final long serialVersionUID = 1L;
 private int zoomFactor = 8;
 //private String ApiKey = "ABQIAAAA5U876NY9uQtuJYcYdj0hPRSB3fYKqo9sRR7o2MKyAKh3L0V4NBREpf50rgLOScH_jEQR7BtpLbAZ0g";
-private String ApiKey = "AIzaSyDLz0GRExK6FU1yf48yMStyc0sc426rbEA";
+private String ApiKey="AIzaSyAmYhzpu6dxUMCZkAWXMDubs43ahBYhnig";
+// saf private String ApiKey = "AIzaSyDLz0GRExK6FU1yf48yMStyc0sc426rbEA";
 
 private String roadmap = "roadmap";
 public final String viewTerrain = "terrain";
@@ -33,8 +34,8 @@ public final String viewHybrid = "hybrid";
 public final String viewRoadmap = "roadmap";
 private String bouton = "";
 private String cursor ="";
-private String line ="&path=color:0xff0000ff|weight:5|Bizerte|Tunis|Nabeul";
-private String line1 = "";
+//private String line ="&path=color:0xff0000ff|weight:5|Bizerte|Tunis|Nabeul";
+private String line = "";
 
 
 //private String line ="&path=weight:3%7Ccolor:orange%7Cenc:polyline_data|Tunis|Nabeul";
@@ -193,46 +194,46 @@ public float getLatitude() {return latitude;}
 
 
 
- public static void main(String[] args) throws Exception {
- GMaps map = new GMaps();
-
-
-        try {
-            map.setApiKey("AIzaSyDLz0GRExK6FU1yf48yMStyc0sc426rbEA");
-            // googleMap.setRoadmap(googleMap.viewHybrid);
-
-            /**
-            Afficher la ville de Strabourg
-             */
-           // map.showLocation(ville_tab[0], "tunisia", 500, 500);
-         
-            
-            System.out.println(map.setMap(ville_tab[0], "tunisia", 500, 500));
-            
-            /**
-             * Afficher Paris en fonction ses coordonnées GPS
-             */
-            //  googleMap.showCoordinate("48.8667", "2.3333",390, 400);
-        } catch (Exception ex) {
-            //Logger.getLogger(JGoogleMapEditorPan.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
- 
- //map.showLocation(ville_tab[0], "tunisia", 500, 500);
- map.setZoom(9);
-
- JFrame frame = new JFrame();
- 
- 
- frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(map);
-        
-        frame.setSize(400, 420);
-        frame.setLocation(200, 200);
-        frame.setVisible(true);
- 
- 
- }
+// public static void main(String[] args) throws Exception {
+// GMaps map = new GMaps();
+//
+//
+//        try {
+//            map.setApiKey("AIzaSyDLz0GRExK6FU1yf48yMStyc0sc426rbEA");
+//            // googleMap.setRoadmap(googleMap.viewHybrid);
+//
+//            /**
+//            Afficher la ville de Strabourg
+//             */
+//           // map.showLocation(ville_tab[0], "tunisia", 500, 500);
+//         
+//            
+//            System.out.println(map.setMap(ville_tab[0], "tunisia", 500, 500));
+//            
+//            /**
+//             * Afficher Paris en fonction ses coordonnées GPS
+//             */
+//            //  googleMap.showCoordinate("48.8667", "2.3333",390, 400);
+//        } catch (Exception ex) {
+//            //Logger.getLogger(JGoogleMapEditorPan.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+// 
+// //map.showLocation(ville_tab[0], "tunisia", 500, 500);
+// map.setZoom(9);
+//
+// JFrame frame = new JFrame();
+// 
+// 
+// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.add(map);
+//        
+//        frame.setSize(400, 420);
+//        frame.setLocation(200, 200);
+//        frame.setVisible(true);
+// 
+// 
+// }
      
      
   

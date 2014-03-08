@@ -109,7 +109,8 @@ public void DeleteById(int id){
 public List<Reservation> DisplayAllReservation() throws SQLException{
        List<Reservation> listeReservation=new ArrayList<Reservation>();
         String requete="select * from reservation";
-         
+         Trajet trajet=new Trajet();
+         TrajetDAO traDAO=new TrajetDAO();
         try{
        PreparedStatement ps=MyConnection.getInstance().prepareStatement(requete);
        
@@ -123,7 +124,8 @@ public List<Reservation> DisplayAllReservation() throws SQLException{
           
            reservation.setIdReservation(resultat.getInt(1));
            reservation.setIdAdherent(resultat.getInt(2));
-           reservation.setIdTrajet(resultat.getInt(3));
+           reservation.setTrajet(traDAO.findTrajetById(resultat.getInt(3)));
+           //reservation.setIdTrajet(resultat.getInt(3));
            reservation.setPlaces(resultat.getInt(4));
            reservation.setDate(resultat.getString(5));
            reservation.setHeure(resultat.getString(6));
@@ -197,4 +199,51 @@ public List<Reservation> DisplayAllReservation() throws SQLException{
             return null;
         }
     }
+
+ public Boolean DisplayAllReservationTrajet(int id_trajet) {
+       List<Reservation> listeReservation=new ArrayList<Reservation>();
+        String requete="select * from reservation where id_passager=? and id_trajet=?";
+         
+        try{
+       PreparedStatement ps=MyConnection.getInstance().prepareStatement(requete);
+       TrajetDAO traDAO=new TrajetDAO();
+       AdherentDAO adDAO=new AdherentDAO();
+       ps.setInt(1, Authentification.id_adherent);
+       ps.setInt(2,id_trajet);
+       ResultSet resultat =ps.executeQuery();
+       
+       while(resultat.next()){
+          
+           
+           Reservation reservation=new Reservation();
+          
+           reservation.setIdReservation(resultat.getInt(1));
+           reservation.setAdhrent(adDAO.findAdherentById(resultat.getInt(2)));
+           reservation.setTrajet(traDAO.DisplayAll_trajet_by_Id_trajet(resultat.getInt(3)));
+           reservation.setPlaces(resultat.getInt(4));
+           reservation.setDate(resultat.getString(5));
+           reservation.setHeure(resultat.getString(6));
+           reservation.setVilleDepart(resultat.getString(7));
+           reservation.setVilleArrivee(resultat.getString(8));
+           reservation.setCode_html(resultat.getString(9));
+           listeReservation.add(reservation);
+           
+       
+       }
+            //System.out.println(listeReservation);
+       if(listeReservation.size()!=0){
+         return true;  
+       }else {
+           return false;
+       }
+               
+    }catch (SQLException ex){
+            System.out.println("Erreurrrrr de chargement de reservation"+ex.getMessage());
+            return false;
+    }
+
+ }
+
+
+
 }

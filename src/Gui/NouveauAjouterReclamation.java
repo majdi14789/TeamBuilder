@@ -225,7 +225,16 @@ public Adherent reclamateur;
         String description =descriptionTextArea.getText();
 
         reclamateur =adherentDAO.findAdherentByIdSa(Authentification.id_adherent);
-        System.out.println(reclamateur.getIdAdherent()+" Salmahh");
+        if(reclamateur==null)
+        {
+            System.out.println("dddddddddddd");
+        }
+        else 
+        {
+                 System.out.println("not null");
+        }
+        
+        System.out.println(Authentification.id_adherent+" Salmahh");
         reclamationadherent.setCause(cause);
         reclamationadherent.setDescription(description);
         ad=adherentDAO.findAdherentByIdSa(idAdherentConcerné);
@@ -238,7 +247,9 @@ public Adherent reclamateur;
 
         reclamationDAO.insert(reclamation,ad,reclamateur);
         adherentDAO.updateAdherentNombreReclamationSa(idAdherentConcerné);
-        reclamationtAdherentDAO.insert(reclamationadherent, ad);
+      
+        reclamationtAdherentDAO.insert(reclamationadherent,ad);
+        
 
         //Recuperation des adresse mail
 
@@ -262,8 +273,9 @@ public Adherent reclamateur;
 
         adresseMailReclamateur=reclamateur.getAdresseMail();
         adresseMailAdherentConcerné=ad.getAdresseMail();
-        mailToSend.sendMessage(cause, contenu,adresseMailAdherentConcerné,adresseMailReclamateur);
-
+        
+        mailToSend.sendMessage(cause,contenu,adresseMailAdherentConcerné,adresseMailReclamateur);
+         
         JOptionPane.showMessageDialog(this, "Reclamation insérée avec succés");
 
     }//GEN-LAST:event_validerButtonActionPerformed

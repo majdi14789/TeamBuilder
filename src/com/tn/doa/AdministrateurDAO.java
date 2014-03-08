@@ -173,5 +173,45 @@ public class AdministrateurDAO {
             return null;
         }
     }
-    
+   public void updateAdmin(Administrateur ad,int idAdministrateur){
+        String requete = "update administrateur set login='"+ad.getLogin()+"',mdp='"+ad.getMdp()+"',nom='"+ad.getNom()+"',prenom='"+ad.getPrenom()+"' where id_administrateur='"+ idAdministrateur+"'";
+        try {
+ //id_administrateur='"+ad.getIdAdministrateur()+"', 
+          Statement statement = MyConnection.getInstance().createStatement();
+          PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);           
+         
+            ps.execute();
+            System.out.println("Mise à jour effectuée avec succès");
+        } catch (SQLException ex) {
+            System.out.println("erreur lors de la mise à jour de vos informations"+ex.getMessage());
+        }
+
+    }
+     public Administrateur findAdministrateurById(int id) {
+        //Administrateur administrateur = new Administrateur();
+         Administrateur administrateur = new Administrateur();
+        String requete = "select * from administrateur where `id_administrateur`=?";
+        try {
+            
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setInt(1, id);
+            ResultSet resultat = ps.executeQuery();
+            while (resultat.next()) {
+                administrateur.setIdAdministrateur(resultat.getInt(1));
+                administrateur.setLogin(resultat.getString(2));
+                administrateur.setMdp(resultat.getString(3));
+                administrateur.setNom(resultat.getString(4));
+                administrateur.setPrenom(resultat.getString(5));
+                //administrateur.setImage(resultat.getString(6));
+             
+            }
+            return administrateur;
+
+        } catch (SQLException ex) {
+            
+            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la recherche de l'admin " + ex.getMessage());
+            return null;
+        }
+    }  
 }

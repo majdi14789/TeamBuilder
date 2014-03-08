@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import Entité.*;
+import Gui.Authentification;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -230,10 +231,11 @@ public class TrajetDAO {
         }
     }
 
- public List<Trajet> DisplayAllTrajet() throws SQLException{
+ public List<Trajet> DisplayAllTrajet(int id) throws SQLException{
        List<Trajet> listeTrajet=new ArrayList<Trajet>();
-        String requete="select * from trajet";
-         VoitureDAO voitureDAO = new VoitureDAO();
+        String requete="select * from trajet where `id_conducteur` != "+id+" ";
+        //SELECT * FROM  `trajet` WHERE  `id_conducteur` <>10
+        VoitureDAO voitureDAO = new VoitureDAO();
                 AdherentDAO adherentDAO = new AdherentDAO();
         try{
        Statement statement=MyConnection.getInstance().createStatement();
@@ -267,9 +269,9 @@ public class TrajetDAO {
             return null;
     }
     }
- public List<Trajet> DisplayAllTrajetByVilleDepart(String villedepart) throws SQLException{
+ public List<Trajet> DisplayAllTrajetByVilleDepart(String villedepart,int id) throws SQLException{
        List<Trajet> listeTrajet=new ArrayList<Trajet>();
-        String requete="select * from trajet where ville_depart=?";
+        String requete="select * from trajet where ville_depart=? and `id_conducteur` != "+id+"";
          VoitureDAO voitureDAO = new VoitureDAO();
                 AdherentDAO adherentDAO = new AdherentDAO();
         try{
@@ -307,9 +309,9 @@ public class TrajetDAO {
     }
     }
 
-     public List<Trajet> DisplayAllTrajetByVilleDepartETVilleArrive(String villedepart,String villearrive) throws SQLException{
+     public List<Trajet> DisplayAllTrajetByVilleDepartETVilleArrive(String villedepart,String villearrive,int id) throws SQLException{
        List<Trajet> listeTrajet=new ArrayList<Trajet>();
-        String requete="select * from trajet where ville_depart=? and ville_arrivee=?";
+        String requete="select * from trajet where ville_depart=? and ville_arrivee=? and `id_conducteur` != "+id+"";
          VoitureDAO voitureDAO = new VoitureDAO();
                 AdherentDAO adherentDAO = new AdherentDAO();
         try{
@@ -348,9 +350,9 @@ public class TrajetDAO {
     }
     }
      
-      public List<Trajet> DisplayAllTrajetByVilleDepartETVilleArriveETdate(String villedepart,String villearrive,String date) throws SQLException{
+      public List<Trajet> DisplayAllTrajetByVilleDepartETVilleArriveETdate(String villedepart,String villearrive,String date,int id) throws SQLException{
        List<Trajet> listeTrajet=new ArrayList<Trajet>();
-        String requete="select * from trajet where ville_depart=? and ville_arrivee=? and jours=?";
+        String requete="select * from trajet where ville_depart=? and ville_arrivee=? and jours=? and `id_conducteur` != "+id+"";
          VoitureDAO voitureDAO = new VoitureDAO();
                 AdherentDAO adherentDAO = new AdherentDAO();
         try{
@@ -391,9 +393,9 @@ public class TrajetDAO {
     }
       
       
-   public List<Trajet> DisplayAllTrajetByVilleDepartAjax(String villedepart) throws SQLException{
+   public List<Trajet> DisplayAllTrajetByVilleDepartAjax(String villedepart,int id) throws SQLException{
        List<Trajet> listeTrajet=new ArrayList<Trajet>();
-        String requete="select * from trajet where ville_depart LIKE '"+villedepart+"%'";//`ville_depart` LIKE  'biz%'
+        String requete="select * from trajet where ville_depart LIKE '"+villedepart+"%' and `id_conducteur` != "+id+"";//`ville_depart` LIKE  'biz%'
          
         VoitureDAO voitureDAO = new VoitureDAO();
                 AdherentDAO adherentDAO = new AdherentDAO();
@@ -431,13 +433,13 @@ public class TrajetDAO {
             return null;
     }
     }
-   public List<Trajet> DisplayAllTrajetByVilleDepartETVilleArriveAjax(String villedepart,String villearrive) throws SQLException{
+   public List<Trajet> DisplayAllTrajetByVilleDepartETVilleArriveAjax(String villedepart,String villearrive,int id) throws SQLException{
        List<Trajet> listeTrajet=new ArrayList<Trajet>();
         //String requete="select * from trajet where ville_depart LIKE '"+villedepart+"%' and ville_arrivee LIKE '"+villearrive+"'";
          String req="SELECT * \n" +
 "FROM trajet\n" +
 "WHERE ville_depart LIKE  '"+villedepart+"%'\n" +
-"AND ville_arrivee LIKE  '"+villearrive+"%'";
+"AND ville_arrivee LIKE  '"+villearrive+"%' and `id_conducteur` != "+id+"";
         VoitureDAO voitureDAO = new VoitureDAO();
                 AdherentDAO adherentDAO = new AdherentDAO();
         try{

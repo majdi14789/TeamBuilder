@@ -48,7 +48,18 @@ public class Administrateur implements Serializable {
     private String login;
     @Basic(optional = false)
     @Column(name = "mdp")
+    
+    
+    
     private String mdp;
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
     @Basic(optional = false)
     @Column(name = "nom")
     private String nom;
@@ -59,7 +70,7 @@ public class Administrateur implements Serializable {
     private Collection<Statistique> statistiqueCollection;
     @OneToMany(mappedBy = "idAdminisrateur")
     private Collection<Reclamation> reclamationCollection;
-
+private String image;
     public Administrateur() {
     }
 

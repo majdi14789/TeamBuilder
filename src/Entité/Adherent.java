@@ -112,7 +112,7 @@ public class Adherent  {
         return telephone;
     }
 
-    public void setTelephone(Integer telephone) {
+    public void setTelephone(int telephone) {
         this.telephone = telephone;
     }
 

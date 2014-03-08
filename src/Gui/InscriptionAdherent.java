@@ -1,6 +1,7 @@
 package Gui;
 
 import Entité.Adherent;
+import static Gui.MainFrame.contentPanel;
 import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
 import com.tn.doa.AdherentDAO;
 import java.text.ParseException;
@@ -20,6 +21,7 @@ public class InscriptionAdherent extends javax.swing.JFrame {
     public InscriptionAdherent() throws UnsupportedLookAndFeelException {
         
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -169,11 +171,19 @@ public class InscriptionAdherent extends javax.swing.JFrame {
         {
         ad.setNom(nouveauNomText.getText());
         ad.setPrenom(nouveauPrenomText.getText());
-        ad.setTelephone(Integer.parseInt(nouveauNumText.getText()));
+        ad.setTelephone(Integer.parseInt(nouveauNumText.getText().toString()));
         ad.setMdp(nouveauMotdepasseText.getText());
         ad.setAdresseMail(nouveauMailtext.getText());
         ad.setNombreReclamation(0);
         adDAO.AjouterAdherent(ad);
+        NouveauMonProfil np=new NouveauMonProfil();
+            try {
+                new Authentification().setVisible(true);
+            } catch (ParseException ex) {
+                Logger.getLogger(InscriptionAdherent.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (UnsupportedLookAndFeelException ex) {
+                Logger.getLogger(InscriptionAdherent.class.getName()).log(Level.SEVERE, null, ex);
+            }
         this.setVisible(false);
             try {
                 new Authentification().setVisible(true);

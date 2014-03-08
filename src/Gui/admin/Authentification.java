@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.UnsupportedLookAndFeelException;
 
 public class Authentification extends javax.swing.JFrame {
-    public static  int id_administrateur=0;
+    public static  int id_administrateur;
     AdministrateurDAO administrateurDAO=new AdministrateurDAO();
     Administrateur ad=new Administrateur();
     public Authentification() {
@@ -182,14 +182,14 @@ public class Authentification extends javax.swing.JFrame {
            
            JOptionPane.showMessageDialog(this,administrateurDAO.getId(login,password));
          
-           id_administrateur=administrateurDAO.getId(login,login);
+           id_administrateur=administrateurDAO.getId(login,password);
             // interface 
             
-           ad=administrateurDAO.findAdministrateurtById(id_administrateur);
-            ad.setIdAdministrateur(id_administrateur);
-            ad.setNom(ad.getNom());
+           //ad=administrateurDAO.findAdministrateurtById(id_administrateur);
+            //ad.setIdAdministrateur(id_administrateur);
+            //ad.setNom(ad.getNom());
            String nom_admin=ad.getNom();
-            System.out.println(id_administrateur);
+            System.out.println("id admin "+id_administrateur);
            this.setVisible(false);
            try {
                new MainFrameAdmin().setVisible(true);

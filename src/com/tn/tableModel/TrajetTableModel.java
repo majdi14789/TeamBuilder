@@ -2,6 +2,7 @@
 
 package com.tn.tableModel;
 import Entité.*;
+import Gui.Authentification;
 import com.tn.doa.TrajetDAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -14,27 +15,27 @@ import javax.swing.table.AbstractTableModel;
 public class TrajetTableModel extends AbstractTableModel{
     public static List<Integer> AllId;
     List<Trajet> monTrajet;
-    String [] entete={"id","Nom","Prenom","Nombre de Place","ville de depart","ville d'arrive","Prix","date","Heure","code_html"};
+    String [] entete={"id","Nom","Prenom","N Place","ville de depart","ville d'arrive","Prix","date","Heure","code_html","idtrajet"};
   
     public TrajetTableModel() {
         try {
-            monTrajet=new TrajetDAO().DisplayAllTrajet();
+            monTrajet=new TrajetDAO().DisplayAllTrajet(Authentification.id_adherent);
         } catch (SQLException ex) {
             Logger.getLogger(TrajetTableModel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     public TrajetTableModel(String villedeart) throws SQLException{
-        monTrajet=new TrajetDAO().DisplayAllTrajetByVilleDepart(villedeart);
+        monTrajet=new TrajetDAO().DisplayAllTrajetByVilleDepart(villedeart,Authentification.id_adherent);
     }
     public TrajetTableModel(String villedeart,String villearrive) throws SQLException{
-        monTrajet=new TrajetDAO().DisplayAllTrajetByVilleDepartETVilleArrive(villedeart,villearrive);
+        monTrajet=new TrajetDAO().DisplayAllTrajetByVilleDepartETVilleArrive(villedeart,villearrive,Authentification.id_adherent);
     }
     public TrajetTableModel(String villedeart,String villearrive,String date) throws SQLException{
-        monTrajet=new TrajetDAO().DisplayAllTrajetByVilleDepartETVilleArriveETdate(villedeart,villearrive,date);
+        monTrajet=new TrajetDAO().DisplayAllTrajetByVilleDepartETVilleArriveETdate(villedeart,villearrive,date,Authentification.id_adherent);
     }
     public TrajetTableModel(String villedeart,int n) {
         try {
-            monTrajet=new TrajetDAO().DisplayAllTrajetByVilleDepartAjax(villedeart);
+            monTrajet=new TrajetDAO().DisplayAllTrajetByVilleDepartAjax(villedeart,Authentification.id_adherent);
         } catch (SQLException ex) {
             Logger.getLogger(TrajetTableModel.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Pobleme AJAX");
@@ -42,7 +43,7 @@ public class TrajetTableModel extends AbstractTableModel{
     }
      public TrajetTableModel(String villedeart,String villearrivee,int n) {
         try {
-            monTrajet=new TrajetDAO().DisplayAllTrajetByVilleDepartETVilleArriveAjax(villedeart, villearrivee);
+            monTrajet=new TrajetDAO().DisplayAllTrajetByVilleDepartETVilleArriveAjax(villedeart, villearrivee,Authentification.id_adherent);
         } catch (SQLException ex) {
             Logger.getLogger(TrajetTableModel.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Pobleme AJAX");
@@ -100,7 +101,8 @@ public class TrajetTableModel extends AbstractTableModel{
             }
             case 9:{
                 return monTrajet.get(rowIndex).getCode_map();}
-           
+           case 10:{
+                return monTrajet.get(rowIndex).getIdTrajet();}
              default:
                  throw new IllegalArgumentException();
         }

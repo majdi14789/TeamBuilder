@@ -261,47 +261,31 @@ ReservationDAO reservationDAO = new ReservationDAO();
                 .addComponent(options_modif_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(modifier_supprimer_trajet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        panelMapGererMesTrajet.setLayout(new java.awt.CardLayout());
 
         label_map.setText("<html><head></head><body><img src='http://maps.googleapis.com/maps/api/staticmap?&amp;size=500x500&amp;maptype=roadmap\\&markers=size:mid&th=color:0xff0000ff|weight:5|Tunis|Grombalia|Nabeul&amp;sensor=true'></body></html>");
         label_map.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ma Map du Trajet : ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
         label_map.setMaximumSize(new java.awt.Dimension(500, 500));
         label_map.setMinimumSize(new java.awt.Dimension(500, 500));
         label_map.setPreferredSize(new java.awt.Dimension(500, 500));
-
-        javax.swing.GroupLayout panelMapGererMesTrajetLayout = new javax.swing.GroupLayout(panelMapGererMesTrajet);
-        panelMapGererMesTrajet.setLayout(panelMapGererMesTrajetLayout);
-        panelMapGererMesTrajetLayout.setHorizontalGroup(
-            panelMapGererMesTrajetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelMapGererMesTrajetLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(label_map, javax.swing.GroupLayout.PREFERRED_SIZE, 396, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        panelMapGererMesTrajetLayout.setVerticalGroup(
-            panelMapGererMesTrajetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelMapGererMesTrajetLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(label_map, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        panelMapGererMesTrajet.add(label_map, "card2");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelTabGererMesTrajet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(panelTabGererMesTrajet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
                         .addComponent(modifier_trajet_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(panelMapGererMesTrajet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,7 +299,7 @@ ReservationDAO reservationDAO = new ReservationDAO();
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(panelMapGererMesTrajet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(1317, 1317, 1317))
         );
 
         add(jPanel1, "card2");
