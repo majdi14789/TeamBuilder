@@ -2398,11 +2398,18 @@ if (ville1.getSelectedIndex() == -1) {
         }
 
         try {
-
+if (!voitureDAO.findVoitureByImmatriculation(Idv1.getText().toString() + "TUN" + Idv2.getText().toString())) {
+    
             voitureDAO.insertVoiture(v1);
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succés Voiture");
             trajetDAO.insererTrajet(trajet,v1,Authentification.id_adherent);
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succés trajet");
+}   
+
+else {
+            trajetDAO.insererTrajet(trajet,v1,Authentification.id_adherent);
+            JOptionPane.showMessageDialog(this, "Ajout effectué avec succés trajet");
+}
         }
         catch (Exception ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);

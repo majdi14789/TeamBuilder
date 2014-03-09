@@ -66,4 +66,34 @@ public class VoitureDAO {
     
     
     
+    
+    // safouen 9 mars 
+    
+    public boolean findVoitureByImmatriculation(String id_voiture) {
+        String requete = "select * from voiture where id_voiture=?";
+       
+        int nb = 0; 
+        
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setString(1, id_voiture);
+            ResultSet resultat = ps.executeQuery();
+            
+            
+            while (resultat.next()) {
+        nb++;    
+            }
+          
+        } catch (SQLException ex) {
+            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors du recherche du adherent " + ex.getMessage());
+            return false;
+        }
+    if (nb!=0) {
+        return true;
+    } 
+    return false;
+    }
+    
+    
 }
