@@ -39,16 +39,20 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         rechVilleDepart = new javax.swing.JTextField();
         rechVilleArrive = new javax.swing.JTextField();
-        rechDate = new javax.swing.JTextField();
-        rechercherBTN = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
+        annee_combo = new javax.swing.JComboBox();
+        mois_combo = new javax.swing.JComboBox();
+        jour_combo = new javax.swing.JComboBox();
         BtnReserver = new javax.swing.JButton();
         trajetMap = new javax.swing.JPanel();
         trajetlabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableTrajet = new javax.swing.JTable();
+        rechercherBTN = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+        setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         setMaximumSize(new java.awt.Dimension(980, 557));
         setMinimumSize(new java.awt.Dimension(980, 557));
         setPreferredSize(new java.awt.Dimension(980, 557));
@@ -61,7 +65,7 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
         rechercher_trajetPanel.setPreferredSize(new java.awt.Dimension(980, 557));
         rechercher_trajetPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 102));
@@ -95,14 +99,7 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
             }
         });
 
-        rechercherBTN.setText("Rechercher");
-        rechercherBTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rechercherBTNActionPerformed(evt);
-            }
-        });
-
-        jPanel4.setBackground(new java.awt.Color(255, 228, 174));
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setToolTipText("");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
@@ -116,7 +113,7 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(237, 237, 237)
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(600, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,6 +121,12 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
                 .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        annee_combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2014" }));
+
+        mois_combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", " " }));
+
+        jour_combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -142,12 +145,14 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(82, 82, 82)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(rechDate, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(29, 29, 29)
-                .addComponent(rechercherBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(400, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jour_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(mois_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(annee_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
@@ -159,15 +164,17 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(rechercherBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
                     .addComponent(rechVilleDepart)
-                    .addComponent(rechVilleArrive)
-                    .addComponent(rechDate))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jour_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mois_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(annee_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rechVilleArrive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        rechercher_trajetPanel.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, -1));
+        rechercher_trajetPanel.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, -1));
         jPanel3.setSize(rechercher_trajetPanel.getSize());
 
         BtnReserver.setText("Reserver ");
@@ -204,6 +211,14 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
 
         rechercher_trajetPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 161, 510, 216));
 
+        rechercherBTN.setText("Rechercher");
+        rechercherBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rechercherBTNActionPerformed(evt);
+            }
+        });
+        rechercher_trajetPanel.add(rechercherBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 141, 29));
+
         add(rechercher_trajetPanel, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
@@ -237,7 +252,8 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
     private void rechercherBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechercherBTNActionPerformed
         String villedepart=rechVilleDepart.getText().toString();
         String villearrive=rechVilleArrive.getText().toString();
-        String date=rechDate.getText().toString();
+        String date=jour_combo.getSelectedItem().toString()+"/"+ mois_combo.getSelectedItem().toString() +"/"+annee_combo.getSelectedItem().toString();
+        //String date=rechDate.getText().toString();
         if((!villedepart.equals(""))&&(!villearrive.equals(""))&&(!date.equals("")))
         {
             try {
@@ -355,6 +371,7 @@ trajetlabel.setText(tableTrajet.getValueAt(tableTrajet.getSelectedRow(),9).toStr
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnReserver;
+    private javax.swing.JComboBox annee_combo;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -362,7 +379,8 @@ trajetlabel.setText(tableTrajet.getValueAt(tableTrajet.getSelectedRow(),9).toStr
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField rechDate;
+    private javax.swing.JComboBox jour_combo;
+    private javax.swing.JComboBox mois_combo;
     private javax.swing.JTextField rechVilleArrive;
     private javax.swing.JTextField rechVilleDepart;
     private javax.swing.JButton rechercherBTN;

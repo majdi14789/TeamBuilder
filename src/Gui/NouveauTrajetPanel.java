@@ -66,6 +66,7 @@ GMaps map = new GMaps(600,600);
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -197,6 +198,7 @@ GMaps map = new GMaps(600,600);
 
         jLabel14.setText("Type : ");
 
+        buttonGroup1.add(occasionel_radio);
         occasionel_radio.setText("Occasionnel");
         occasionel_radio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,6 +206,7 @@ GMaps map = new GMaps(600,600);
             }
         });
 
+        buttonGroup1.add(regulier_radio);
         regulier_radio.setText("Regulier");
         regulier_radio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2446,6 +2449,7 @@ else {
     private javax.swing.JButton ajout_un_poit;
     private javax.swing.JComboBox annee_combo;
     private javax.swing.JComboBox bagage_combo;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox carburant;
     private javax.swing.JComboBox combo_tous_pointArrets;
     private javax.swing.JTextArea commentaire;

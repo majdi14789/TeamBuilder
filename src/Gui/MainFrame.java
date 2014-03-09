@@ -93,6 +93,9 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
 
         ajouterTrajetButton.setBackground(new java.awt.Color(255, 255, 255));
         ajouterTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ajoutcov.jpeg"))); // NOI18N
+        ajouterTrajetButton.setMaximumSize(new java.awt.Dimension(75, 57));
+        ajouterTrajetButton.setMinimumSize(new java.awt.Dimension(75, 57));
+        ajouterTrajetButton.setPreferredSize(new java.awt.Dimension(75, 57));
         ajouterTrajetButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ajouterTrajetButtonMouseEntered(evt);
@@ -179,16 +182,16 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
             .addGroup(menu_panelLayout.createSequentialGroup()
                 .addComponent(monProfilButton)
                 .addGap(0, 0, 0)
-                .addComponent(ajouterTrajetButton)
+                .addComponent(ajouterTrajetButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(chercherTrajetButton)
+                .addComponent(chercherTrajetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(gererMesTrajetButtom)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addComponent(evaluerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(gererMesTrajetButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(evaluerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(reclamationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(reclamationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(deconexionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
