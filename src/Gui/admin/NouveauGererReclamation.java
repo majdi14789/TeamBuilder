@@ -331,6 +331,7 @@ public class NouveauGererReclamation extends javax.swing.JPanel {
         // TODO add your handling code here:
 
         int row =reclamationTable.getSelectedRow();
+        System.out.println("row  dddddddddddddddddddddddddddddddddddddd"+row);
         int id=(int) reclamationTable.getValueAt(row,0);
         System.out.println("id reclamation"+id);
         Reclamation reclamation=new Reclamation();
@@ -351,7 +352,7 @@ public class NouveauGererReclamation extends javax.swing.JPanel {
             rapportTest.report(id);
         } catch (JRException ex) {
             Logger.getLogger(Acceuil.class.getName()).log(Level.SEVERE, null, ex);
-
+            System.out.println("ahawa mennaaaa ");
         }
 
     }//GEN-LAST:event_genererButtonActionPerformed

@@ -32,8 +32,8 @@ public class RapportTest {
        HashMap m = new HashMap();
        m.put("id_reclamation",id_reclamation);
            System.out.println("iddddddddddddddddd"+id_reclamation);
-        
-            String report ="C:\\Users\\Salma\\Desktop\\Esprit\\PIWEB\\reclamationREPORT1.jasper";
+            String report="D:\\Rapport\\reclamationREPORT1.jasper";
+            //String report ="C:\\Users\\majdi\\Desktop\\salma pi dev\\chouchou\\Rapport\\reclamationREPORT1.jasper";
            // JasperReport jasperReport = JasperCompileManager.compileReport(report);
             System.out.println("Test1");
             Connection cnx;
@@ -42,6 +42,7 @@ public class RapportTest {
                 System.out.println(" not Nulll");
             JasperPrint jp = JasperFillManager.fillReport(report,m,cnx);
             JasperViewer.viewReport(jp);
+            
     }
 
     

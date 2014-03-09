@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package facebook;
+package com.tn.test;
 
 import chrriis.dj.nativeswing.swtimpl.NativeInterface;
 import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
@@ -15,17 +15,21 @@ import javax.swing.JFrame;
  *
  * @author Invite
  */
-public class NewClass {
+
+
+public class WebBrowserTest {
     
-//public  static String API_KEY = "621092927964113";
-//public  static String access_token = "CAAI04XdYA9EBAMdDGd1SnUJCMTeo3eFbZAbBZCIxFIpvCkbKJ3gNU4dU9l9cLh0Gdnu9cJqIb0GddRCH9u5JCQZB5hWCZCJysudJ7qGa9Wlsr9H2zylsyi2RqitqFCO7gfkhwN7kzO6pmZCZAZABO18hroBb8HzNE2nySJn76r3PiYe1g5ZCkmI9x5d0bHqkLPnWTvaO1YxqgAZDZD";
+public  static String API_KEY = "621092927964113";
 
 
-//public static String firstRequest = "https://graph.facebook.com/oauth/authorize?"
- // + "client_id="
- // + API_KEY
- // + "&redirect_uri=http://www.facebook.com/connect/login_success.html"
-  //+ "scope=publish_stream,offline_access,create_event,read_stream,email,user_birthday";
+public  static String access_token = "CAAI04XdYA9EBABNsSZAZA82jchWrBqzbc8HrlxCxt4ynKE1IW4XdYD1M5c6yFO4fga1FE7UtRnat3birlEj8q8tXY7ghNwxgon27gmgkDToPi713hOYrZA2ZBuGh2iLAa6PNZA2hyIYH6HiHQZBqVFC6qsRPCZBZA1mgCVLRTZApI9u9xZB2gtZA0ZCnoeH5riOwJxFCJqedZCS8HDAZDZD";
+
+
+ public static String firstRequest = "https://graph.facebook.com/oauth/authorize?"
+  + "client_id="
+  + API_KEY;
+//  + "&redirect_uri=http://www.facebook.com/connect/login_success.html"
+// + "scope=publish_stream,offline_access,create_event,read_stream,email,user_birthday";
     
 
 public static void main(String [] args ) {
@@ -36,22 +40,21 @@ public static void main(String [] args ) {
     webBrowser.setButtonBarVisible(false);
     webBrowser.setLocationBarVisible(false);
    
+    webBrowser.navigate(firstRequest);
+   
     
+  // webBrowser.navigate("http://www.facebook.com/");
+// ba3ed me tasna3 el Browser T3ayyet lel NativeInterface 
    NativeInterface.open();
    NativeInterface.initialize();
-           
-    
-     //   webBrowser.navigate(firstRequest);
-       webBrowser.navigate("http://www.facebook.com/");
-
-               // NativeInterface.open();
-                //NativeInterface.initialize();
+//*****************************************************************
+     
                      
-                        JFrame loginFrame = new JFrame();
+    JFrame loginFrame = new JFrame();
     loginFrame.setSize(1000,1000);
     loginFrame.setVisible(true);
 loginFrame.add(webBrowser);
-if (webBrowser.getHTMLContent().contains("Success")) {
+//if (webBrowser.getHTMLContent().contains("Success")) {
 
     
     
@@ -73,7 +76,7 @@ if (webBrowser.getHTMLContent().contains("Success")) {
 }    
     }
     
-}
+
     
 
 

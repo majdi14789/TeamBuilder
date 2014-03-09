@@ -444,6 +444,23 @@ public class AdherentDAO {
         }
             return id;
     }
+    
+     public void AjouterAdherentfb(Adherent ad){
+        try {
+            String req="INSERT INTO `adherent`(`nom`,`adresse_mail`,`mdp`) VALUES (?,?,?)";
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(req);
+            ps.setString(1, ad.getNom());
+            ps.setString(2, ad.getAdresseMail());
+            ps.setString(3, ad.getMdp());
+            
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AdherentDAO.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Erreur de l'ajout "+ex.getMessage());
+            
+        }
+  
+  }
 }
   
 

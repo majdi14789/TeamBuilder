@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package facebook;
+package com.tn.test;
 
 import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;

@@ -27,7 +27,7 @@ public class ReclamationDAO {
         
         List<Reclamation> listreclamation = new ArrayList<Reclamation>();
         
-        String requete = "select r.* from reclamation r,adherent a where a.id_adherent=r.id_adherentConcerné and a.nombre_reclamation>=8";
+        String requete = "select r.* from reclamation r,adherent a where a.id_adherent=r.id_adherentConcerné and a.nombre_reclamation>=0";
         try {
            Statement statement = MyConnection.getInstance()
                    .createStatement();
@@ -37,6 +37,8 @@ public class ReclamationDAO {
             AdministrateurDAO administrateurDAO=new AdministrateurDAO();
             
             while(resultat.next()){
+                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+                
                 Reclamation reclamation =new Reclamation();
                 reclamation.setIdReclamation(resultat.getInt(1));
                 reclamation.setAdherentConcerné(adherentDAO.findAdherentByIdSa(resultat.getInt(2)));
@@ -61,7 +63,7 @@ public class ReclamationDAO {
 
         List<Reclamation> listreclamation = new ArrayList<Reclamation>();
         
-        String requete = "select r.* from reclamation r,adherent a where a.id_adherent=r.id_adherentConcerné and a.nombre_reclamation>=8";
+        String requete = "select r.* from reclamation r,adherent a where a.id_adherent=r.id_adherentConcerné and a.nombre_reclamation>=0";
         try {
            Statement statement = MyConnection.getInstance()
                    .createStatement();
