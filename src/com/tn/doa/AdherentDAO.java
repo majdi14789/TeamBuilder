@@ -461,6 +461,31 @@ public class AdherentDAO {
         }
   
   }
+     
+     public boolean DisplayEmails (String mail){
+  String email = new String();
+    email=null;
+        String requete = "select adresse_mail from adherent where adresse_mail ='"+mail+"'";
+       try {
+           PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+                     
+      ResultSet resultat = ps.executeQuery(requete);
+                     
+            while(resultat.next()){
+              
+              email=resultat.getString("adresse_mail");
+            }
+     if(email!=null){
+            return true;}
+     else{return false;}
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(" "+ex.getMessage());
+            return false;
+        }
+    }
+
+ 
 }
   
 

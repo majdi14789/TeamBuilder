@@ -227,13 +227,13 @@ TrajetDAO traDAO=new TrajetDAO();
                 tableMesReservationMousePressed(evt);
             }
         });
-        tableMesReservation.getColumnModel().getColumn(0).setMinWidth(0);
-        tableMesReservation.getColumnModel().getColumn(0).setMaxWidth(0);
-        tableMesReservation.getColumnModel().getColumn(0).setWidth(0);
+        //tableMesReservation.getColumnModel().getColumn(0).setMinWidth(0);
+        //tableMesReservation.getColumnModel().getColumn(0).setMaxWidth(0);
+        //tableMesReservation.getColumnModel().getColumn(0).setWidth(0);
 
-        tableMesReservation.getColumnModel().getColumn(2).setMinWidth(0);
-        tableMesReservation.getColumnModel().getColumn(2).setMaxWidth(0);
-        tableMesReservation.getColumnModel().getColumn(2).setWidth(0);
+        //tableMesReservation.getColumnModel().getColumn(2).setMinWidth(0);
+        //tableMesReservation.getColumnModel().getColumn(2).setMaxWidth(0);
+        //tableMesReservation.getColumnModel().getColumn(2).setWidth(0);
         jScrollPane1.setViewportView(tableMesReservation);
 
         javax.swing.GroupLayout conteneurtableaureservationLayout = new javax.swing.GroupLayout(conteneurtableaureservation);
@@ -276,7 +276,7 @@ TrajetDAO traDAO=new TrajetDAO();
                 .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, Short.MAX_VALUE)
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(AnnulerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
@@ -342,11 +342,12 @@ TrajetDAO traDAO=new TrajetDAO();
     private void AnnulerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnnulerButtonActionPerformed
           
         int x =tableMesReservation.getSelectedRow();
-        int id=(Integer)tableMesReservation.getValueAt(x, 2);
+        
         ReservationDAO resDAO=new ReservationDAO();
-        int nbr=Integer.parseInt(tableTrajet.getValueAt(x,3).toString());
+        int nbrplaces=Integer.parseInt(tableTrajet.getValueAt(x,3).toString());
+        int id=(Integer)tableMesReservation.getValueAt(x, 2);
+        traDAO.update_Places_Trajet(traDAO.DisplayAll_trajet_by_Id_trajet(Integer.parseInt(NouveauRechercherTrajetPanel.tableTrajet.getValueAt(x, 0).toString())),nbrplaces+1);
         resDAO.DeleteById(id);
-        traDAO.update_Places_Trajet(traDAO.DisplayAll_trajet_by_Id_trajet(Integer.parseInt(NouveauRechercherTrajetPanel.tableTrajet.getValueAt(x, 0).toString())),nbr+1);
         tableMesReservation.setModel(new com.tn.tableModel.ReservationTableModel(Authentification.id_adherent));
         System.out.println(tableMesReservation.getSelectedRow());
         System.out.println("du table mes reservation "+Authentification.id_adherent);

@@ -8,6 +8,7 @@ package Gui;
 
 import Entité.Adherent;
 import com.tn.doa.AdherentDAO;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.text.ParseException;
@@ -39,6 +40,7 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
           setSize(width1 -100, height1 -100 );
           setLocationRelativeTo(new Gui.Authentification());
           //System.out.println(width1+","+height1);
+    //contentPanel.setBackground(Color.);
     }
 
     /**

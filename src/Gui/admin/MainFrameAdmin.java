@@ -62,6 +62,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
         deconexionButton = new javax.swing.JButton();
         gererMesTrajetButtom = new javax.swing.JButton();
         evaluerButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         contentPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,7 +84,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
         menu_panel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(51, 51, 51)));
 
         monProfilButton.setBackground(new java.awt.Color(255, 255, 255));
-        monProfilButton.setText("Mon Profil");
+        monProfilButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/MonProfilBleu.jpg"))); // NOI18N
         monProfilButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 monProfilButtonActionPerformed(evt);
@@ -91,7 +92,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
         });
 
         ajouterTrajetButton.setBackground(new java.awt.Color(255, 255, 255));
-        ajouterTrajetButton.setText("info Adherent");
+        ajouterTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ConsulterInformationsIcon.jpg"))); // NOI18N
         ajouterTrajetButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ajouterTrajetButtonMouseEntered(evt);
@@ -115,6 +116,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
         });
 
         chercherTrajetButton.setBackground(new java.awt.Color(255, 255, 255));
+        chercherTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/StatistiquesIIcon.png"))); // NOI18N
         chercherTrajetButton.setMargin(new java.awt.Insets(0, 0, 0, 0));
         chercherTrajetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,19 +136,28 @@ public class MainFrameAdmin extends javax.swing.JFrame {
         });
 
         gererMesTrajetButtom.setBackground(new java.awt.Color(255, 255, 255));
+        gererMesTrajetButtom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ReclamationIcon.jpg"))); // NOI18N
         gererMesTrajetButtom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gererMesTrajetButtomActionPerformed(evt);
             }
         });
 
-        evaluerButton.setText("jButton1");
+        evaluerButton.setBackground(new java.awt.Color(255, 255, 255));
+        evaluerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/FaqIcon.jpg"))); // NOI18N
         evaluerButton.setMaximumSize(new java.awt.Dimension(113, 69));
         evaluerButton.setMinimumSize(new java.awt.Dimension(113, 69));
         evaluerButton.setPreferredSize(new java.awt.Dimension(113, 69));
         evaluerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 evaluerButtonActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -160,22 +171,25 @@ public class MainFrameAdmin extends javax.swing.JFrame {
             .addComponent(deconexionButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(gererMesTrajetButtom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(evaluerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         menu_panelLayout.setVerticalGroup(
             menu_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_panelLayout.createSequentialGroup()
-                .addComponent(monProfilButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(monProfilButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ajouterTrajetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ajouterTrajetButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chercherTrajetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(gererMesTrajetButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(chercherTrajetButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(gererMesTrajetButtom)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(evaluerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(deconexionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addContainerGap())
         );
 
         contentPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -301,11 +315,16 @@ public class MainFrameAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void deconexionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deconexionButtonActionPerformed
-     contentPanel.removeAll();
+    this.setVisible(false);
+    new Authentification().setVisible(true);
+    }//GEN-LAST:event_deconexionButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      contentPanel.removeAll();
         contentPanel.add(new NouveauNotificationsAdministrateur());
         contentPanel.repaint();
-        contentPanel.revalidate();   
-    }//GEN-LAST:event_deconexionButtonActionPerformed
+        contentPanel.revalidate();     
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -356,6 +375,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JButton deconexionButton;
     private javax.swing.JButton evaluerButton;
     private javax.swing.JButton gererMesTrajetButtom;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel;
     private javax.swing.JPanel menu_panel;
     private javax.swing.JButton monProfilButton;

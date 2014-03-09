@@ -317,7 +317,7 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
         
         
                                 traDAO.update_Places_Trajet(traDAO.DisplayAll_trajet_by_Id_trajet(Integer.parseInt(tableTrajet.getValueAt(x, 0).toString())),nbr-1);
-                                tableMesReservation.setModel(new ReservationTableModel(Authentification.id_adherent));
+                                Gui.NouveauMonProfil.tableMesReservation.setModel(new ReservationTableModel(Authentification.id_adherent));
                                 tableTrajet.setModel(new TrajetTableModel());
                              JOptionPane.showMessageDialog(this,"tu as reserver");
                             } else{JOptionPane.showMessageDialog(this, " vous avez deja reserver mesieur ");}

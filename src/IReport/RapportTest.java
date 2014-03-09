@@ -10,8 +10,10 @@ import com.tn.connect.MyConnection;
 import java.sql.Connection;
 import java.util.HashMap;
 import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 
 /**
@@ -32,9 +34,9 @@ public class RapportTest {
        HashMap m = new HashMap();
        m.put("id_reclamation",id_reclamation);
            System.out.println("iddddddddddddddddd"+id_reclamation);
-            String report="D:\\Rapport\\reclamationREPORT1.jasper";
-            //String report ="C:\\Users\\majdi\\Desktop\\salma pi dev\\chouchou\\Rapport\\reclamationREPORT1.jasper";
-           // JasperReport jasperReport = JasperCompileManager.compileReport(report);
+            //String report="D:\\Rapport\\reclamationREPORT2.jasper";
+            String report ="C:\\Users\\majdi\\Desktop\\salma pi dev\\chouchou\\Rapport\\reclamationREPORT1.jasper";
+            //JasperReport jasperReport = JasperCompileManager.compileReport(report);
             System.out.println("Test1");
             Connection cnx;
             cnx = MyConnection.getInstance(); 

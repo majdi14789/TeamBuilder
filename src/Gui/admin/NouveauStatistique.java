@@ -50,21 +50,22 @@ public class NouveauStatistique extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        idEvaluationLabel = new javax.swing.JLabel();
-        idAdherentevalueLabel = new javax.swing.JLabel();
-        idEvaluateurLabel = new javax.swing.JLabel();
-        noteLabel = new javax.swing.JLabel();
-        commentaireLabel = new javax.swing.JLabel();
-        ReponseLabel = new javax.swing.JLabel();
-        idEvaluationText = new javax.swing.JTextField();
-        idAdherentEvaluéText = new javax.swing.JTextField();
-        idEvaluateurText = new javax.swing.JTextField();
-        noteTxt = new javax.swing.JTextField();
-        commentaireTxt = new javax.swing.JTextField();
-        RepTxt = new javax.swing.JTextField();
         StatistiquesBoutton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablemesEvaluation = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        idEvaluationLabel = new javax.swing.JLabel();
+        idAdherentevalueLabel = new javax.swing.JLabel();
+        idEvaluateurLabel = new javax.swing.JLabel();
+        idEvaluationText = new javax.swing.JTextField();
+        idAdherentEvaluéText = new javax.swing.JTextField();
+        idEvaluateurText = new javax.swing.JTextField();
+        noteLabel = new javax.swing.JLabel();
+        noteTxt = new javax.swing.JTextField();
+        commentaireLabel = new javax.swing.JLabel();
+        commentaireTxt = new javax.swing.JTextField();
+        ReponseLabel = new javax.swing.JLabel();
+        RepTxt = new javax.swing.JTextField();
 
         setMaximumSize(new java.awt.Dimension(400, 300));
         setMinimumSize(new java.awt.Dimension(400, 300));
@@ -73,19 +74,7 @@ public class NouveauStatistique extends javax.swing.JPanel {
         jPanel1.setMaximumSize(new java.awt.Dimension(591, 457));
         jPanel1.setMinimumSize(new java.awt.Dimension(591, 457));
 
-        idEvaluationLabel.setText("id evaluation");
-
-        idAdherentevalueLabel.setText("id adhérent evalué");
-
-        idEvaluateurLabel.setText("id evaluateur");
-
-        noteLabel.setText("note");
-
-        commentaireLabel.setText("commentaire");
-
-        ReponseLabel.setText("Réponse");
-
-        StatistiquesBoutton.setText("générer Statistique");
+        StatistiquesBoutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/StatistiquesIIcon.png"))); // NOI18N
         StatistiquesBoutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StatistiquesBouttonActionPerformed(evt);
@@ -100,71 +89,104 @@ public class NouveauStatistique extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tablemesEvaluation);
 
+        idEvaluationLabel.setText("id evaluation");
+
+        idAdherentevalueLabel.setText("id adhérent evalué");
+
+        idEvaluateurLabel.setText("id evaluateur");
+
+        noteLabel.setText("note");
+
+        commentaireLabel.setText("commentaire");
+
+        ReponseLabel.setText("Réponse");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(idEvaluationLabel)
+                        .addGap(79, 79, 79)
+                        .addComponent(idEvaluationText))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(idAdherentevalueLabel)
+                        .addGap(50, 50, 50)
+                        .addComponent(idAdherentEvaluéText))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(idEvaluateurLabel)
+                        .addGap(77, 77, 77)
+                        .addComponent(idEvaluateurText))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(noteLabel)
+                        .addGap(118, 118, 118)
+                        .addComponent(noteTxt))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(commentaireLabel)
+                        .addGap(79, 79, 79)
+                        .addComponent(commentaireTxt))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(ReponseLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                        .addComponent(RepTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idEvaluationLabel)
+                    .addComponent(idEvaluationText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idAdherentevalueLabel)
+                    .addComponent(idAdherentEvaluéText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idEvaluateurLabel)
+                    .addComponent(idEvaluateurText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(noteLabel)
+                    .addComponent(noteTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(commentaireLabel)
+                    .addComponent(commentaireTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ReponseLabel)
+                    .addComponent(RepTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(idEvaluationLabel)
-                            .addComponent(idAdherentevalueLabel)
-                            .addComponent(idEvaluateurLabel)
-                            .addComponent(noteLabel)
-                            .addComponent(commentaireLabel)
-                            .addComponent(ReponseLabel))
-                        .addGap(47, 47, 47)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(idEvaluationText)
-                            .addComponent(idAdherentEvaluéText)
-                            .addComponent(idEvaluateurText)
-                            .addComponent(noteTxt)
-                            .addComponent(commentaireTxt)
-                            .addComponent(RepTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(StatistiquesBoutton))
-                .addGap(0, 23, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(StatistiquesBoutton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(idEvaluationLabel)
-                                .addGap(26, 26, 26)
-                                .addComponent(idAdherentevalueLabel)
-                                .addGap(27, 27, 27)
-                                .addComponent(idEvaluateurLabel)
-                                .addGap(25, 25, 25)
-                                .addComponent(noteLabel)
-                                .addGap(34, 34, 34)
-                                .addComponent(commentaireLabel)
-                                .addGap(27, 27, 27)
-                                .addComponent(ReponseLabel))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(commentaireTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(idEvaluationText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(idAdherentEvaluéText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(27, 27, 27)
-                                        .addComponent(idEvaluateurText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(25, 25, 25)
-                                        .addComponent(noteTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(48, 48, 48)))
-                                .addGap(27, 27, 27)
-                                .addComponent(RepTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(14, 14, 14)
-                        .addComponent(StatistiquesBoutton)))
-                .addContainerGap(156, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(StatistiquesBoutton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         add(jPanel1, "card2");
@@ -312,6 +334,7 @@ public class NouveauStatistique extends javax.swing.JPanel {
     private javax.swing.JLabel idEvaluationLabel;
     private javax.swing.JTextField idEvaluationText;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel noteLabel;
     private javax.swing.JTextField noteTxt;

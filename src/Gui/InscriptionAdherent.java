@@ -4,6 +4,7 @@ import Entité.Adherent;
 import static Gui.MainFrame.contentPanel;
 import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
 import com.tn.doa.AdherentDAO;
+import java.awt.Color;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,6 +49,7 @@ public class InscriptionAdherent extends javax.swing.JFrame {
         nouveauConfirmermotdepasse = new javax.swing.JTextField();
         validerNouveauMotdepasse = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        mailvalide = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,6 +68,12 @@ public class InscriptionAdherent extends javax.swing.JFrame {
 
         jLabel6.setText("Retaper mot de passe :");
 
+        nouveauMailtext.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nouveauMailtextKeyReleased(evt);
+            }
+        });
+
         validerNouveauMotdepasse.setText("Valider");
         validerNouveauMotdepasse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +87,9 @@ public class InscriptionAdherent extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+
+        mailvalide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/BloquageIcone.jpg"))); // NOI18N
+        mailvalide.setText("k");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -102,13 +113,16 @@ public class InscriptionAdherent extends javax.swing.JFrame {
                 .addGap(53, 53, 53)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(nouveauConfirmermotdepasse, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(nouveauNomText)
-                        .addComponent(nouveauPrenomText)
-                        .addComponent(nouveauNumText)
-                        .addComponent(nouveauMailtext)
-                        .addComponent(nouveauMotdepasseText, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nouveauNomText)
+                            .addComponent(nouveauPrenomText)
+                            .addComponent(nouveauNumText)
+                            .addComponent(nouveauMailtext)
+                            .addComponent(nouveauMotdepasseText, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)
+                        .addComponent(mailvalide, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 199, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,12 +142,13 @@ public class InscriptionAdherent extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(nouveauMailtext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nouveauMailtext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mailvalide, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nouveauMotdepasseText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nouveauConfirmermotdepasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -208,6 +223,18 @@ public class InscriptionAdherent extends javax.swing.JFrame {
                 nouveauConfirmermotdepasse.setText(null);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void nouveauMailtextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nouveauMailtextKeyReleased
+        AdherentDAO adDAO=new AdherentDAO();
+        //Adherent ad=new Adherent();
+        //String mail=;
+        
+        if(adDAO.DisplayEmails(nouveauMailtext.getText().toString())==true)
+        nouveauMailtext.setBackground(Color.red);
+        else{
+            nouveauMailtext.setBackground(Color.GREEN);
+        }
+    }//GEN-LAST:event_nouveauMailtextKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -256,6 +283,7 @@ public class InscriptionAdherent extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel mailvalide;
     private javax.swing.JTextField nouveauConfirmermotdepasse;
     private javax.swing.JTextField nouveauMailtext;
     private javax.swing.JTextField nouveauMotdepasseText;

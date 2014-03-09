@@ -2290,8 +2290,62 @@ GMaps map = new GMaps(600,600);
 
     private void ajout_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajout_ButtonActionPerformed
 
-        // recuperation des donneees :
-        //        v1.setIdVoiture(Integer.parseInt(Idv1.getText().toString()));
+       
+if (ville1.getSelectedIndex() == -1) {
+            JOptionPane.showMessageDialog(this, "Ajouter une ville de depart ");
+ 
+        }
+ else if (ville2.getSelectedIndex() == -1) {
+            JOptionPane.showMessageDialog(this, "Ajouter une ville d'arrivee ");
+ 
+        }
+     
+ else if (!occasionel_radio.isSelected() && !regulier_radio.isSelected()) {
+     
+            JOptionPane.showMessageDialog(this, "Selectionner un Type de Trajet ");
+ 
+ }
+ 
+      
+      else if(kilometrage.getText().toString().isEmpty()|| !(kilometrage.getText().matches("[0-9]*"))) { 
+                
+            JOptionPane.showMessageDialog(this, "Ajouter la Distance Prevue ");
+        }
+ 
+      else   if(prix_text.getText().isEmpty() || !(prix_text.getText().matches("[0-9]*"))) {
+            
+            JOptionPane.showMessageDialog(this, "Ajouter le Prix");
+        } 
+        
+        else if(!(Idv1.getText().matches("[0-9]*"))  
+                || !(Idv2.getText().matches("[0-9]*")) 
+                || (Idv1.getText().isEmpty()) 
+                || (Idv2.getText().isEmpty()) 
+                || Idv1.getText().length()<1 
+                || Idv1.getText().length()>4 
+                || Idv2.getText().length()<1 
+                || Idv2.getText().length()>3 
+                )  {
+           
+             JOptionPane.showMessageDialog(this, "Ajouter une Immatriculation de Voiture Valide sous cette Forme : XXXX TU XXX ");
+        }
+        
+         
+      else   if(marque.getText().isEmpty() || !(marque.getText().matches("[a-zA-Z]*"))) {
+            
+            JOptionPane.showMessageDialog(this, "Ajouter la marque de votre Voiture");
+        } 
+        
+      else   if(model.getText().isEmpty()) {
+            
+            JOptionPane.showMessageDialog(this, "Ajouter le Model de Votre Voiture ");
+        } 
+           else {        
+
+
+
+// recuperation des donneees :
+     
         v1.setIdVoiture(Idv1.getText().toString() + "TUN" + Idv2.getText().toString() );
 
         v1.setMarque(marque.getText().toString());
@@ -2358,23 +2412,23 @@ GMaps map = new GMaps(600,600);
 
         // rafraichir la Table de la gestion des trajets
 
-//        GererMesTrajet.mes_trajets_table.setModel(new TrajetModel(Authentification.id_adherent));
+        NouveauGererMesTrajets.mes_trajets_table.setModel(new TrajetModel(Authentification.id_adherent));
 //         cacher les champs
-//        GererMesTrajet.mes_trajets_table.getColumnModel().getColumn(1).setMinWidth(0);
-//        GererMesTrajet.mes_trajets_table.getColumnModel().getColumn(1).setMaxWidth(0);
-//        GererMesTrajet.mes_trajets_table.getColumnModel().getColumn(1).setWidth(0);
-//        GererMesTrajet.mes_trajets_table.getColumnModel().getColumn(0).setMinWidth(0);
-//        GererMesTrajet.mes_trajets_table.getColumnModel().getColumn(0).setMaxWidth(0);
-//        GererMesTrajet.mes_trajets_table.getColumnModel().getColumn(0).setWidth(0);
-//
-//        GererMesTrajet.mes_trajets_table.getColumnModel().getColumn(14).setMinWidth(0);
-//        GererMesTrajet.mes_trajets_table.getColumnModel().getColumn(14).setMaxWidth(0);
-//        GererMesTrajet.mes_trajets_table.getColumnModel().getColumn(14).setWidth(0);
-//
-//        GererMesTrajet.mes_trajets_table.getColumnModel().getColumn(8).setMinWidth(0);
-//        GererMesTrajet.mes_trajets_table.getColumnModel().getColumn(8).setMaxWidth(0);
-//        GererMesTrajet.mes_trajets_table.getColumnModel().getColumn(8).setWidth(0);
+        NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(1).setMinWidth(0);
+        NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(1).setMaxWidth(0);
+        NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(1).setWidth(0);
+        NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(0).setMinWidth(0);
+        NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(0).setMaxWidth(0);
+        NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(0).setWidth(0);
 
+        NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(14).setMinWidth(0);
+        NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(14).setMaxWidth(0);
+        NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(14).setWidth(0);
+
+        NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(8).setMinWidth(0);
+        NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(8).setMaxWidth(0);
+        NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(8).setWidth(0);
+      }
     }//GEN-LAST:event_ajout_ButtonActionPerformed
 
 

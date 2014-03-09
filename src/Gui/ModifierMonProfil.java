@@ -26,7 +26,10 @@ public class ModifierMonProfil extends javax.swing.JFrame {
         this.setName("form Modifier information Profil");
         System.out.println(Authentification.id_adherent+" | "+this.getName());
         modifierMotdepasse.disable();
-          
+        modifierEmailText.disable();
+        modifierNomText.disable();
+        modifierTelephoneText.disable();
+        ModierPrenomText.disable();
     }
 
     /**
@@ -198,10 +201,15 @@ public class ModifierMonProfil extends javax.swing.JFrame {
     private void modifierMotdepasseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierMotdepasseButtonActionPerformed
         if(verifmotdepasseText.getText().equals(ad.getMdp()) ){
            modifierMotdepasse.enable();
+           modifierEmailText.enable();
+           modifierNomText.enable();
+           modifierMotdepasse.enable();
+           modifierTelephoneText.enable();
+           
            modifierMotdepasse.setText(ad.getMdp()); 
        }else {
            System.out.println("error mot de pas");
-           JOptionPane.showMessageDialog(rootPane, "ok"+ad.getMdp());
+           JOptionPane.showMessageDialog(rootPane, "Mo de passe incorrect");
 //new JOptionPane("Mot de passe Invalid", JOptionPane.ERROR_MESSAGE);
        }
         
