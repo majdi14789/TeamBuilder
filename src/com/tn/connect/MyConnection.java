@@ -20,6 +20,7 @@ public class MyConnection {
             Class.forName(driver);
             con= DriverManager.getConnection(url,login,pwd);
             System.out.println("--------- CNX Etablie---------");
+            System.out.println("ncx ok");
             
         } catch (ClassNotFoundException e) {System.out.println("Erreur de chargement de driver"+e.getMessage());}
           catch(SQLException ex){
