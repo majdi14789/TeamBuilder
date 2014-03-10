@@ -49,6 +49,10 @@ public class ReclamationDAO {
                 System.out.println(reclamation.getIdAdminisrateur());
                 reclamation.setCause(resultat.getString(6));
                 reclamation.setReport(resultat.getString(7));
+                System.out.println(reclamation.getAdherentConcerné().getNom()+" test");
+                System.out.println(reclamation.getAdherentConcerné().getNom()+" from reclamation dao ");
+                System.out.println(reclamation.getAdherentReclamateur().getNom()+" from reclamation dao ");
+                
                 listreclamation.add(reclamation);
             }
             return listreclamation;
@@ -76,12 +80,14 @@ public class ReclamationDAO {
                 Reclamation reclamation =new Reclamation();
                 reclamation.setIdReclamation(resultat.getInt(1));
                 reclamation.setAdherentConcerné(adherentDAO.findAdherentByIdSa(resultat.getInt(2)));
+                System.out.println(reclamation.getAdherentConcerné().getNom()+" test");
                 reclamation.getAdherentConcerné().getIdAdherent();
+                
                 reclamation.setAdherentReclamateur(adherentDAO.findAdherentByIdSa(resultat.getInt(3)));
-                System.out.println(reclamation.getIdadherentConcerné());
+                
                 reclamation.setDescription(resultat.getString(4));
                 reclamation.setAdministrateur(administrateurDAO.findAdministrateurByIdSa(resultat.getInt(5)));
-                System.out.println(reclamation.getIdAdminisrateur());
+                
                 reclamation.setCause(resultat.getString(6));
                 reclamation.setReport(resultat.getString(7));
                 listreclamation.add(reclamation);

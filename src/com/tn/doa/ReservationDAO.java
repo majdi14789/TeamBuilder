@@ -24,7 +24,8 @@ public class ReservationDAO {
   
     public void insertReservation(Reservation reser){
     String requete="insert into reservation (id_passager,id_trajet,places,date,heure,ville_depart,ville_arrivee,code_html) values (?,?,?,?,?,?,?,?)";
-            try {
+         int  id_trajet,id_passager;  
+    try {
                 
             //Statement statement = MyConnection.getInstance().createStatement();
 
@@ -43,6 +44,14 @@ public class ReservationDAO {
             ps.setString(8,reser.getCode_html());
             ps.executeUpdate();
             //***********************************************************
+            //***********************************************************
+             id_trajet=reser.getTrajet().getIdTrajet();
+            System.out.println("id trajet   "+id_trajet);
+             id_passager=Authentification.id_adherent;
+            //***********************************************************
+            //***********************************************************
+            ReclamationReservationDAO reclamationReservationDAO=new ReclamationReservationDAO();
+            reclamationReservationDAO.insertSelectReclamationReservation(id_trajet,id_passager);
     }
         catch (SQLException ex) { 
             System.out.println("erruerrrr dans inseert reservation "+ex.getMessage());

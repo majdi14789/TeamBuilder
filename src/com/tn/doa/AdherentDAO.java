@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.tn.doa;
 import Entité.Adherent;
 import Gui.Authentification;
@@ -15,8 +11,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-
-
 public class AdherentDAO {
     
     
@@ -44,7 +38,6 @@ public class AdherentDAO {
             
          return compt;
 }
-
     public int getId(String login,String mdp)
     {
         int id=0;
@@ -74,7 +67,6 @@ public class AdherentDAO {
         }
             return id;
     }
-
      public Adherent findAdherentById(int id) {
         Adherent adherent = new Adherent();
         String requete = "select * from adherent where id_adherent=?";
@@ -90,11 +82,9 @@ public class AdherentDAO {
                 adherent.setMdp(resultat.getString(5));
                 adherent.setTelephone(resultat.getInt(6));
                 adherent.setNombre_reclamation(resultat.getInt(6));
-
             
             }
             return adherent;
-
         } catch (SQLException ex) {
             //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("erreur lors du recherche du adherent " + ex.getMessage());
@@ -194,7 +184,6 @@ public class AdherentDAO {
                
                adherent.setTelephone(resultat.getInt(6));
                 adherent.setNombreReclamation(resultat.getInt(7));
-
                 listreclamation.add(adherent);
             }
             return listreclamation;
@@ -247,7 +236,6 @@ public class AdherentDAO {
                
                adherent.setTelephone(resultat.getInt(6));
                 adherent.setNombreReclamation(resultat.getInt(7));
-
                 listreclamation.add(adherent);
             }
             return listreclamation;
@@ -267,9 +255,7 @@ public class AdherentDAO {
             catch (SQLException ex) 
             { System.out.println("erreur lors de la mise Ã jour "+ex.getMessage()); } }
   
-
       
-
   public Adherent findByPseudo(String pseudo)
   {
   
@@ -299,7 +285,6 @@ public class AdherentDAO {
   
   return null;
  }
-
  public List<Adherent> DisplayAllAdherentSa(int id_adherent)
      {
          List<Adherent> listeAdherent=new ArrayList<>();
@@ -323,7 +308,6 @@ public class AdherentDAO {
                 listeAdherent.add(adherent);
             }
             return listeAdherent;
-
         } catch (SQLException ex) {
             //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("erreur lors de la recherche de l'adherent " + ex.getMessage());
@@ -334,7 +318,7 @@ public class AdherentDAO {
   
  public Adherent findAdherentByIdSa(int id) {
         Adherent adherent = new Adherent();
-        String requete = "select * from adherent where id_adherent=? and bloqué!='false'";
+        String requete = "select * from adherent where id_adherent=? and bloqué='false'";
         try {
             
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
@@ -351,7 +335,6 @@ public class AdherentDAO {
                 adherent.setNombreReclamation(resultat.getInt(7));
             }
             return adherent;
-
         } catch (SQLException ex) {
             //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("erreur lors de la recherche de l'adherent " + ex.getMessage());
@@ -362,7 +345,7 @@ public class AdherentDAO {
  
  public int connexionSa(String login,String mdp)
     {
-        String requete="select * from adherent a where a.adresse_mail=? and a.mdp=? and bloqué !='false'";
+        String requete="select * from adherent a where a.adresse_mail=? and a.mdp=? and bloqué ='false'";
         int compt=0;
             try {
                 
@@ -387,7 +370,7 @@ public class AdherentDAO {
     
     public void updateAdherentNombreReclamationSa(int idAdherent )
     { 
-        String requete = "update adherent set nombre_reclamation=nombre_reclamation+1 where id_adherent="+idAdherent+" and bloqué !='false';";
+        String requete = "update adherent set nombre_reclamation=nombre_reclamation+1 where id_adherent="+idAdherent+" and bloqué ='false';";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
           
@@ -414,7 +397,6 @@ public class AdherentDAO {
         }
         
     }
-
     public int getIdSa(String login,String mdp)
     {
         int id=0;
@@ -484,8 +466,5 @@ public class AdherentDAO {
             return false;
         }
     }
-
  
 }
-  
-
