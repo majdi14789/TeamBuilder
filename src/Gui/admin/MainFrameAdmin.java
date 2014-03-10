@@ -66,6 +66,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
         contentPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Acceuil Administrateur");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -125,7 +126,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
         });
 
         deconexionButton.setBackground(new java.awt.Color(255, 255, 255));
-        deconexionButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/dis.png"))); // NOI18N
+        deconexionButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/delete-icon.png"))); // NOI18N
         deconexionButton.setMaximumSize(new java.awt.Dimension(10, 10));
         deconexionButton.setMinimumSize(new java.awt.Dimension(10, 10));
         deconexionButton.setPreferredSize(new java.awt.Dimension(10, 10));
@@ -154,7 +155,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("jButton1");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/EnvoyerMailIcon.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -166,7 +167,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
         menu_panelLayout.setHorizontalGroup(
             menu_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(chercherTrajetButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(monProfilButton, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+            .addComponent(monProfilButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ajouterTrajetButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(deconexionButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(gererMesTrajetButtom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -177,19 +178,18 @@ public class MainFrameAdmin extends javax.swing.JFrame {
             menu_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_panelLayout.createSequentialGroup()
                 .addComponent(monProfilButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(ajouterTrajetButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(chercherTrajetButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(gererMesTrajetButtom)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(evaluerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(deconexionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, 0)
+                .addComponent(gererMesTrajetButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jButton1)
+                .addGap(0, 0, 0)
+                .addComponent(evaluerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(deconexionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         contentPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -208,7 +208,7 @@ public class MainFrameAdmin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(menu_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 884, Short.MAX_VALUE)
                 .addContainerGap())
         );
         bodyPanelLayout.setVerticalGroup(

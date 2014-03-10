@@ -19,7 +19,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-55,0,0,2,96"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-18,0,0,3,24"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
@@ -42,44 +42,34 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="280" max="-2" attributes="0"/>
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="328" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                      <Component id="StatistiquesBoutton" min="-2" pref="84" max="-2" attributes="0"/>
+                      <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="169" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+                      <Component id="jPanel3" max="32767" attributes="0"/>
                   </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="StatistiquesBoutton" min="-2" pref="84" max="-2" attributes="0"/>
-                  <EmptySpace pref="107" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="StatistiquesBoutton">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/image/StatistiquesIIcon.png"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StatistiquesBouttonActionPerformed"/>
-          </Events>
-        </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -99,46 +89,106 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel2">
+        <Container class="javax.swing.JPanel" name="jPanel4">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder justification="1" position="2" title="Generer Les Statistiques ">
+                  <Font PropertyName="font" name="Tahoma" size="14" style="3"/>
+                </TitledBorder>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="164" max="32767" attributes="0"/>
+                      <Component id="StatistiquesBoutton" min="-2" pref="84" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="StatistiquesBoutton" min="-2" pref="84" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="StatistiquesBoutton">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/StatistiquesIIcon.png"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StatistiquesBouttonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Generer Les Statistiques ici :"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel3">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Informations">
+                  <Font PropertyName="font" name="Tahoma" size="14" style="3"/>
+                </TitledBorder>
+              </Border>
+            </Property>
+          </Properties>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="idEvaluationLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                              <Component id="idEvaluationText" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="idAdherentevalueLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="idEvaluationLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="idEvaluateurLabel" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="idAdherentEvaluéText" alignment="0" pref="103" max="32767" attributes="0"/>
+                                  <Component id="idEvaluationText" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="idEvaluateurText" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="idAdherentevalueLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                              <Component id="idAdherentEvaluéText" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="idEvaluateurLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                              <Component id="idEvaluateurText" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="noteLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
-                              <Component id="noteTxt" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="commentaireLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                              <Component id="commentaireTxt" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="ReponseLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="98" max="32767" attributes="0"/>
-                              <Component id="RepTxt" min="-2" pref="120" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="noteLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="commentaireLabel" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ReponseLabel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="noteTxt" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
+                                  <Component id="commentaireTxt" alignment="0" pref="213" max="32767" attributes="0"/>
+                                  <Component id="RepTxt" alignment="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace pref="69" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -150,32 +200,32 @@
                           <Component id="idEvaluationLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="idEvaluationText" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="idAdherentevalueLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="idAdherentEvaluéText" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="idEvaluateurLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="idEvaluateurText" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="idEvaluateurLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="noteLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="noteTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="noteLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="commentaireLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="commentaireTxt" min="-2" pref="59" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="commentaireLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="commentaireTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="ReponseLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="RepTxt" min="-2" pref="64" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ReponseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="RepTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="35" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -183,45 +233,63 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="idEvaluationLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="id evaluation"/>
+                <Property name="text" type="java.lang.String" value="Id Evaluation :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="idEvaluationText">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="idAdherentevalueLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="id adh&#xe9;rent evalu&#xe9;"/>
+                <Property name="text" type="java.lang.String" value="Id Adh&#xe9;rent Evalu&#xe9; :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="idAdherentEvalu&#xe9;Text">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="idEvaluateurText">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="idEvaluateurLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="id evaluateur"/>
+                <Property name="text" type="java.lang.String" value="Id Evaluateur :"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="idEvaluationText">
-            </Component>
-            <Component class="javax.swing.JTextField" name="idAdherentEvalu&#xe9;Text">
-            </Component>
-            <Component class="javax.swing.JTextField" name="idEvaluateurText">
             </Component>
             <Component class="javax.swing.JLabel" name="noteLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="note"/>
+                <Property name="text" type="java.lang.String" value="Note :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="noteTxt">
-            </Component>
-            <Component class="javax.swing.JLabel" name="commentaireLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="commentaire"/>
+                <Property name="editable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="commentaireTxt">
-            </Component>
-            <Component class="javax.swing.JLabel" name="ReponseLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="R&#xe9;ponse"/>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="commentaireLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Commentaire :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="RepTxt">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ReponseLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="R&#xe9;ponse:"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

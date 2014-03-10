@@ -24,213 +24,45 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="53" pref="623" max="32767" attributes="0"/>
-                      <Component id="SubjectLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                      <Component id="SubjectText" min="-2" pref="137" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="436" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="MailBoutton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="toLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="fromLabel" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="ToText" alignment="1" min="-2" pref="137" max="-2" attributes="0"/>
-                                  <Component id="FromText" alignment="1" min="-2" pref="137" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="adresseAdherentTxt" min="-2" pref="125" max="-2" attributes="0"/>
-                          <Component id="idadherenttxt" min="-2" pref="125" max="-2" attributes="0"/>
-                          <Component id="txtSearchAdherent" min="-2" pref="127" max="-2" attributes="0"/>
-                          <Component id="nomadherentTxt" alignment="1" min="-2" pref="125" max="-2" attributes="0"/>
-                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                              <Component id="mdpAdherentTXT" min="-2" pref="120" max="-2" attributes="0"/>
-                              <Component id="prenomAdhrentTxt" min="-2" pref="125" max="-2" attributes="0"/>
-                              <Component id="telAdherentTXT" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
-                              <Component id="nbrReclamationsTxt" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="tel_lbl" min="-2" max="-2" attributes="0"/>
-                          <Component id="mdpAdherent_lbl" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jPanel3" min="-2" pref="335" max="-2" attributes="0"/>
+                  <Component id="jPanel1" max="32767" attributes="0"/>
               </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" pref="243" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="name_comboBox" min="-2" pref="98" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="deleteButton" min="-2" pref="115" max="-2" attributes="0"/>
-                          <Component id="updateButton" min="-2" pref="119" max="-2" attributes="0"/>
-                          <Component id="BloquerBoutton" alignment="1" min="-2" pref="115" max="-2" attributes="0"/>
-                          <Component id="RapportBoutton" alignment="1" min="-2" pref="115" max="-2" attributes="0"/>
-                          <Component id="ImprimerBoutton" alignment="1" min="-2" pref="115" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jScrollPane6" min="-2" pref="378" max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jScrollPane6" max="32767" attributes="0"/>
+                  <Component id="jPanel4" max="32767" attributes="0"/>
+                  <Component id="jPanel5" max="32767" attributes="0"/>
               </Group>
-          </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="idadherent_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="nom_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="prenomadherent_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="adresseaderent_lbl" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="nbr_recl_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="795" max="32767" attributes="0"/>
-              </Group>
+              <EmptySpace pref="25" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="adresseAdherentTxt" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="BloquerBoutton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="mdpAdherent_lbl" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                                  <Component id="mdpAdherentTXT" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="RapportBoutton" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                                  <Component id="tel_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="telAdherentTXT" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel5" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="name_comboBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtSearchAdherent" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="idadherenttxt" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="nomadherentTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="updateButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="prenomAdhrentTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="deleteButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="jScrollPane6" min="-2" pref="220" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="126" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="jScrollPane6" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="nbrReclamationsTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ImprimerBoutton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="FromText" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="fromLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="ToText" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="toLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="SubjectText" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="SubjectLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel3" max="32767" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="MailBoutton" min="-2" pref="41" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" pref="28" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="idadherent_lbl" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="nom_lbl" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                  <Component id="prenomadherent_lbl" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                  <Component id="adresseaderent_lbl" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
-                  <Component id="nbr_recl_lbl" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="253" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -259,174 +91,515 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="idadherent_lbl">
+    <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="IdAdh&#xe9;rent"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Envoyer Un Mail A L&apos;adherent :">
+              <Font PropertyName="font" name="Tahoma" size="14" style="3"/>
+            </TitledBorder>
+          </Border>
+        </Property>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="nom_lbl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nom"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="prenomadherent_lbl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Prenom"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="adresseaderent_lbl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="adresse mail"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="mdpAdherent_lbl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Mot de passe"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="tel_lbl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="tel"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="idadherenttxt">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idadherenttxtActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JTextField" name="nomadherentTxt">
-    </Component>
-    <Component class="javax.swing.JTextField" name="prenomAdhrentTxt">
-    </Component>
-    <Component class="javax.swing.JTextField" name="adresseAdherentTxt">
-    </Component>
-    <Component class="javax.swing.JTextField" name="mdpAdherentTXT">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mdpAdherentTXTActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="telAdherentTXT">
-    </Component>
-    <Component class="javax.swing.JButton" name="deleteButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Supprimer"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteButtonActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="updateButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Modifier"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateButtonActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="nbr_recl_lbl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nombres de r&#xe9;clamations"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="nbrReclamationsTxt">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nbrReclamationsTxtActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="name_comboBox">
-      <Events>
-        <EventHandler event="popupMenuWillBecomeInvisible" listener="javax.swing.event.PopupMenuListener" parameters="javax.swing.event.PopupMenuEvent" handler="name_comboBoxPopupMenuWillBecomeInvisible"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="name_comboBoxActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="fromLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="From"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="toLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="To"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="SubjectLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Subject"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="FromText">
-    </Component>
-    <Component class="javax.swing.JTextField" name="ToText">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ToTextActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="SubjectText">
-    </Component>
-    <Component class="javax.swing.JButton" name="RapportBoutton">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="G&#xe9;n&#xe9;rer Rapport"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RapportBouttonActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Veuillez entrez un Nom"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Selectionnez le Nom et pr&#xe9;nom de l&apos;adherent"/>
-      </Properties>
-    </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="fromLabel" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="toLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="ToText" max="32767" attributes="0"/>
+                              <Component id="FromText" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="SubjectLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="SubjectText" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="MailBoutton" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="fromLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FromText" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="ToText" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="toLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="SubjectText" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="SubjectLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="MailBoutton" min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="EmailText">
+        <Component class="javax.swing.JTextField" name="FromText">
+        </Component>
+        <Component class="javax.swing.JTextField" name="ToText">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ToTextActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="SubjectText">
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="EmailText">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="fromLabel">
           <Properties>
-            <Property name="columns" type="int" value="20"/>
-            <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="From"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="toLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="To"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="SubjectLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Subject"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="MailBoutton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Envoyer"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MailBouttonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="MailBoutton">
+    <Container class="javax.swing.JPanel" name="jPanel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Envoyer un Email"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder roundedCorners="true"/>
+          </Border>
+        </Property>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[392, 336]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[392, 336]"/>
+        </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MailBouttonActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="BloquerBoutton">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="13" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Information De L&apos;Adherent :">
+                  <Font PropertyName="font" name="Tahoma" size="14" style="3"/>
+                </TitledBorder>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="adresseaderent_lbl" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tel_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="telAdherentTXT" max="32767" attributes="0"/>
+                                  <Component id="adresseAdherentTxt" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="idadherent_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nom_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="prenomadherent_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="idadherenttxt" alignment="0" pref="146" max="32767" attributes="0"/>
+                                  <Component id="nomadherentTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="prenomAdhrentTxt" alignment="1" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="nbr_recl_lbl" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="mdpAdherentTXT" max="32767" attributes="0"/>
+                                  <Component id="nbrReclamationsTxt" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="idadherent_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="idadherenttxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="nom_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nomadherentTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="prenomadherent_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="prenomAdhrentTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="adresseaderent_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="adresseAdherentTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="telAdherentTXT" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tel_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="nbr_recl_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nbrReclamationsTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="mdpAdherentTXT" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="idadherent_lbl">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="IdAdh&#xe9;rent :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="idadherenttxt">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idadherenttxtActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="nom_lbl">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nom :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="nomadherentTxt">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="prenomadherent_lbl">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Prenom :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="prenomAdhrentTxt">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="adresseaderent_lbl">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Adresse E-mail : "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="adresseAdherentTxt">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="telAdherentTXT">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="tel_lbl">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Telephone :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="nbr_recl_lbl">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombres de r&#xe9;clamations:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="nbrReclamationsTxt">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JPasswordField" name="mdpAdherentTXT">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mot De passe Adhrent :"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Bloquer"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder roundedCorners="true"/>
+          </Border>
+        </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BloquerBouttonActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtSearchAdherent">
-      <Events>
-        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtSearchAdherentKeyReleased"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="ImprimerBoutton">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="txtSearchAdherent" min="-2" pref="175" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel5" min="-2" pref="243" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="name_comboBox" min="-2" pref="98" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel5" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="name_comboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel4" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="txtSearchAdherent" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Chercher Un Adherent :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtSearchAdherent">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtSearchAdherentKeyReleased"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Selectionnez le Nom et pr&#xe9;nom de l&apos;adherent"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="name_comboBox">
+          <Events>
+            <EventHandler event="popupMenuWillBecomeInvisible" listener="javax.swing.event.PopupMenuListener" parameters="javax.swing.event.PopupMenuEvent" handler="name_comboBoxPopupMenuWillBecomeInvisible"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="name_comboBoxActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Imprimer"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Vos Options d&apos;Administrateur : ">
+              <Font PropertyName="font" name="Tahoma" size="14" style="3"/>
+            </TitledBorder>
+          </Border>
+        </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImprimerBouttonActionPerformed"/>
-      </Events>
-    </Component>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="updateButton" max="32767" attributes="0"/>
+                      <Component id="RapportBoutton" pref="189" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="BloquerBoutton" max="32767" attributes="0"/>
+                      <Component id="ImprimerBoutton" pref="169" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="deleteButton" min="-2" pref="131" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="updateButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BloquerBoutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="deleteButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="66" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="ImprimerBoutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RapportBoutton" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="updateButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Modifier"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="BloquerBoutton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Bloquer"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BloquerBouttonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="RapportBoutton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="G&#xe9;n&#xe9;rer Rapport"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RapportBouttonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="deleteButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Supprimer"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="ImprimerBoutton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Imprimer"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImprimerBouttonActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

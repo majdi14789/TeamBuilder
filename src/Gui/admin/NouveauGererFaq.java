@@ -43,13 +43,14 @@ public class NouveauGererFaq extends javax.swing.JPanel {
         faqTable3 = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         objetfaq = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        objettxt1 = new javax.swing.JTextField();
-        contenutxt1 = new javax.swing.JTextField();
         Ajouter = new javax.swing.JButton();
         Supprimer = new javax.swing.JButton();
         Modifier = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        objettxt1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        contenutxt1 = new javax.swing.JTextField();
 
         setLayout(new java.awt.CardLayout());
 
@@ -80,8 +81,8 @@ public class NouveauGererFaq extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(leftSplitFAQ3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         leftSplitFAQ3Layout.setVerticalGroup(
             leftSplitFAQ3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,29 +90,15 @@ public class NouveauGererFaq extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jSplitPane5.setLeftComponent(leftSplitFAQ3);
 
-        jLabel4.setText("Objet :");
-
-        jLabel5.setText("Contenu :");
-
-        objettxt1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                objettxt1ActionPerformed(evt);
-            }
-        });
-
-        contenutxt1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contenutxt1ActionPerformed(evt);
-            }
-        });
-
         Ajouter.setText("Ajouter");
+        Ajouter.setMaximumSize(new java.awt.Dimension(38, 86));
+        Ajouter.setMinimumSize(new java.awt.Dimension(38, 86));
         Ajouter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AjouterActionPerformed(evt);
@@ -132,46 +119,80 @@ public class NouveauGererFaq extends javax.swing.JPanel {
             }
         });
 
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        objettxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                objettxt1ActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Objet :");
+
+        jLabel5.setText("Contenu :");
+
+        contenutxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contenutxt1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(objettxt1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(contenutxt1)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(objettxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(contenutxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout objetfaqLayout = new javax.swing.GroupLayout(objetfaq);
         objetfaq.setLayout(objetfaqLayout);
         objetfaqLayout.setHorizontalGroup(
             objetfaqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(objetfaqLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(objetfaqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(objetfaqLayout.createSequentialGroup()
-                        .addGroup(objetfaqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(28, 28, 28)
-                        .addGroup(objetfaqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(contenutxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                            .addComponent(objettxt1)))
-                    .addGroup(objetfaqLayout.createSequentialGroup()
-                        .addComponent(Ajouter)
-                        .addGap(47, 47, 47)
-                        .addComponent(Supprimer)
-                        .addGap(49, 49, 49)
-                        .addComponent(Modifier)))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addGap(14, 14, 14)
+                .addComponent(Modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         objetfaqLayout.setVerticalGroup(
             objetfaqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(objetfaqLayout.createSequentialGroup()
-                .addGap(75, 75, 75)
+                .addGap(17, 17, 17)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(objetfaqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(objettxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
-                .addGroup(objetfaqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(contenutxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57)
-                .addGroup(objetfaqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(161, Short.MAX_VALUE))
+                    .addComponent(Supprimer)
+                    .addComponent(Modifier)
+                    .addComponent(Ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(140, 140, 140))
         );
 
         jSplitPane5.setRightComponent(objetfaq);
@@ -183,13 +204,13 @@ public class NouveauGererFaq extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSplitPane5)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSplitPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
+                .addComponent(jSplitPane5)
                 .addContainerGap())
         );
 
@@ -217,13 +238,24 @@ public class NouveauGererFaq extends javax.swing.JPanel {
 
     private void AjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AjouterActionPerformed
 
+        
+        if (objettxt1.getText().isEmpty()) {
+                 JOptionPane.showMessageDialog(this,"Ajouter Une Question !");   
+
+        }
+        else if(contenutxt1.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this,"Ajouter La Reponse !");   
+
+        }  else {
         FaqDAO faqDAO=new FaqDAO();
         Faq faq=new Faq();
+
         faq.setObjet(objettxt1.getText());
         faq.setContenu(contenutxt1.getText());
         faqDAO.insertFaq(faq);
 
         update_table();
+        }
     }//GEN-LAST:event_AjouterActionPerformed
  private void update_table(){
     try{
@@ -268,7 +300,8 @@ public class NouveauGererFaq extends javax.swing.JPanel {
 
             JOptionPane.showMessageDialog(null, "Faq modifié avec succes");
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex);
+            JOptionPane.showMessageDialog(null, "Selectionner une Q/R a modifier");
+            
         }
         update_table();
     }//GEN-LAST:event_ModifierActionPerformed
@@ -279,28 +312,14 @@ public class NouveauGererFaq extends javax.swing.JPanel {
     private javax.swing.JButton Modifier;
     private javax.swing.JButton Supprimer;
     private javax.swing.JTextField contenutxt1;
-    private javax.swing.JTable faqTable;
-    private javax.swing.JTable faqTable1;
-    private javax.swing.JTable faqTable2;
     private javax.swing.JTable faqTable3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JSplitPane jSplitPane2;
-    private javax.swing.JSplitPane jSplitPane3;
-    private javax.swing.JSplitPane jSplitPane4;
     private javax.swing.JSplitPane jSplitPane5;
-    private javax.swing.JPanel leftSplitFAQ;
-    private javax.swing.JPanel leftSplitFAQ1;
-    private javax.swing.JPanel leftSplitFAQ2;
     private javax.swing.JPanel leftSplitFAQ3;
     private javax.swing.JPanel objetfaq;
     private javax.swing.JTextField objettxt1;
