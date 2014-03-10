@@ -82,6 +82,7 @@ public class ReclamationDAO {
                 reclamation.setAdherentConcerné(adherentDAO.findAdherentByIdSa(resultat.getInt(2)));
                 System.out.println(reclamation.getAdherentConcerné().getNom()+" test");
                 reclamation.getAdherentConcerné().getIdAdherent();
+                //*************
                 
                 reclamation.setAdherentReclamateur(adherentDAO.findAdherentByIdSa(resultat.getInt(3)));
                 
