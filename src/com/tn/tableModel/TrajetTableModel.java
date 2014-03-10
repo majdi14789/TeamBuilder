@@ -49,6 +49,16 @@ public class TrajetTableModel extends AbstractTableModel{
             System.out.println("Pobleme AJAX");
         }
     }
+      public TrajetTableModel(String villedeart,String villearrivee,String date,int n) {
+        try {
+           // monTrajet=new TrajetDAO().DisplayAllTrajetByVilleDepartETVilleArriveETdate(villedeart, villearrivee,date,Authentification.id_adherent);
+            System.out.println(date+" from table trajet");
+            monTrajet=new TrajetDAO(). DisplayAllTrajetByVilleDepartArriveDateAjax(villedeart, villearrivee, date, n);
+        } catch (SQLException ex) {
+            Logger.getLogger(TrajetTableModel.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Pobleme AJAX m3a kol chay");
+        }
+    }
     @Override
     public int getRowCount() {
         try {

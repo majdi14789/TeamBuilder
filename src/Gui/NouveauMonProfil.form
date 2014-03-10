@@ -385,7 +385,7 @@
                     <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableMesReservationMousePressed"/>
                   </Events>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="//tableMesReservation.getColumnModel().getColumn(0).setMinWidth(0);&#xa;//tableMesReservation.getColumnModel().getColumn(0).setMaxWidth(0);&#xa;//tableMesReservation.getColumnModel().getColumn(0).setWidth(0);&#xa;&#xa;//tableMesReservation.getColumnModel().getColumn(2).setMinWidth(0);&#xa;//tableMesReservation.getColumnModel().getColumn(2).setMaxWidth(0);&#xa;//tableMesReservation.getColumnModel().getColumn(2).setWidth(0);"/>
+                    <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="tableMesReservation.getColumnModel().getColumn(0).setMinWidth(0);&#xa;tableMesReservation.getColumnModel().getColumn(0).setMaxWidth(0);&#xa;tableMesReservation.getColumnModel().getColumn(0).setWidth(0);&#xa;&#xa;tableMesReservation.getColumnModel().getColumn(2).setMinWidth(0);&#xa;tableMesReservation.getColumnModel().getColumn(2).setMaxWidth(0);&#xa;tableMesReservation.getColumnModel().getColumn(2).setWidth(0);&#xa;&#xa;tableMesReservation.getColumnModel().getColumn(8).setMinWidth(0);&#xa;tableMesReservation.getColumnModel().getColumn(8).setMaxWidth(0);&#xa;tableMesReservation.getColumnModel().getColumn(8).setWidth(0);"/>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                   </AuxValues>
                 </Component>

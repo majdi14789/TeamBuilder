@@ -200,11 +200,12 @@ public class ModifierMonProfil extends javax.swing.JFrame {
 
     private void modifierMotdepasseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierMotdepasseButtonActionPerformed
         if(verifmotdepasseText.getText().equals(ad.getMdp()) ){
-           modifierMotdepasse.enable();
-           modifierEmailText.enable();
-           modifierNomText.enable();
-           modifierMotdepasse.enable();
-           modifierTelephoneText.enable();
+           modifierMotdepasse.setEnabled(true);
+           modifierEmailText.setEnabled(true);
+           modifierNomText.setEnabled(true);
+           modifierMotdepasse.setEnabled(true);
+           modifierTelephoneText.setEnabled(true);
+           ModierPrenomText.setEnabled(true);
            
            modifierMotdepasse.setText(ad.getMdp()); 
        }else {

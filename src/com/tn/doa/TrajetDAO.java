@@ -618,6 +618,46 @@ public Trajet findTrajetById(int id_trajet) {
         }
     }
        
-   
+ public List<Trajet> DisplayAllTrajetByVilleDepartArriveDateAjax(String villedepart,String villearrive,String date,int id) throws SQLException{
+       List<Trajet> listeTrajet=new ArrayList<Trajet>();
+        //String requete="select * from trajet where ville_depart LIKE '"+villedepart+"%' and ville_arrivee LIKE '"+villearrive+"%' and jours = '"+date+"%' and `id_conducteur` != "+id+"";//`ville_depart` LIKE  'biz%'
+        String requete="select * from trajet where jours = '"+date+"' and `id_conducteur` != '"+id+"' and ville_arrivee LIKE '"+villearrive+"%' and ville_depart LIKE '"+villedepart+"%'";
+        //select * from trajet where jours = '01/01/2014' and `id_conducteur` != "10"
+        VoitureDAO voitureDAO = new VoitureDAO();
+                AdherentDAO adherentDAO = new AdherentDAO();
+        try{
+            
+       PreparedStatement ps=MyConnection.getInstance().prepareStatement(requete);
+       //ps.setString(1,villedepart);
+       ResultSet resultat =ps.executeQuery();
+       
+       while(resultat.next()){
+         Trajet trajet=new Trajet();
+           trajet.setIdTrajet(resultat.getInt(1));
+           trajet.setAdherent(adherentDAO.findAdherentById(resultat.getInt(2)));
+           trajet.setJours(resultat.getString(3));
+           trajet.setHeure(resultat.getString(4));
+           trajet.setFrequence(resultat.getString(5));
+           trajet.setTypeTrajet(resultat.getString(6));
+           trajet.setPlaces(resultat.getInt(7));
+           trajet.setBagages(resultat.getString(8));
+           trajet.setCommentaire(resultat.getString(9));
+           trajet.setKilometrage(resultat.getInt(10));
+           trajet.setVoiture(voitureDAO.findVoitureById(resultat.getString(11)));
+           trajet.setPrix(resultat.getInt(12));
+           trajet.setVilleArrivee(resultat.getString(13));
+           trajet.setVilleDepart(resultat.getString(14));
+           trajet.setCode_map(resultat.getString(15));
+           listeTrajet.add(trajet);
+           
+       
+       }
+        return listeTrajet;
+       
+    }catch (SQLException ex){
+            System.out.println("Erreurrrrr de chargement de  trajet date mnin el win 3ajax "+ex.getMessage());
+            return null;
+    }
+    }
 }
 

@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Gui;
-
 
 import Entité.Adherent;
 import static Gui.NouveauRechercherTrajetPanel.tableTrajet;
@@ -17,6 +15,7 @@ import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.UnsupportedLookAndFeelException;
 
 /**
@@ -24,13 +23,14 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @author majdi
  */
 public class NouveauMonProfil extends javax.swing.JPanel {
-TrajetDAO traDAO=new TrajetDAO();
-   
-/**
+
+    TrajetDAO traDAO = new TrajetDAO();
+
+    /**
      * Creates new form NouveauMonProfil
      */
     public NouveauMonProfil() {
-        
+
         initComponents();
     }
 
@@ -227,13 +227,17 @@ TrajetDAO traDAO=new TrajetDAO();
                 tableMesReservationMousePressed(evt);
             }
         });
-        //tableMesReservation.getColumnModel().getColumn(0).setMinWidth(0);
-        //tableMesReservation.getColumnModel().getColumn(0).setMaxWidth(0);
-        //tableMesReservation.getColumnModel().getColumn(0).setWidth(0);
+        tableMesReservation.getColumnModel().getColumn(0).setMinWidth(0);
+        tableMesReservation.getColumnModel().getColumn(0).setMaxWidth(0);
+        tableMesReservation.getColumnModel().getColumn(0).setWidth(0);
 
-        //tableMesReservation.getColumnModel().getColumn(2).setMinWidth(0);
-        //tableMesReservation.getColumnModel().getColumn(2).setMaxWidth(0);
-        //tableMesReservation.getColumnModel().getColumn(2).setWidth(0);
+        tableMesReservation.getColumnModel().getColumn(2).setMinWidth(0);
+        tableMesReservation.getColumnModel().getColumn(2).setMaxWidth(0);
+        tableMesReservation.getColumnModel().getColumn(2).setWidth(0);
+
+        tableMesReservation.getColumnModel().getColumn(8).setMinWidth(0);
+        tableMesReservation.getColumnModel().getColumn(8).setMaxWidth(0);
+        tableMesReservation.getColumnModel().getColumn(8).setWidth(0);
         jScrollPane1.setViewportView(tableMesReservation);
 
         javax.swing.GroupLayout conteneurtableaureservationLayout = new javax.swing.GroupLayout(conteneurtableaureservation);
@@ -313,7 +317,7 @@ TrajetDAO traDAO=new TrajetDAO();
             md.setLocationRelativeTo(null);
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(Gui.NouveauMonProfil.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (OutOfMemoryError e){
+        } catch (OutOfMemoryError e) {
             System.out.println("out of memory");
         } catch (ParseException ex) {
             Logger.getLogger(Gui.NouveauMonProfil.class.getName()).log(Level.SEVERE, null, ex);
@@ -326,12 +330,12 @@ TrajetDAO traDAO=new TrajetDAO();
     }//GEN-LAST:event_jPanel4ComponentShown
 
     private void tableMesReservationMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMesReservationMousePressed
-        Adherent ad=new Adherent();
-        ReservationDAO resDAO=new ReservationDAO();
-        int x=tableMesReservation.getSelectedRow();
-        int id=Integer.parseInt(tableMesReservation.getValueAt(x, 2).toString());
-        System.out.println("vous aver selectioner "+x+"  id="+id);
-        ad=resDAO.findAdherentByTrajet(id);
+        Adherent ad = new Adherent();
+        ReservationDAO resDAO = new ReservationDAO();
+        int x = tableMesReservation.getSelectedRow();
+        int id = Integer.parseInt(tableMesReservation.getValueAt(x, 2).toString());
+        System.out.println("vous aver selectioner " + x + "  id=" + id);
+        ad = resDAO.findAdherentByTrajet(id);
         nomConducteurLabel.setText(ad.getNom());
         prenomConducteurLabel.setText(ad.getPrenom());
         emailConducteurLabel.setText(ad.getAdresseMail());
@@ -340,22 +344,36 @@ TrajetDAO traDAO=new TrajetDAO();
     }//GEN-LAST:event_tableMesReservationMousePressed
 
     private void AnnulerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnnulerButtonActionPerformed
-          
-        int x =tableMesReservation.getSelectedRow();
-        
-        ReservationDAO resDAO=new ReservationDAO();
-        int nbrplaces=Integer.parseInt(tableTrajet.getValueAt(x,3).toString());
-        int id=(Integer)tableMesReservation.getValueAt(x, 2);
-        traDAO.update_Places_Trajet(traDAO.DisplayAll_trajet_by_Id_trajet(Integer.parseInt(NouveauRechercherTrajetPanel.tableTrajet.getValueAt(x, 0).toString())),nbrplaces+1);
+
+        int x = tableMesReservation.getSelectedRow();
+if(x==-1){
+ JOptionPane.showMessageDialog(this, " vous devez selectionner un trajet ");}
+ else{
+
+        ReservationDAO resDAO = new ReservationDAO();
+        int nbrplaces = Integer.parseInt(tableMesReservation.getValueAt(x, 3).toString());
+        int id = (Integer) tableMesReservation.getValueAt(x, 2);
+        traDAO.update_Places_Trajet(traDAO.DisplayAll_trajet_by_Id_trajet(Integer.parseInt(tableMesReservation.getValueAt(x, 2).toString())), nbrplaces + 1);
         resDAO.DeleteById(id);
         tableMesReservation.setModel(new com.tn.tableModel.ReservationTableModel(Authentification.id_adherent));
+        tableMesReservation.getColumnModel().getColumn(0).setMinWidth(0);
+        tableMesReservation.getColumnModel().getColumn(0).setMaxWidth(0);
+        tableMesReservation.getColumnModel().getColumn(0).setWidth(0);
+
+        tableMesReservation.getColumnModel().getColumn(2).setMinWidth(0);
+        tableMesReservation.getColumnModel().getColumn(2).setMaxWidth(0);
+        tableMesReservation.getColumnModel().getColumn(2).setWidth(0);
+
+        tableMesReservation.getColumnModel().getColumn(8).setMinWidth(0);
+        tableMesReservation.getColumnModel().getColumn(8).setMaxWidth(0);
+        tableMesReservation.getColumnModel().getColumn(8).setWidth(0);
         System.out.println(tableMesReservation.getSelectedRow());
-        System.out.println("du table mes reservation "+Authentification.id_adherent);
-        
+        System.out.println("du table mes reservation " + Authentification.id_adherent);
+}
     }//GEN-LAST:event_AnnulerButtonActionPerformed
 
     private void tableMesReservationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMesReservationMouseClicked
-      labemmapmonprofil.setText(tableMesReservation.getValueAt(tableMesReservation.getSelectedRow(),8).toString());
+        labemmapmonprofil.setText(tableMesReservation.getValueAt(tableMesReservation.getSelectedRow(), 8).toString());
     }//GEN-LAST:event_tableMesReservationMouseClicked
 
 

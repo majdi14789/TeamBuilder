@@ -1,4 +1,3 @@
-
 package Gui;
 
 import Gui.Authentification;
@@ -13,21 +12,26 @@ import com.tn.doa.TrajetDAO;
 import com.tn.tableModel.ReservationTableModel;
 import com.tn.tableModel.TrajetModel;
 import com.tn.tableModel.TrajetTableModel;
+import de.javasoft.plaf.synthetica.SyntheticaSkyMetallicLookAndFeel;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author majdi
  */
 public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
 
-    public NouveauRechercherTrajetPanel() {
+    public NouveauRechercherTrajetPanel() throws UnsupportedLookAndFeelException, ParseException {
+        javax.swing.UIManager.setLookAndFeel(new SyntheticaSkyMetallicLookAndFeel());
         initComponents();
+        //System.out.println(jour_combo.getSelectedItem().toString()+"/"+ mois_combo.getSelectedItem().toString() +"/"+annee_combo.getSelectedItem().toString());
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -49,7 +53,6 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
         trajetlabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableTrajet = new javax.swing.JTable();
-        rechercherBTN = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -127,6 +130,22 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
         mois_combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", " " }));
 
         jour_combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        jour_combo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jour_comboMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jour_comboMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jour_comboMouseReleased(evt);
+            }
+        });
+        jour_combo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jour_comboItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -152,7 +171,7 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
                         .addComponent(mois_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(annee_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 712, Short.MAX_VALUE))
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
@@ -198,9 +217,18 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
 
         try{
             tableTrajet.setModel(new TrajetTableModel());
-            //tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
-            //tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
-            //tableTrajet.getColumnModel().getColumn(0).setWidth(0);
+            tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
+            tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
+            tableTrajet.getColumnModel().getColumn(0).setWidth(0);
+
+            tableTrajet.getColumnModel().getColumn(9).setMinWidth(0);
+            tableTrajet.getColumnModel().getColumn(9).setMaxWidth(0);
+            tableTrajet.getColumnModel().getColumn(9).setWidth(0);
+
+            tableTrajet.getColumnModel().getColumn(10).setMinWidth(0);
+            tableTrajet.getColumnModel().getColumn(10).setMaxWidth(0);
+            tableTrajet.getColumnModel().getColumn(10).setWidth(0);
+
         }catch(Exception ex ){System.out.print("erreurrr affichage tableauu");}
         tableTrajet.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -210,14 +238,6 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(tableTrajet);
 
         rechercher_trajetPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 161, 510, 216));
-
-        rechercherBTN.setText("Rechercher");
-        rechercherBTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rechercherBTNActionPerformed(evt);
-            }
-        });
-        rechercher_trajetPanel.add(rechercherBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 141, 29));
 
         add(rechercher_trajetPanel, "card2");
     }// </editor-fold>//GEN-END:initComponents
@@ -231,128 +251,122 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_rechVilleDepartKeyPressed
 
     private void rechVilleDepartKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechVilleDepartKeyReleased
-        System.out.println("pip pip from key "+rechVilleDepart.getText());
-        String villedepart=rechVilleDepart.getText();
-        tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart,3));
+        System.out.println("pip pip from key " + rechVilleDepart.getText());
+        String villedepart = rechVilleDepart.getText();
+        tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart, 3));
 //        tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
 //        tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
 //        tableTrajet.getColumnModel().getColumn(0).setWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setWidth(0);
+
+        tableTrajet.getColumnModel().getColumn(9).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(9).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(9).setWidth(0);
+
+        tableTrajet.getColumnModel().getColumn(10).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(10).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(10).setWidth(0);
     }//GEN-LAST:event_rechVilleDepartKeyReleased
 
     private void rechVilleArriveKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechVilleArriveKeyReleased
-        System.out.println("pip pip from key "+rechVilleDepart.getText());
-        String villedepart=rechVilleDepart.getText();
-        String villearrivee=rechVilleArrive.getText();
+        System.out.println("pip pip from key " + rechVilleDepart.getText());
+        String villedepart = rechVilleDepart.getText();
+        String villearrivee = rechVilleArrive.getText();
         tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart, villearrivee, 1));
 //        tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
 //        tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
 //        tableTrajet.getColumnModel().getColumn(0).setWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setWidth(0);
+
+        tableTrajet.getColumnModel().getColumn(9).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(9).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(9).setWidth(0);
+
+        tableTrajet.getColumnModel().getColumn(10).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(10).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(10).setWidth(0);
     }//GEN-LAST:event_rechVilleArriveKeyReleased
 
-    private void rechercherBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechercherBTNActionPerformed
-        String villedepart=rechVilleDepart.getText().toString();
-        String villearrive=rechVilleArrive.getText().toString();
-        String date=jour_combo.getSelectedItem().toString()+"/"+ mois_combo.getSelectedItem().toString() +"/"+annee_combo.getSelectedItem().toString();
-        //String date=rechDate.getText().toString();
-        if((!villedepart.equals(""))&&(!villearrive.equals(""))&&(!date.equals("")))
-        {
-            try {
-
-                tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart,villearrive,date));
-//                tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
-//                tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
-//                tableTrajet.getColumnModel().getColumn(0).setWidth(0);
-            } catch (SQLException ex) {
-                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-            }}else if((!villedepart.equals(""))&&(!villearrive.equals(""))&&(date.equals("")))
-            {
-                try {
-                    tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart,villearrive));
-//                    tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
-//                    tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
-//                    tableTrajet.getColumnModel().getColumn(0).setWidth(0);
-                } catch (SQLException ex) {
-                    Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }else if((!villedepart.equals(""))&&(villearrive.equals(""))&&(date.equals("")))
-            {
-                try {
-                    tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart));
-                } catch (SQLException ex) {
-                    Logger.getLogger(NouveauRechercherTrajetPanel.class.getName()).log(Level.SEVERE, null, ex);
-                }
-//                tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
-//                tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
-//                tableTrajet.getColumnModel().getColumn(0).setWidth(0);
-            }else{
-                tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel());
-//                tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
-//                tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
-//                tableTrajet.getColumnModel().getColumn(0).setWidth(0);
-            }
-
-            //        for(int tr : com.tn.tableModel.TrajetTableModel.AllId){
-                //            System.out.println(tr);
-                //        }
-            //
-    }//GEN-LAST:event_rechercherBTNActionPerformed
-
     private void BtnReserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReserverActionPerformed
-        Reservation reservation=new Reservation();
-        ReservationDAO reservationDAO=new ReservationDAO();
-        TrajetDAO traDAO=new TrajetDAO();
-        AdherentDAO adDAO=new AdherentDAO();
+        Reservation reservation = new Reservation();
+        ReservationDAO reservationDAO = new ReservationDAO();
+        TrajetDAO traDAO = new TrajetDAO();
+        AdherentDAO adDAO = new AdherentDAO();
         Gmail gmail = new Gmail();
-        
+
 //         int x=tableTrajet.getSelectedRow();
 //        
 //        System.out.println("l'id du trajet "+id_trajet);
+        int x = tableTrajet.getSelectedRow();
+        int id_trajet, nbr;
 
-        
-        int x=tableTrajet.getSelectedRow();
-        int id_trajet,nbr;
-        
-        if(tableTrajet.getSelectedRow()==-1){
-            JOptionPane.showMessageDialog(this,"veuillez selectionner une ligne de la table reservation ");
-        } else{
-              {nbr=Integer.parseInt(tableTrajet.getValueAt(x,3).toString());
-              if(nbr!=0){
-                  id_trajet=Integer.parseInt(tableTrajet.getValueAt(x,10).toString());
-                      JOptionPane.showMessageDialog(this, " id_trajet=  "+id_trajet);
-                         if(reservationDAO.DisplayAllReservationTrajet(id_trajet)==false){
-                              System.out.println(nbr+" nombre de place disponible");
-                                System.out.println("l'index est "+x);
-                                reservation.setAdhrent(adDAO.findAdherentById(Authentification.id_adherent));
-                                reservation.setTrajet(traDAO.DisplayAll_trajet_by_Id_trajet(Integer.parseInt(tableTrajet.getValueAt(x, 0).toString())));
-                                reservation.setPlaces((Integer)tableTrajet.getValueAt(x, 3)-1);
-                                reservation.setDate((String) tableTrajet.getValueAt(x, 7));
-                                reservation.setVilleDepart(tableTrajet.getValueAt(x, 4).toString());
-                                reservation.setVilleArrivee(tableTrajet.getValueAt(x, 5).toString());
-                                reservation.setCode_html(tableTrajet.getValueAt(x, 9).toString());
-                                reservationDAO.insertReservation(reservation);
-        
-        
-                                traDAO.update_Places_Trajet(traDAO.DisplayAll_trajet_by_Id_trajet(Integer.parseInt(tableTrajet.getValueAt(x, 0).toString())),nbr-1);
-                                Gui.NouveauMonProfil.tableMesReservation.setModel(new ReservationTableModel(Authentification.id_adherent));
-                                tableTrajet.setModel(new TrajetTableModel());
-                             JOptionPane.showMessageDialog(this,"tu as reserver");
-                            } else{JOptionPane.showMessageDialog(this, " vous avez deja reserver mesieur ");}
-                         
-                         
-                     }else{JOptionPane.showMessageDialog(this, " nombre de places =0 ");}
-       
-        
-         }}
-        
-       
-        
+        if (tableTrajet.getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(this, "veuillez selectionner une ligne de la table reservation ");
+        } else {
+            {
+                nbr = Integer.parseInt(tableTrajet.getValueAt(x, 3).toString());
+                if (nbr != 0) {
+                    id_trajet = Integer.parseInt(tableTrajet.getValueAt(x, 10).toString());
+                    JOptionPane.showMessageDialog(this, " id_trajet=  " + id_trajet);
+                    if (reservationDAO.DisplayAllReservationTrajet(id_trajet) == false) {
+                        System.out.println(nbr + " nombre de place disponible");
+                        System.out.println("l'index est " + x);
+                        reservation.setAdhrent(adDAO.findAdherentById(Authentification.id_adherent));
+                        reservation.setTrajet(traDAO.DisplayAll_trajet_by_Id_trajet(Integer.parseInt(tableTrajet.getValueAt(x, 0).toString())));
+                        reservation.setPlaces((Integer) tableTrajet.getValueAt(x, 3) - 1);
+                        reservation.setDate((String) tableTrajet.getValueAt(x, 7));
+                        reservation.setVilleDepart(tableTrajet.getValueAt(x, 4).toString());
+                        reservation.setVilleArrivee(tableTrajet.getValueAt(x, 5).toString());
+                        reservation.setCode_html(tableTrajet.getValueAt(x, 9).toString());
+                        reservation.setHeure(tableTrajet.getValueAt(x, 8).toString());
+                        System.out.println(reservation.toString());
+                        reservationDAO.insertReservation(reservation);
+
+                        traDAO.update_Places_Trajet(traDAO.DisplayAll_trajet_by_Id_trajet(Integer.parseInt(tableTrajet.getValueAt(x, 0).toString())), nbr - 1);
+                        Gui.NouveauMonProfil.tableMesReservation.setModel(new ReservationTableModel(Authentification.id_adherent));
+                        tableTrajet.setModel(new TrajetTableModel());
+                        tableMesReservation.getColumnModel().getColumn(0).setMinWidth(0);
+                        tableMesReservation.getColumnModel().getColumn(0).setMaxWidth(0);
+                        tableMesReservation.getColumnModel().getColumn(0).setWidth(0);
+
+                        tableMesReservation.getColumnModel().getColumn(2).setMinWidth(0);
+                        tableMesReservation.getColumnModel().getColumn(2).setMaxWidth(0);
+                        tableMesReservation.getColumnModel().getColumn(2).setWidth(0);
+
+                        tableMesReservation.getColumnModel().getColumn(8).setMinWidth(0);
+                        tableMesReservation.getColumnModel().getColumn(8).setMaxWidth(0);
+                        tableMesReservation.getColumnModel().getColumn(8).setWidth(0);
+                        JOptionPane.showMessageDialog(this, "tu as reserver");
+                    } else {
+                        JOptionPane.showMessageDialog(this, " vous avez deja reserver mesieur ");
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(this, " nombre de places =0 ");
+                }
+
+            }
+        }
+
 //        tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
 //        tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
 //        tableTrajet.getColumnModel().getColumn(0).setWidth(0);
-      
-        
-            
-        
+        tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setWidth(0);
+
+        tableTrajet.getColumnModel().getColumn(9).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(9).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(9).setWidth(0);
+
+        tableTrajet.getColumnModel().getColumn(10).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(10).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(10).setWidth(0);
+
 //        gmail.subject = "Equipe Administration Covoiturage--Prevention";
 //        gmail.contenu="ba33333";
 //        gmail.adresse_destination="majdi.saadani@esprit.tn";
@@ -362,11 +376,47 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
 
     private void tableTrajetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableTrajetMouseClicked
 
-trajetlabel.setText(tableTrajet.getValueAt(tableTrajet.getSelectedRow(),9).toString());
-
+        trajetlabel.setText(tableTrajet.getValueAt(tableTrajet.getSelectedRow(), 9).toString());
 
 // TODO add your handling code here:
     }//GEN-LAST:event_tableTrajetMouseClicked
+
+    private void jour_comboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jour_comboItemStateChanged
+        String date = jour_combo.getSelectedItem().toString() + "/" + mois_combo.getSelectedItem().toString() + "/" + annee_combo.getSelectedItem().toString();
+        //System.out.println(date);
+        String x = date.substring(0, 10);
+        System.out.println("la chaine est:" + x);
+        String villedepart = rechVilleDepart.getText().toString();
+        String villearrive = rechVilleArrive.getText().toString();
+        //if(rechVilleDepart.getText().isEmpty()&&(rechVilleArrive.getText().isEmpty())){
+        tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart, villearrive, x, Authentification.id_adherent));
+        tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(0).setWidth(0);
+
+        tableTrajet.getColumnModel().getColumn(9).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(9).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(9).setWidth(0);
+
+        tableTrajet.getColumnModel().getColumn(10).setMinWidth(0);
+        tableTrajet.getColumnModel().getColumn(10).setMaxWidth(0);
+        tableTrajet.getColumnModel().getColumn(10).setWidth(0);
+//}
+
+
+    }//GEN-LAST:event_jour_comboItemStateChanged
+
+    private void jour_comboMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jour_comboMouseClicked
+
+    }//GEN-LAST:event_jour_comboMouseClicked
+
+    private void jour_comboMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jour_comboMouseReleased
+
+    }//GEN-LAST:event_jour_comboMouseReleased
+
+    private void jour_comboMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jour_comboMousePressed
+
+    }//GEN-LAST:event_jour_comboMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -383,7 +433,6 @@ trajetlabel.setText(tableTrajet.getValueAt(tableTrajet.getSelectedRow(),9).toStr
     private javax.swing.JComboBox mois_combo;
     private javax.swing.JTextField rechVilleArrive;
     private javax.swing.JTextField rechVilleDepart;
-    private javax.swing.JButton rechercherBTN;
     private javax.swing.JPanel rechercher_trajetPanel;
     public static javax.swing.JTable tableTrajet;
     private javax.swing.JPanel trajetMap;

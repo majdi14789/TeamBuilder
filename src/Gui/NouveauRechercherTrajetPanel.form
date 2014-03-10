@@ -106,7 +106,7 @@
                               <Component id="annee_combo" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="712" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -290,6 +290,12 @@
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jour_comboMouseClicked"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jour_comboMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jour_comboMouseReleased"/>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jour_comboItemStateChanged"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -367,26 +373,13 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableTrajetMouseClicked"/>
               </Events>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);&#xa;//tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);&#xa;//tableTrajet.getColumnModel().getColumn(0).setWidth(0);&#xa;}catch(Exception ex ){System.out.print(&quot;erreurrr affichage tableauu&quot;);}"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);&#xa;tableTrajet.getColumnModel().getColumn(0).setMaxWidth(0);&#xa;tableTrajet.getColumnModel().getColumn(0).setWidth(0);&#xa;&#xa;tableTrajet.getColumnModel().getColumn(9).setMinWidth(0);&#xa;tableTrajet.getColumnModel().getColumn(9).setMaxWidth(0);&#xa;tableTrajet.getColumnModel().getColumn(9).setWidth(0);&#xa;&#xa;tableTrajet.getColumnModel().getColumn(10).setMinWidth(0);&#xa;        tableTrajet.getColumnModel().getColumn(10).setMaxWidth(0);&#xa;        tableTrajet.getColumnModel().getColumn(10).setWidth(0);&#xa;&#xa;&#xa;}catch(Exception ex ){System.out.print(&quot;erreurrr affichage tableauu&quot;);}"/>
                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{"/>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="rechercherBTN">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Rechercher"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rechercherBTNActionPerformed"/>
-          </Events>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="100" y="410" width="141" height="29"/>
-            </Constraint>
-          </Constraints>
-        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

@@ -8,6 +8,8 @@ package Gui;
 
 import Entité.Adherent;
 import com.tn.doa.AdherentDAO;
+import de.javasoft.plaf.synthetica.*;
+import de.javasoft.plaf.synthetica.SyntheticaSkyMetallicLookAndFeel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -31,6 +33,7 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
      * Creates new form MainFrame
      */
     public MainFrame() throws ParseException, UnsupportedLookAndFeelException {
+        javax.swing.UIManager.setLookAndFeel(new SyntheticaSkyMetallicLookAndFeel());
         initComponents();
         //Adherent ad=Adherent(); 
         Toolkit tool=Toolkit.getDefaultToolkit();
@@ -82,88 +85,92 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
 
         menu_panel.setBackground(new java.awt.Color(255, 255, 255));
         menu_panel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(51, 51, 51)));
+        try{
+            javax.swing.UIManager.setLookAndFeel(new SyntheticaSkyMetallicLookAndFeel());
 
-        monProfilButton.setBackground(new java.awt.Color(255, 255, 255));
-        monProfilButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/monprofil.png"))); // NOI18N
-        monProfilButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                monProfilButtonActionPerformed(evt);
-            }
-        });
+            monProfilButton.setBackground(new java.awt.Color(255, 255, 255));
+            monProfilButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/monprofil.png"))); // NOI18N
+            monProfilButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    monProfilButtonActionPerformed(evt);
+                }
+            });
 
-        ajouterTrajetButton.setBackground(new java.awt.Color(255, 255, 255));
-        ajouterTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ajoutcov.jpeg"))); // NOI18N
-        ajouterTrajetButton.setMaximumSize(new java.awt.Dimension(75, 57));
-        ajouterTrajetButton.setMinimumSize(new java.awt.Dimension(75, 57));
-        ajouterTrajetButton.setPreferredSize(new java.awt.Dimension(75, 57));
-        ajouterTrajetButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ajouterTrajetButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                ajouterTrajetButtonMouseExited(evt);
-            }
-        });
-        ajouterTrajetButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                ajouterTrajetButtonMouseDragged(evt);
-            }
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                ajouterTrajetButtonMouseMoved(evt);
-            }
-        });
-        ajouterTrajetButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ajouterTrajetButtonActionPerformed(evt);
-            }
-        });
+            ajouterTrajetButton.setBackground(new java.awt.Color(255, 255, 255));
+            ajouterTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ajoutcov.jpeg"))); // NOI18N
+            ajouterTrajetButton.setMaximumSize(new java.awt.Dimension(97, 73));
+            ajouterTrajetButton.setMinimumSize(new java.awt.Dimension(97, 73));
+            ajouterTrajetButton.setPreferredSize(new java.awt.Dimension(97, 73));
+            ajouterTrajetButton.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseEntered(java.awt.event.MouseEvent evt) {
+                    ajouterTrajetButtonMouseEntered(evt);
+                }
+                public void mouseExited(java.awt.event.MouseEvent evt) {
+                    ajouterTrajetButtonMouseExited(evt);
+                }
+            });
+            ajouterTrajetButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+                public void mouseDragged(java.awt.event.MouseEvent evt) {
+                    ajouterTrajetButtonMouseDragged(evt);
+                }
+                public void mouseMoved(java.awt.event.MouseEvent evt) {
+                    ajouterTrajetButtonMouseMoved(evt);
+                }
+            });
+            ajouterTrajetButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    ajouterTrajetButtonActionPerformed(evt);
+                }
+            });
 
-        chercherTrajetButton.setBackground(new java.awt.Color(255, 255, 255));
-        chercherTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cherch.jpg"))); // NOI18N
-        chercherTrajetButton.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        chercherTrajetButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chercherTrajetButtonActionPerformed(evt);
-            }
-        });
+            chercherTrajetButton.setBackground(new java.awt.Color(255, 255, 255));
+            chercherTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cherch.jpg"))); // NOI18N
+            chercherTrajetButton.setMargin(new java.awt.Insets(0, 0, 0, 0));
+            chercherTrajetButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    chercherTrajetButtonActionPerformed(evt);
+                }
+            });
 
-        deconexionButton.setBackground(new java.awt.Color(255, 255, 255));
-        deconexionButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/dis.png"))); // NOI18N
-        deconexionButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        deconexionButton.setMinimumSize(new java.awt.Dimension(10, 10));
-        deconexionButton.setPreferredSize(new java.awt.Dimension(10, 10));
-        deconexionButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deconexionButtonActionPerformed(evt);
-            }
-        });
+            deconexionButton.setBackground(new java.awt.Color(255, 255, 255));
+            deconexionButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/dis.png"))); // NOI18N
+            deconexionButton.setMaximumSize(new java.awt.Dimension(10, 10));
+            deconexionButton.setMinimumSize(new java.awt.Dimension(10, 10));
+            deconexionButton.setPreferredSize(new java.awt.Dimension(10, 10));
+            deconexionButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    deconexionButtonActionPerformed(evt);
+                }
+            });
 
-        gererMesTrajetButtom.setBackground(new java.awt.Color(255, 255, 255));
-        gererMesTrajetButtom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/gestion.jpg"))); // NOI18N
-        gererMesTrajetButtom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gererMesTrajetButtomActionPerformed(evt);
-            }
-        });
+            gererMesTrajetButtom.setBackground(new java.awt.Color(255, 255, 255));
+            gererMesTrajetButtom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/gestion.jpg"))); // NOI18N
+            gererMesTrajetButtom.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    gererMesTrajetButtomActionPerformed(evt);
+                }
+            });
 
-        evaluerButton.setBackground(new java.awt.Color(255, 255, 255));
-        evaluerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/evaluer.png"))); // NOI18N
-        evaluerButton.setMaximumSize(new java.awt.Dimension(113, 69));
-        evaluerButton.setMinimumSize(new java.awt.Dimension(113, 69));
-        evaluerButton.setPreferredSize(new java.awt.Dimension(113, 69));
-        evaluerButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                evaluerButtonActionPerformed(evt);
-            }
-        });
+            evaluerButton.setBackground(new java.awt.Color(255, 255, 255));
+            evaluerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/evaluer.png"))); // NOI18N
+            evaluerButton.setMaximumSize(new java.awt.Dimension(113, 69));
+            evaluerButton.setMinimumSize(new java.awt.Dimension(113, 69));
+            evaluerButton.setPreferredSize(new java.awt.Dimension(113, 69));
+            evaluerButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    evaluerButtonActionPerformed(evt);
+                }
+            });
 
-        reclamationsButton.setBackground(new java.awt.Color(255, 255, 255));
-        reclamationsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reclamations.png"))); // NOI18N
-        reclamationsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reclamationsButtonActionPerformed(evt);
-            }
-        });
+            reclamationsButton.setBackground(new java.awt.Color(255, 255, 255));
+            reclamationsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reclamations.png"))); // NOI18N
+            reclamationsButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    reclamationsButtonActionPerformed(evt);
+                }
+            });
+
+        }catch(Exception ex){}
 
         javax.swing.GroupLayout menu_panelLayout = new javax.swing.GroupLayout(menu_panel);
         menu_panel.setLayout(menu_panelLayout);
@@ -182,7 +189,7 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
             .addGroup(menu_panelLayout.createSequentialGroup()
                 .addComponent(monProfilButton)
                 .addGap(0, 0, 0)
-                .addComponent(ajouterTrajetButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ajouterTrajetButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(chercherTrajetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
@@ -191,7 +198,7 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
                 .addComponent(evaluerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(reclamationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(27, 27, 27)
                 .addComponent(deconexionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
@@ -269,7 +276,13 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
 
     private void chercherTrajetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chercherTrajetButtonActionPerformed
         contentPanel.removeAll();
+    try {
         contentPanel.add(new NouveauRechercherTrajetPanel());
+    } catch (UnsupportedLookAndFeelException ex) {
+        Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (ParseException ex) {
+        Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+    }
         contentPanel.repaint();
         contentPanel.revalidate();
     }//GEN-LAST:event_chercherTrajetButtonActionPerformed

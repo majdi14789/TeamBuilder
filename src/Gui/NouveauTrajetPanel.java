@@ -54,6 +54,7 @@ GMaps map = new GMaps(600,600);
      * Creates new form NouveauTrajetPanel
      */
     public NouveauTrajetPanel() {
+        
         initComponents();
     }
 
@@ -2407,11 +2408,13 @@ if (!voitureDAO.findVoitureByImmatriculation(Idv1.getText().toString() + "TUN" +
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succés Voiture");
             trajetDAO.insererTrajet(trajet,v1,Authentification.id_adherent);
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succés trajet");
+            
 }   
 
 else {
             trajetDAO.insererTrajet(trajet,v1,Authentification.id_adherent);
             JOptionPane.showMessageDialog(this, "Ajout effectué avec succés trajet");
+            
 }
         }
         catch (Exception ex) {
@@ -2419,10 +2422,12 @@ else {
         }
 
         label_trajet.setVisible(true);
-
         // rafraichir la Table de la gestion des trajets
+           //label_trajet.setText(map.setMap(map.arrList.get(0), "Tunisia", 500, 500));
 
-        NouveauGererMesTrajets.mes_trajets_table.setModel(new TrajetModel(Authentification.id_adherent));
+  }
+        try {
+         NouveauGererMesTrajets.mes_trajets_table.setModel(new TrajetModel(Authentification.id_adherent));
 //         cacher les champs
         NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(1).setMinWidth(0);
         NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(1).setMaxWidth(0);
@@ -2438,7 +2443,16 @@ else {
         NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(8).setMinWidth(0);
         NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(8).setMaxWidth(0);
         NouveauGererMesTrajets.mes_trajets_table.getColumnModel().getColumn(8).setWidth(0);
-      }
+       
+        } catch (Exception e) {
+            
+        }finally{
+         map.arrList.clear();
+        }
+
+
+        
+
     }//GEN-LAST:event_ajout_ButtonActionPerformed
 
 
