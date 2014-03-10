@@ -2,17 +2,12 @@ package Tools;
 
 import java.util.ArrayList; 
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JEditorPane;
-import javax.swing.JFrame;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 
 public class GMaps extends JEditorPane {
-//public static String[] ville_tab = {"Tunis","Bizerte","Grombalia","Nabeul"}; 
 
-public static String[] ville_tab = {"",""}; 
 public ArrayList<String> arrList = new ArrayList<String>();
 
 
@@ -23,7 +18,6 @@ private float latitude;
 
 private static final long serialVersionUID = 1L;
 private int zoomFactor = 8;
-//private String ApiKey = "ABQIAAAA5U876NY9uQtuJYcYdj0hPRSB3fYKqo9sRR7o2MKyAKh3L0V4NBREpf50rgLOScH_jEQR7BtpLbAZ0g";
 private String ApiKey="AIzaSyAmYhzpu6dxUMCZkAWXMDubs43ahBYhnig";
 // saf private String ApiKey = "AIzaSyDLz0GRExK6FU1yf48yMStyc0sc426rbEA";
 
@@ -38,10 +32,8 @@ private String cursor ="";
 private String line = "";
 
 
-//private String line ="&path=weight:3%7Ccolor:orange%7Cenc:polyline_data|Tunis|Nabeul";
 
 public GMaps(float longitude,float latitude) {
-       // this.ville_tab = new String[]{"", ""};
 
 
 HTMLEditorKit kit = new HTMLEditorKit();
@@ -139,9 +131,7 @@ throw new Exception("Developper API Key not set !!!!");
 
 String ville = "\\&markers=size:mid";
 
-//for (int i=0;i<ville_tab.length;i++) {
-//    ville = ville+"%7C"+ville_tab[i];
-//}
+
 
 for (int i=0;i<arrList.size();i++) {
     if(arrList.get(i).equals("")!=true) { 
@@ -149,11 +139,9 @@ ville = ville+"%7C"+arrList.get(i).toString()+",TUNISIA";
     }
 }
 
-System.out.println(ville);
 
 //String url = "http://maps.google.com/maps/api/staticmap?";
 String url = "http://maps.googleapis.com/maps/api/staticmap?";
-//String url ="http://maps.googleapis.com/maps/api/geocode/json?";
 
 //url += "center=" + x + "," + y;
 //url += "&amp;zoom=" /*+ this.zoomFactor*/ + getZoom();
@@ -162,23 +150,15 @@ url += "&amp;maptype=" /*+ this.roadmap */ + getRoadmap();
 url += ville;
 url += line;
 url += "&amp;sensor=false";
-//String html = "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>";
+
 String html = "";
 
 html += "<html><head></head>";
 html +="<body><img src='" + url + "'>";
 html += "</body></html>";
 
-//this.setText(html);
-//JEditorPane ed=new JEditorPane("text/html",html);
-//add(ed);
 
-//this.setPage(url);
-//ed.setPage(html);
-
-//System.out.println(ville_tab[0].toString());
-System.out.println(ville_tab[1].toString());
-System.out.println(html);
+//System.out.println(html);
 
 return html;
 }
@@ -194,47 +174,7 @@ public float getLatitude() {return latitude;}
 
 
 
-// public static void main(String[] args) throws Exception {
-// GMaps map = new GMaps();
-//
-//
-//        try {
-//            map.setApiKey("AIzaSyDLz0GRExK6FU1yf48yMStyc0sc426rbEA");
-//            // googleMap.setRoadmap(googleMap.viewHybrid);
-//
-//            /**
-//            Afficher la ville de Strabourg
-//             */
-//           // map.showLocation(ville_tab[0], "tunisia", 500, 500);
-//         
-//            
-//            System.out.println(map.setMap(ville_tab[0], "tunisia", 500, 500));
-//            
-//            /**
-//             * Afficher Paris en fonction ses coordonnées GPS
-//             */
-//            //  googleMap.showCoordinate("48.8667", "2.3333",390, 400);
-//        } catch (Exception ex) {
-//            //Logger.getLogger(JGoogleMapEditorPan.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-// 
-// //map.showLocation(ville_tab[0], "tunisia", 500, 500);
-// map.setZoom(9);
-//
-// JFrame frame = new JFrame();
-// 
-// 
-// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        frame.add(map);
-//        
-//        frame.setSize(400, 420);
-//        frame.setLocation(200, 200);
-//        frame.setVisible(true);
-// 
-// 
-// }
-     
+
      
   
      

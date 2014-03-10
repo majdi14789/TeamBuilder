@@ -6,22 +6,6 @@
 
 package Gui.admin;
 
-import com.tn.connect.MyConnection;
-import com.tn.doa.AdherentDAO;
-import java.io.FileOutputStream;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.Date;
-import java.util.Properties;
-import javax.mail.Message;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import javax.swing.JOptionPane;
-import javax.swing.text.Document;
 import javax.mail.Message;
 import javax.mail.Transport;
 import javax.mail.PasswordAuthentication;
@@ -30,45 +14,15 @@ import javax.mail.Session;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import brouillons.Authentification;
-import com.itextpdf.text.BadElementException;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Image;
-import com.itextpdf.text.PageSize;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
 import com.tn.connect.MyConnection;
 import com.tn.doa.AdherentDAO;
 import com.tn.tableModel.gestionAdherent;
-import java.awt.Color;
 import java.awt.Graphics;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JTabbedPane;
-import javax.swing.UIManager;
 import net.proteanit.sql.DbUtils;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartFrame;
-import org.jfree.chart.ChartRenderingInfo;
-import org.jfree.chart.ChartUtilities;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.entity.StandardEntityCollection;
-import org.jfree.chart.plot.CategoryPlot;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.category.DefaultCategoryDataset;
 /**
  *
  * @author majdi

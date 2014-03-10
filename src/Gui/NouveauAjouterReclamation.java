@@ -10,18 +10,10 @@ import Entité.Adherent;
 import com.tn.doa.AdherentDAO;
 import com.tn.doa.ReclamationDAO;
 import com.tn.doa.reclamationAdherentDAO;
-import Entité.ReclamationAdherent;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.swing.JOptionPane;
-import com.tn.connect.MyConnection;
 import Entité.Reclamation;
 import Entité.ReclamationAdherent;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.tn.doa.ReclamationReservationDAO;
 /**
  *
  * @author majdi
@@ -34,8 +26,7 @@ public Adherent reclamateur;
      * Creates new form NouveauAjouterReclamation
      */
     public NouveauAjouterReclamation() {
-      //  adherent=new Adherent();
-       // adherentDAO=new AdherentDAO
+      
                 
         initComponents();
     }
@@ -62,6 +53,10 @@ public Adherent reclamateur;
         descriptionLabel = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         reclamationLabel = new javax.swing.JLabel();
+        annee_combo = new javax.swing.JComboBox();
+        mois_combo = new javax.swing.JComboBox();
+        jour_combo = new javax.swing.JComboBox();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new java.awt.CardLayout());
 
@@ -101,6 +96,14 @@ public Adherent reclamateur;
         reclamationLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         reclamationLabel.setText("        RECLAMATION");
 
+        annee_combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2014" }));
+
+        mois_combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", " " }));
+
+        jour_combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        jLabel2.setText("Date :");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -111,32 +114,46 @@ public Adherent reclamateur;
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(122, 122, 122)
                 .addComponent(reclamationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 36, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inponctualiteRadio)
-                            .addComponent(descriptionTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(descriptionLabel)
-                            .addComponent(causeLabel))
-                        .addContainerGap(127, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(validerButton))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(adherentLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(adherentcmb, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(validerButton)
                         .addGap(52, 52, 52))
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(fauxProfilRadio)
-                            .addComponent(absenceNonPrevenueRadio))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(inponctualiteRadio)
+                                    .addComponent(descriptionTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(descriptionLabel)
+                                    .addComponent(causeLabel))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(fauxProfilRadio)
+                                    .addComponent(absenceNonPrevenueRadio))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(adherentLabel)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel2)
+                                .addGap(39, 39, 39)
+                                .addComponent(jour_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(mois_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(annee_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(33, 33, 33)
+                        .addComponent(adherentcmb, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,11 +161,17 @@ public Adherent reclamateur;
                 .addContainerGap()
                 .addComponent(reclamationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(adherentcmb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adherentLabel))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jour_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mois_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(annee_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16)
+                        .addComponent(adherentLabel))
+                    .addComponent(adherentcmb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(causeLabel)
                 .addGap(18, 18, 18)
@@ -194,6 +217,91 @@ public Adherent reclamateur;
     private void validerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerButtonActionPerformed
         // TODO add your handling code here:
 
+        String jours=jour_combo.getSelectedItem().toString()+"/"+ mois_combo.getSelectedItem().toString() +"/"+annee_combo.getSelectedItem().toString();
+        
+        ReclamationDAO reclamationDAO=new ReclamationDAO();
+        reclamationAdherentDAO reclamationtAdherentDAO=new reclamationAdherentDAO();
+        ReclamationAdherent reclamationadherent= new ReclamationAdherent();
+       
+        String adresseMailReclamateur;
+        String adresseMailAdherentConcerné;
+        String contenu,causeMail;
+        MailToSend mailToSend=new MailToSend();
+        
+        
+        String AdherentConcerné=adherentcmb.getSelectedItem().toString();
+      
+        
+        int i=AdherentConcerné.indexOf(" ");
+      
+        String adherentConcernéChar=AdherentConcerné.substring(0,i);
+         int idAdherentConcerné=Integer.parseInt(adherentConcernéChar);
+        ReclamationReservationDAO reclamationReservationDAO=new ReclamationReservationDAO();
+       
+        int nbrReclamation=reclamationReservationDAO.getNombreReclamation(Authentification.id_adherent,idAdherentConcerné,jours);
+        if(nbrReclamation==0)
+        {
+             String cause ="";
+        if (inponctualiteRadio.isSelected()) {
+            cause = inponctualiteRadio.getText();
+        }
+        if (absenceNonPrevenueRadio.isSelected()) {
+            cause =absenceNonPrevenueRadio.getText();
+        }
+
+        if(fauxProfilRadio.isSelected())
+        {
+            cause=fauxProfilRadio.getText();
+        }
+        String description =descriptionTextArea.getText();
+
+        reclamateur =adherentDAO.findAdherentByIdSa(Authentification.id_adherent);
+        reclamationadherent.setCause(cause);
+        reclamationadherent.setDescription(description);
+        ad=adherentDAO.findAdherentByIdSa(idAdherentConcerné);
+          
+        Reclamation reclamation=new Reclamation();
+       
+        reclamation.setDescription(description);
+        reclamation.setCause(cause);
+
+        reclamationDAO.insert(reclamation,ad,reclamateur);
+        adherentDAO.updateAdherentNombreReclamationSa(idAdherentConcerné);
+        reclamationtAdherentDAO.insert(reclamationadherent,ad);
+
+        //Recuperation des adresse mail
+
+        contenu="Vous avez fait l'objet d'une reclamation de la part de l'adherent "+reclamateur.getNom()+" "+reclamateur.getPrenom();
+        causeMail="Reclamation";
+        if(cause!="")
+        {
+            contenu=contenu+" pour motif "+cause;
+            causeMail=causeMail+" "+cause;
+        }
+        if(!description.isEmpty())
+        {
+            contenu =contenu+"\n description : "+description;
+        }
+        contenu=contenu+" \n Vous etes prié de bien vouloir adresser votre reponse  à l'adherent reclamateur en copie au niveau de ce mail";
+
+        if(reclamationtAdherentDAO.findNbrFauxProfil(idAdherentConcerné)>=3)
+        {
+            contenu=contenu+" \n Vous avez ete bloqué par l'administration pour cause FAUX PROFIL ,vueillez nous presenter un justificatif d'identité afin de vous reaccorder vos privileges ";
+            adherentDAO.updateDesactivéCompteAdherentSa(idAdherentConcerné);
+        }
+
+        adresseMailReclamateur=reclamateur.getAdresseMail();
+        adresseMailAdherentConcerné=ad.getAdresseMail();
+        mailToSend.sendMessage(cause, contenu,adresseMailAdherentConcerné,adresseMailReclamateur);
+        reclamationReservationDAO.updateReclamationReservation(reclamateur.getIdAdherent(),idAdherentConcerné);
+          JOptionPane.showMessageDialog(this, "Reclamation insérée avec succés");
+        }
+        else 
+        {
+               JOptionPane.showMessageDialog(this, "Vous ne pouvez deposer qu'une seule reclamation par trajet ");
+        }
+    
+        /*
         ReclamationDAO reclamationDAO=new ReclamationDAO();
         reclamationAdherentDAO reclamationtAdherentDAO=new reclamationAdherentDAO();
         ReclamationAdherent reclamationadherent= new ReclamationAdherent();
@@ -247,6 +355,7 @@ public Adherent reclamateur;
 
         reclamationDAO.insert(reclamation,ad,reclamateur);
         adherentDAO.updateAdherentNombreReclamationSa(idAdherentConcerné);
+        System.out.println("id adherent concerné ffffffffffffffffffffff"+idAdherentConcerné);
       
         reclamationtAdherentDAO.insert(reclamationadherent,ad);
         
@@ -277,7 +386,7 @@ public Adherent reclamateur;
         mailToSend.sendMessage(cause,contenu,adresseMailAdherentConcerné,adresseMailReclamateur);
          
         JOptionPane.showMessageDialog(this, "Reclamation insérée avec succés");
-
+*/
     }//GEN-LAST:event_validerButtonActionPerformed
 
     private void fauxProfilRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fauxProfilRadioActionPerformed
@@ -289,14 +398,18 @@ public Adherent reclamateur;
     private javax.swing.JRadioButton absenceNonPrevenueRadio;
     private javax.swing.JLabel adherentLabel;
     public static javax.swing.JComboBox adherentcmb;
+    private javax.swing.JComboBox annee_combo;
     private javax.swing.JLabel causeLabel;
     private javax.swing.JLabel descriptionLabel;
     private java.awt.TextArea descriptionTextArea;
     private javax.swing.JRadioButton fauxProfilRadio;
     private javax.swing.JRadioButton inponctualiteRadio;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JComboBox jour_combo;
+    private javax.swing.JComboBox mois_combo;
     private javax.swing.JLabel reclamationLabel;
     private javax.swing.JButton validerButton;
     // End of variables declaration//GEN-END:variables

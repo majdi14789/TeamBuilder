@@ -1,10 +1,7 @@
 package Gui;
 
 import Entité.Adherent;
-import static Gui.MainFrame.contentPanel;
-import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
 import com.tn.doa.AdherentDAO;
-import com.tn.tableModel.EmailValidator;
 import java.awt.Color;
 import java.text.ParseException;
 import java.util.logging.Level;
@@ -212,6 +209,7 @@ public class InscriptionAdherent extends javax.swing.JFrame {
         ad.setMdp(nouveauMotdepasseText.getText());
         ad.setAdresseMail(nouveauMailtext.getText());
         ad.setNombreReclamation(0);
+        ad.setEtat("false");
         adDAO.AjouterAdherent(ad);
         NouveauMonProfil np=new NouveauMonProfil();
             try {

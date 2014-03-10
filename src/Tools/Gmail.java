@@ -18,8 +18,8 @@ public class Gmail{
     public static String subject;
     public static String contenu;
      
-    final String username ="ad2ministration.covoiturage@gmail.com"; // your email 
-    final String password ="123456788?"; // your password
+    final String username ="torjmen.salma@gmail.com"; // your email 
+    final String password ="barratira9ra"; // your password
 
     
     public void sendMail () {

@@ -5,18 +5,9 @@
  */
 
 package Gui;
-import java.awt.TextField;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JTabbedPane;
-import javax.swing.JTextField;
 import Tools.*;
 import java.util.ArrayList;
 import com.tn.doa.*;
-import Entité.*;
-import java.sql.SQLException;
-import java.util.List;
 import javax.swing.JOptionPane;
 import com.tn.tableModel.*;
 /**
@@ -326,8 +317,7 @@ ReservationDAO reservationDAO = new ReservationDAO();
             gmail.subject = "Equipe Administration Covoiturage--Annulation de trajet " ;
             gmail.contenu=e_mail_annulation_trajet;
             gmail.adresse_destination=list_Emails_passagers.get(i);
-
-//            gmail.sendMail();
+        gmail.sendMail();
 
         }
 

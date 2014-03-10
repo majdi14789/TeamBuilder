@@ -43,6 +43,8 @@ public class ReclamationDAO {
                 reclamation.setIdReclamation(resultat.getInt(1));
                 reclamation.setAdherentConcerné(adherentDAO.findAdherentByIdSa(resultat.getInt(2)));
                 reclamation.setAdherentReclamateur(adherentDAO.findAdherentByIdSa(resultat.getInt(3)));
+//                reclamation.setAdherentConcerné(adherentDAO.findAdherentById(resultat.getInt(2)));
+//                reclamation.setAdherentReclamateur(adherentDAO.findAdherentById(resultat.getInt(3)));
                 System.out.println(reclamation.getIdadherentConcerné());
                 reclamation.setDescription(resultat.getString(4));
                 reclamation.setAdministrateur(administrateurDAO.findAdministrateurByIdSa(resultat.getInt(5)));

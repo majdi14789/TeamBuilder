@@ -5,26 +5,19 @@
 package facebook;
 
 import Entité.Adherent;
+import Gui.admin.MainFrameAdmin;
 import chrriis.dj.nativeswing.swtimpl.NativeInterface;
 import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
 import chrriis.dj.nativeswing.swtimpl.components.WebBrowserAdapter;
 import chrriis.dj.nativeswing.swtimpl.components.WebBrowserNavigationEvent;
 import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
-import com.restfb.types.Page;
 import com.restfb.types.User;
 import com.tn.doa.AdherentDAO;
-import com.tn.gui.Acceuil_admin;
-//import bestdeal.esprit.entities.Administrateur;
-//import bestdeal.esprit.entities.Membre;
-//import bestdeal.esprit.gui.AuthentificationMembre;
-//import bestdeal.esprit.gui.InterfaceMembre;
-//import bestdeal.esprit.gui.InterfaceAdmin;
-//import bestdeal.esprit.gui.InterfaceClient;
+
 import java.awt.BorderLayout;
 import java.io.IOException;
 import java.io.StringReader;
-import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -34,10 +27,7 @@ import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.parser.ParserDelegator;
 import Tools.GenerationDeCode;
 import Tools.Gmail;
-/**
- *
- * @author ACER
- */
+
 public class ConnexionFacebook {
     
     public static Adherent currentUser;
@@ -57,7 +47,7 @@ public class ConnexionFacebook {
             + API_KEY
             + "&redirect_uri=http://www.facebook.com/connect/login_success.html&"
             + "client_secret=" + SECRET + "&code=";
-    public static String access_token = "CAAU6V5j2TQQBAJiYjmIPkZC0aDNshYZCtcRm6BblZB93QAq9YhqqG9ObL0GXQJBAc5VZByBZBXlj2sNbGvGbaPzJHXfXIa5PIR5ZBEqBs8Y5hbw9canaPOs2acd5S3hroIZB9CW76qTOKHIKnhR7IvVvr0r7fWt5j12pqEnB3YKoVZCFWCaZBchCX0V9LQSSRZATgZD";
+    public static String access_token = "";
     public static boolean firstRequestDone = false;
     public static boolean secondRequestDone = false;
     final JFrame loginFrame = new JFrame();
@@ -145,6 +135,7 @@ public class ConnexionFacebook {
                                        Adherent ad = new Adherent();
                                        ad.setAdresseMail(userMail);
                                        ad.setNom(userName);
+                                       ad.setEtat("false");
                                        // attribution de mot de passe automatique
                                        ad.setMdp(motdepasse);
                                        System.out.println("**************");
@@ -156,7 +147,7 @@ public class ConnexionFacebook {
                                        if (ad.getNom().equals(registredUserName)) {
 
                                            
-                                           Acceuil_admin admin=new Acceuil_admin();
+                                           MainFrameAdmin admin=new MainFrameAdmin();
                                            JOptionPane.showMessageDialog(admin, "Bievenue " + registredUserName);
 
                                        } else {

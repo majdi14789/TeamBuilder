@@ -1,5 +1,6 @@
 package Entité;
 import java.util.Collection;
+import java.util.logging.Logger;
 /**
  *
  * @author Salma
@@ -35,6 +36,24 @@ public class Adherent  {
     private int nombreReclamation;
     
     private int nombre_reclamation;
+    
+    private String etat;
+
+    public void setTelephone(Integer telephone) {
+        this.telephone = telephone;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
+    }
+
+    public int getNombre_reclamation() {
+        return nombre_reclamation;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
     public Adherent() {
     }
     public Adherent(Integer idAdherent) {
@@ -157,9 +176,7 @@ public class Adherent  {
     }
   
     
-    public Integer getNombre_reclamation() {
-        return nombre_reclamation;
-    }
+   
     
     
     

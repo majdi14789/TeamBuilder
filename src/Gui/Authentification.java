@@ -1,28 +1,14 @@
 package Gui;
 
-import com.tn.connect.MyConnection;
-import com.tn.gui.Acceuil_admin;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import com.tn.doa.AdherentDAO;
 import Entité.Adherent;
 import Gui.MainFrame;
-import com.jtattoo.plaf.aero.AeroLookAndFeel;
-import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
-import com.jtattoo.plaf.fast.FastLookAndFeel;
-import com.jtattoo.plaf.mcwin.McWinLookAndFeel;
-import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
-import de.javasoft.plaf.synthetica.SyntheticaBlackStarLookAndFeel;
-import de.javasoft.plaf.synthetica.SyntheticaSilverMoonLookAndFeel;
 import de.javasoft.plaf.synthetica.SyntheticaSkyMetallicLookAndFeel;
-import de.javasoft.plaf.synthetica.SyntheticaStandardLookAndFeel;
 import facebook.ConnexionFacebook;
 import java.text.ParseException;
-import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 public class Authentification extends javax.swing.JFrame {
     

@@ -4,7 +4,6 @@ package Gui;
 
 import Entité.Adherent;
 import static Gui.MainFrame.contentPanel;
-import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
 import com.tn.doa.AdherentDAO;
 import java.text.ParseException;
 import java.util.logging.Level;

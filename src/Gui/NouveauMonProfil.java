@@ -6,7 +6,6 @@
 package Gui;
 
 import Entité.Adherent;
-import static Gui.NouveauRechercherTrajetPanel.tableTrajet;
 
 import com.tn.doa.ReservationDAO;
 import com.tn.doa.TrajetDAO;
@@ -14,7 +13,6 @@ import com.tn.tableModel.ReservationTableModel;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -130,9 +128,9 @@ public class NouveauMonProfil extends javax.swing.JPanel {
                     .addComponent(monMail)
                     .addComponent(monTelephone))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,8 +151,9 @@ public class NouveauMonProfil extends javax.swing.JPanel {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(monTelephone))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -318,7 +317,7 @@ public class NouveauMonProfil extends javax.swing.JPanel {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(Gui.NouveauMonProfil.class.getName()).log(Level.SEVERE, null, ex);
         } catch (OutOfMemoryError e) {
-            System.out.println("out of memory");
+           // System.out.println("out of memory");
         } catch (ParseException ex) {
             Logger.getLogger(Gui.NouveauMonProfil.class.getName()).log(Level.SEVERE, null, ex);
         }

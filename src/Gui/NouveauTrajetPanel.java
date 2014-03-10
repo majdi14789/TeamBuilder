@@ -6,20 +6,13 @@
 
 package Gui;
 
-import java.awt.TextField;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JTabbedPane;
-import javax.swing.JTextField;
 import Tools.*;
 import java.util.ArrayList;
 import com.tn.doa.*;
 import Entité.*;
 import com.tn.tableModel.TrajetModel;
-import java.awt.Point;
-import java.sql.SQLException;
-import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 

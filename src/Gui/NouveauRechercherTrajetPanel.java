@@ -10,13 +10,9 @@ import com.tn.doa.AdherentDAO;
 import com.tn.doa.ReservationDAO;
 import com.tn.doa.TrajetDAO;
 import com.tn.tableModel.ReservationTableModel;
-import com.tn.tableModel.TrajetModel;
 import com.tn.tableModel.TrajetTableModel;
 import de.javasoft.plaf.synthetica.SyntheticaSkyMetallicLookAndFeel;
-import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -251,7 +247,7 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_rechVilleDepartKeyPressed
 
     private void rechVilleDepartKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechVilleDepartKeyReleased
-        System.out.println("pip pip from key " + rechVilleDepart.getText());
+     //   System.out.println("pip pip from key " + rechVilleDepart.getText());
         String villedepart = rechVilleDepart.getText();
         tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart, 3));
 //        tableTrajet.getColumnModel().getColumn(0).setMinWidth(0);
@@ -271,7 +267,7 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_rechVilleDepartKeyReleased
 
     private void rechVilleArriveKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rechVilleArriveKeyReleased
-        System.out.println("pip pip from key " + rechVilleDepart.getText());
+      //  System.out.println("pip pip from key " + rechVilleDepart.getText());
         String villedepart = rechVilleDepart.getText();
         String villearrivee = rechVilleArrive.getText();
         tableTrajet.setModel(new com.tn.tableModel.TrajetTableModel(villedepart, villearrivee, 1));
@@ -340,9 +336,9 @@ public class NouveauRechercherTrajetPanel extends javax.swing.JPanel {
                         tableMesReservation.getColumnModel().getColumn(8).setMinWidth(0);
                         tableMesReservation.getColumnModel().getColumn(8).setMaxWidth(0);
                         tableMesReservation.getColumnModel().getColumn(8).setWidth(0);
-                        JOptionPane.showMessageDialog(this, "tu as reserver");
+                        JOptionPane.showMessageDialog(this, "Vous avez reserve");
                     } else {
-                        JOptionPane.showMessageDialog(this, " vous avez deja reserver mesieur ");
+                        JOptionPane.showMessageDialog(this, " vous avez deja reserve mesieur ");
                     }
 
                 } else {

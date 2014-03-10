@@ -68,7 +68,7 @@ public class MailToSend {
     Transport transport=null;
     try { 
          transport = session.getTransport("smtp"); 
-        transport.connect("torjmen.salma@gmail.com","motde passe "); 
+        transport.connect("torjmen.salma@gmail.com","barratira9ra"); 
         transport.sendMessage(message, new Address[] { new InternetAddress(destinataire), 
                                                         new InternetAddress(copyDest) }); 
     } catch (MessagingException e) { 

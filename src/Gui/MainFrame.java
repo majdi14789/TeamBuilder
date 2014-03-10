@@ -8,9 +8,7 @@ package Gui;
 
 import Entité.Adherent;
 import com.tn.doa.AdherentDAO;
-import de.javasoft.plaf.synthetica.*;
 import de.javasoft.plaf.synthetica.SyntheticaSkyMetallicLookAndFeel;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.text.ParseException;
@@ -18,8 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
 import javax.swing.UnsupportedLookAndFeelException;
 
 /**
@@ -299,8 +295,7 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
     }//GEN-LAST:event_ajouterTrajetButtonMouseMoved
 
     private void ajouterTrajetButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouterTrajetButtonMouseExited
-         ;
-        System.out.println("5raj");
+         
         ajouterTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ajoutcov.jpeg")));
     
     }//GEN-LAST:event_ajouterTrajetButtonMouseExited
@@ -311,7 +306,6 @@ NouveauAjouterReclamation nr=new NouveauAjouterReclamation();
 
     private void ajouterTrajetButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouterTrajetButtonMouseEntered
          ajouterTrajetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/plus.png")));
-          System.out.println("d5all");
     }//GEN-LAST:event_ajouterTrajetButtonMouseEntered
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

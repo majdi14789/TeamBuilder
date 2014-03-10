@@ -196,7 +196,7 @@ public class AdherentDAO {
   
   public void AjouterAdherent(Adherent ad){
         try {
-            String req="INSERT INTO `adherent`(`nom`, `prenom`, `adresse_mail`, `mdp`, `telephone`, `nombre_reclamation`) VALUES (?,?,?,?,?,?)";
+            String req="INSERT INTO `adherent`(`nom`, `prenom`, `adresse_mail`, `mdp`, `telephone`, `nombre_reclamation`,`bloqué`) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(req);
             ps.setString(1, ad.getNom());
             ps.setString(2, ad.getPrenom());
@@ -204,6 +204,7 @@ public class AdherentDAO {
             ps.setString(4, ad.getMdp());
             ps.setInt(5, ad.getTelephone());
             ps.setInt(6, 0);
+            ps.setString(7, ad.getEtat());
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(AdherentDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -429,12 +430,13 @@ public class AdherentDAO {
     
      public void AjouterAdherentfb(Adherent ad){
         try {
-            String req="INSERT INTO `adherent`(`nom`,`adresse_mail`,`mdp`) VALUES (?,?,?)";
+            String req="INSERT INTO `adherent`(`nom`,`adresse_mail`,`mdp`,`bloqué`) VALUES (?,?,?;?)";
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(req);
             ps.setString(1, ad.getNom());
             ps.setString(2, ad.getAdresseMail());
             ps.setString(3, ad.getMdp());
-            
+           ps.setString(4, ad.getEtat());
+
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(AdherentDAO.class.getName()).log(Level.SEVERE, null, ex);

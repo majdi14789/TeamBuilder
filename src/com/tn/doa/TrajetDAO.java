@@ -4,15 +4,13 @@
  */
 package com.tn.doa;
 
-import Entité.Adherent;
 import Entité.Trajet;
 import com.tn.connect.MyConnection;
-import com.tn.entities.Conducteur;
+
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import Entité.*;
-import Gui.Authentification;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;

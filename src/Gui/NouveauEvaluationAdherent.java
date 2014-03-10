@@ -183,7 +183,6 @@ public class NouveauEvaluationAdherent extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tableEvaluationAdherentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableEvaluationAdherentMousePressed
-        System.out.println("ha333");
         int x=tableEvaluationAdherent.getSelectedRow();
         sonnomLabel.setText(tableEvaluationAdherent.getValueAt(x, 1).toString());
         sonPrenomLabel.setText(tableEvaluationAdherent.getValueAt(x, 2).toString());
